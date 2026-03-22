@@ -3,7 +3,7 @@ import path from 'node:path';
 import { runInit, listStarters } from './init-cmd.js';
 import { getPackageRoot } from '../lib/paths.js';
 
-export async function createApp(name: string, options: { template?: string }): Promise<void> {
+export async function createApp(name: string, options: { starter?: string }): Promise<void> {
   const targetDir = path.resolve(process.cwd(), name);
 
   if (fs.existsSync(targetDir)) {
@@ -31,7 +31,7 @@ export async function createApp(name: string, options: { template?: string }): P
 
   console.log(`  \x1b[32m✓\x1b[0m Project scaffolded: ${name}\n`);
 
-  const starterName = options.template === 'blank' ? 'blank' : 'lokatech';
+  const starterName = options.starter ?? 'lokatech';
   const startersDir = resolveStartersDir();
 
   if (startersDir && fs.existsSync(path.join(startersDir, starterName))) {

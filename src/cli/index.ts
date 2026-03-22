@@ -164,8 +164,8 @@ program
 program
   .command('create <name>')
   .description('Create a new Barka project')
-  .option('-t, --template <template>', 'Starter template', 'default')
-  .action(async (name: string, opts: { template?: string }) => {
+  .option('-s, --starter <starter>', 'Starter template (lokatech, kadoservices, blank)', 'lokatech')
+  .action(async (name: string, opts: { starter?: string }) => {
     const { createApp } = await import('./create-app.js');
     await createApp(name, opts);
   });
