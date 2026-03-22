@@ -1,0 +1,31 @@
+{
+  "name": "create-barka-app",
+  "version": "0.1.0",
+  "description": "Create a new Barka CMS project — AI-native progressive Content-as-Code CMS",
+  "type": "module",
+  "bin": {
+    "create-barka-app": "./index.js"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "barka",
+    "cms",
+    "create",
+    "scaffold",
+    "ai",
+    "content",
+    "markdown"
+  ],
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/barkajs/barka",
+    "directory": "packages/create-barka-app"
+  },
+  "author": "Grzegorz Bartman",
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
