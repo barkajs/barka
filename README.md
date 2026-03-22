@@ -162,7 +162,9 @@ Level 1: Files Only          Level 2: Dev Server          Level 3: + Database   
 **Step 1:** Create a new Barka project:
 
 ```bash
-npx @barkajs/barka create my-site
+npx create-barka-app my-site                      # default: lokatech starter
+npx create-barka-app my-site --starter kadoservices  # HR/staffing starter
+npx create-barka-app my-site --starter blank         # empty project
 ```
 
 **Step 2:** Install dependencies and start:
