@@ -75,7 +75,7 @@ themes/lokatech/components/
 └── ... (15 components)
 ```
 
-**Starter Profiles (Distributions)**
+**Starter Templates**
 Ready-made starter templates for different industries. Each starter bundles a premium theme, config, and demo content. After `barka init`, everything is yours to customize — framework updates never touch your files.
 
 **Admin UI with HTMX**
@@ -147,9 +147,9 @@ Barka grows with your project. Start simple, scale up only when needed.
 ```
 Level 1: Files Only          Level 2: Dev Server          Level 3: + Database          Level 4: Full CMS
 ┌─────────────────┐          ┌─────────────────┐          ┌─────────────────┐          ┌─────────────────┐
-│  content/*.md   │          │  barka dev      │          │  + SQLite       │          │  + Multi-lang   │
-│  config/*.yaml  │   →      │  Hot reload     │   →      │  + Admin UI     │   →      │  + Multi-site   │
-│  barka build    │          │  Live preview   │          │  + Auth         │          │  + Workflows    │
+│  content/*.md   │          │  barka dev      │          │  + SQLite       │          │  + Workflows    │
+│  config/*.yaml  │   →      │  Hot reload     │   →      │  + Admin UI     │   →      │  + Approvals    │
+│  barka build    │          │  Live preview   │          │  + Auth         │          │  + Scheduling   │
 │  Deploy: $0     │          │  Local only     │          │  Deploy: $0-5   │          │  Deploy: $5-20  │
 └─────────────────┘          └─────────────────┘          └─────────────────┘          └─────────────────┘
       No DB                        No DB                      SQLite                   SQLite or PG
@@ -175,9 +175,9 @@ npm install
 npm run dev
 ```
 
-**Step 4:** Open your site at `http://localhost:3000`
+**Step 3:** Open your site at `http://localhost:3000`
 
-**Step 5 (optional):** Add a database and admin UI:
+**Step 4 (optional):** Add a database and admin UI:
 
 ```bash
 npx barka db:init
@@ -237,8 +237,7 @@ Minimal setup for starting from scratch. Just a homepage, about page, and the ba
 
 ```bash
 # Create a new project
-npx @barkajs/barka create my-company
-cd my-company && npm install
+npx create-barka-app my-company
 
 # Pick a starter that matches your industry
 barka init --starter kadoservices --force
@@ -417,7 +416,7 @@ Mark verification items as done in `BARKA_PLAN.md`.
 
 ```bash
 barka create <name>           # Scaffold a new project
-barka init -s <starter>       # Initialize from a starter profile (lokatech, blank)
+barka init -s <starter>       # Initialize from a starter (lokatech, kadoservices, blank)
 barka starters                # List available starter profiles
 barka dev                     # Dev server with hot reload
 barka build                   # Static HTML output to dist/
@@ -525,7 +524,7 @@ After changes to routing, i18n, `sites.yaml`, or theme navigation, verify at lea
 | **404** | `/missing` vs `/pl/missing` — themed page + matching nav language |
 | **Switcher** | Dropdown lists all configured languages; links use correct prefix |
 
-The Barka wrapper documents a fuller checklist in `.claude/skills/role-qa-testing/SKILL.md` (section **Frontend Smoke Tests — Barka v2**).
+Use Playwright MCP or manual browser testing to verify all routes.
 
 ---
 
@@ -561,7 +560,7 @@ The Barka wrapper documents a fuller checklist in `.claude/skills/role-qa-testin
 | Free static hosting | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: | :white_check_mark: |
 | Self-contained | :x: | :white_check_mark: | :x: | :x: | :x: | Partial | :white_check_mark: |
 | SDC / co-located styles | :white_check_mark: | :x: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: |
-| Setup complexity | `npm create` | `brew install` | Docker + server | PHP + MySQL | Node + DB | `npm create` | **`npx barka create`** |
+| Setup complexity | `npm create` | `brew install` | Docker + server | PHP + MySQL | Node + DB | `npm create` | **`npx create-barka-app`** |
 | Hosting cost | $0 | $0 | $10-50/mo | $5-30/mo | $10-30/mo | $0 | **$0-5/mo** |
 
 ---
@@ -570,41 +569,33 @@ The Barka wrapper documents a fuller checklist in `.claude/skills/role-qa-testin
 
 ```
 my-site/
-├── content/                  # Your content (Markdown + YAML) — user-owned
-│   ├── articles/             # 22 articles (+ .pl.md translations)
-│   ├── pages/                # Static pages (about, contact + PL)
-│   ├── services/             # 7 service pages (+ PL)
-│   ├── case-studies/         # 9 case studies (+ PL)
+├── content/                  # Your content (Markdown + YAML)
+│   ├── articles/             # Blog posts (+ .pl.md translations)
+│   ├── pages/                # Static pages (about, contact)
+│   ├── services/             # Service pages
+│   ├── case-studies/         # Case studies
 │   ├── industries/           # Industry pages
-│   ├── landing-pages/        # Homepage and landing pages (YAML + PL)
+│   ├── landing-pages/        # Homepage and landing pages (YAML sections)
 │   ├── team/                 # Team member profiles
 │   └── locations/            # Office locations
-├── config/                   # Configuration (YAML) — user-owned
+├── config/                   # Configuration (YAML)
 │   ├── settings.yaml         # Site name, theme, SEO
-│   ├── content-types.yaml    # 8 content types with fields
-│   ├── section-types.yaml    # Section type definitions
+│   ├── content-types.yaml    # Content type definitions
+│   ├── section-types.yaml    # Section types for page builder
 │   ├── languages.yaml        # en, pl, de
 │   ├── taxonomies.yaml       # Vocabularies and terms
 │   ├── sites.yaml            # Multi-site domains
 │   └── translations/         # UI strings per locale (en.yaml, pl.yaml, …)
-├── themes/                   # Themes (Hono JSX + SDC) — user-owned
-│   ├── lokatech/             # Premium theme
-│   │   ├── theme.yaml        # Theme config and settings
-│   │   ├── layouts/          # 14 layout templates
-│   │   ├── components/       # 15 SDC section components
-│   │   │   ├── hero/         # hero.tsx + hero.css + schema.yaml
-│   │   │   ├── features/     # features.tsx + features.css + schema.yaml
-│   │   │   └── ...
+├── themes/                   # Themes (Hono JSX + SDC)
+│   ├── lokatech/             # Active theme
+│   │   ├── theme.yaml        # Theme config
+│   │   ├── layouts/          # Page templates
+│   │   ├── components/       # Section components (hero/, features/, cta/, …)
 │   │   └── static/           # CSS, images, fonts
 │   └── starter/              # Base theme (fallback)
-├── starters/                 # Starter profiles (framework-managed)
-│   ├── lokatech/             # Enterprise IT starter
-│   └── blank/                # Clean starting point
-├── src/                      # Framework source code
-│   ├── lib/                  # Content engine, i18n, themes, SEO
-│   ├── built-in-theme/       # Minimal fallback theme
-│   └── cli/                  # CLI commands
-├── public/                   # Static assets
+├── node_modules/@barkajs/barka/  # Framework (npm, updatable)
+├── package.json              # { "@barkajs/barka": "^0.1.0" }
+├── tsconfig.json             # JSX config for theme templates
 └── dist/                     # Build output (generated)
 ```
 
