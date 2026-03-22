@@ -257,94 +257,156 @@ Framework updates (`npm update @barkajs/barka`) never touch these directories.
 
 ## For AI Coding Agents
 
-Copy the prompt below into **Claude Code**, **Cursor**, **Codex**, **Aider**, or any AI coding tool to start building a new Barka site from scratch. The agent will ask you a few questions, recommend the best starter, and generate a customized website.
+Copy the prompt below into **Claude Code**, **Cursor**, **Codex**, **Aider**, or any AI coding tool to start building a new Barka site. The agent will gather requirements, scan your existing website, create a plan, and build a customized site.
 
 ````markdown
 # Build a new website with Barka CMS
 
-## Step 1 — Set up the project
+**IMPORTANT: Start by switching to plan mode** (e.g. `/plan` in Claude Code, or ask the
+user to confirm planning before execution). Do NOT write code until the plan is approved.
 
-```bash
-npx @barkajs/barka create my-site
-cd my-site
-npm install
-```
+## Phase 1 — Gather requirements
 
-Read the files `CLAUDE.md` and `INVARIANTS.json` in the project root before making
-any changes — they contain the rules you must follow.
-
-## Step 2 — Gather requirements
-
-Before choosing a starter or generating content, ask me (the human) these questions
-and wait for answers:
+Ask me (the human) these questions one by one. Wait for all answers before proceeding.
 
 1. **Company / website name** — What is the company called? What should the site title be?
-2. **Main goal** — What is the primary goal of the website?
-   (lead generation, brand awareness, recruitment, e-commerce, portfolio, internal tool, etc.)
-3. **Services / products** — What does the company offer? List the main services or product categories.
-4. **Target audience** — Who are the ideal customers? Which industries or verticals?
-5. **Languages** — How many languages are needed and which ones? (e.g. EN + PL, EN only, EN + DE + FR)
-6. **Brand identity** — Do you have a brand book, existing website, or logo I can use to match colors and typography? Paste a link or describe the palette.
-7. **Content volume** — How much content do you plan to publish?
-   (a few static pages, regular blog posts, case studies, landing pages for campaigns, etc.)
+2. **Existing website URL** — Do you have a current website? Paste the URL so I can:
+   - Scan the site structure (pages, services, blog, about, contact)
+   - Extract color palette and typography from the design
+   - Identify content that should be migrated (service descriptions, team, case studies)
+   - Detect languages currently in use
+3. **Logo** — Paste a link to your logo file, or describe the brand colors if no logo yet.
+4. **Main goal** — What is the primary goal of the website?
+   (lead generation, brand awareness, recruitment, e-commerce, portfolio, etc.)
+5. **Services / products** — What does the company offer? List the main services or product
+   categories. (If I already scanned your website, I'll suggest what I found — confirm or correct.)
+6. **Target audience** — Who are the ideal customers? Which industries?
+7. **Languages** — How many languages are needed and which ones? (e.g. EN + PL, EN only)
+8. **Content plan** — What content do you want to publish regularly?
+   (blog posts, case studies, landing pages for campaigns, job offers, etc.)
 
-## Step 3 — Choose a starter and initialize
+## Phase 2 — Analyze existing site (if URL provided)
 
-Based on the answers, pick the best starter:
+If the user provided a website URL:
 
-| Starter | Best for | Theme style |
-|---------|----------|-------------|
-| `lokatech` | IT services, software houses, consulting, digital agencies | Dark navy + emerald, premium animations |
-| `kadoservices` | HR, staffing, recruitment, outsourcing, business services | Warm amber + deep plum, professional |
-| `blank` | Fully custom design, e-commerce, portfolio, non-standard layouts | Minimal base theme |
+1. Use web fetch / browser tools to scan the site
+2. List all pages found (nav structure, footer links, sitemap if available)
+3. Extract the color palette (primary, secondary, accent, background colors)
+4. Note the typography (heading font, body font)
+5. Identify content types present (services, blog, case studies, team, locations, etc.)
+6. Report findings to the user: "I found X pages, Y services, Z blog posts. Colors: #xxx, #yyy.
+   Here's what I suggest migrating..."
+7. Ask the user to confirm or adjust
 
-> More industry-specific starters are coming (healthcare, real estate, SaaS, education).
-> For now, pick the closest match and customize from there.
+## Phase 3 — Create the plan
 
-```bash
-barka init --starter <recommended> --force
+Based on all answers, create a file called `BARKA_PLAN.md` in the project root with:
+
+```markdown
+# Barka Site Plan — [Company Name]
+
+## Requirements
+- Company: [name]
+- Goal: [goal]
+- Languages: [list]
+- Existing site: [URL or "none"]
+- Brand colors: primary [#xxx], secondary [#yyy], accent [#zzz]
+
+## Starter selection
+- Chosen: [lokatech / kadoservices / blank]
+- Reason: [why this starter fits]
+
+## Checklist
+
+### Setup
+- [ ] Create project: `npx create-barka-app [name]`
+- [ ] Init starter: `barka init --starter [name] --force`
+- [ ] Configure settings.yaml (site name, URL, colors)
+- [ ] Configure languages.yaml
+- [ ] Configure sites.yaml (domain, localhost)
+
+### Content migration
+- [ ] Homepage — hero, features, CTA sections
+- [ ] About page — company story, mission, values
+- [ ] Services — [list each service page]
+- [ ] Blog posts — [number] articles to create/migrate
+- [ ] Case studies — [list if applicable]
+- [ ] Team page — [list members if applicable]
+- [ ] Contact page — address, form, map
+- [ ] [Other pages found on existing site]
+
+### Translations (per language)
+- [ ] [lang] — homepage.yaml
+- [ ] [lang] — navigation labels (config/translations/[lang].yaml)
+- [ ] [lang] — service pages
+- [ ] [lang] — about, contact pages
+
+### Theme customization
+- [ ] Update brand colors in theme CSS/settings
+- [ ] Replace logo
+- [ ] Adjust typography if needed
+- [ ] Update footer links and social media
+
+### Verification
+- [ ] `barka dev` — all pages render correctly
+- [ ] Check all languages and language switcher
+- [ ] Check mobile responsiveness
+- [ ] Verify all navigation links work
+- [ ] `barka build` — static build succeeds
 ```
 
-## Step 4 — Customize for the company
+**Show this plan to the user and wait for approval before executing.**
 
-1. Edit `config/settings.yaml` — set `site_name`, `site_url`, `tagline`, and theme colors
-   to match the brand book or provided palette.
-2. Edit `config/languages.yaml` — configure the languages from the requirements.
-3. Edit `config/sites.yaml` — set the production domain and localhost alias.
-4. Update `config/translations/en.yaml` (and other language files) — replace demo
-   navigation labels, footer text, and CTA copy with the real company content.
+## Phase 4 — Execute the plan
 
-## Step 5 — Generate content
+After plan approval:
 
-Replace the demo content in `content/` with real pages tailored to the company:
+1. Set up the project:
+   ```bash
+   npx create-barka-app [name]
+   cd [name]
+   ```
 
-- `content/landing-pages/homepage.yaml` — hero, features, CTA, testimonials sections
-- `content/pages/about.md` — company story, mission, values
-- `content/services/*.md` — one file per service/product
-- `content/articles/*.md` — blog posts relevant to the industry
-- `content/landing-pages/*.yaml` — campaign landing pages with section builder
+2. Read `CLAUDE.md` and `INVARIANTS.json` — follow these rules strictly.
 
-For each non-default language, create translated files with the language suffix
-(e.g. `homepage.pl.yaml`, `about.pl.md`).
+3. Choose the best starter:
 
-## Step 6 — Preview and iterate
+   | Starter | Best for | Theme style |
+   |---------|----------|-------------|
+   | `lokatech` | IT, software, consulting, digital agencies | Dark navy + emerald |
+   | `kadoservices` | HR, staffing, recruitment, business services | Warm amber + deep plum |
+   | `blank` | Custom design, e-commerce, portfolio | Minimal base theme |
+
+   > More starters coming. Pick the closest match and customize.
+
+   ```bash
+   barka init --starter <recommended> --force
+   ```
+
+4. Customize `config/settings.yaml` — site name, URL, brand colors from scan.
+5. Configure `config/languages.yaml` and `config/translations/*.yaml`.
+6. Replace demo content in `content/` with real pages.
+   - For each page migrated from the old site, create the content file
+   - For each non-default language, create translated files (`.pl.md`, `.pl.yaml`)
+7. Update `BARKA_PLAN.md` — check off each completed item as `[x]`.
+
+## Phase 5 — Verify
 
 ```bash
 barka dev
 # Open http://localhost:3000
 ```
 
-Use Playwright or a browser to verify every page renders correctly.
-Check all languages, navigation, footer links, and mobile responsiveness.
+Check every page, every language, navigation, footer, mobile view.
+Mark verification items as done in `BARKA_PLAN.md`.
 
-## Rules to follow
+## Rules
 
 - NEVER delete content/, config/, or themes/ directories
-- NEVER hardcode language prefixes (/pl/, /de/) — use `_url()` and `_t()` in templates
-- ALWAYS run `npm test && npm run typecheck` before committing
+- NEVER hardcode language prefixes (/pl/, /de/) — use `_url()` and `_t()`
 - Content files use YAML frontmatter; landing pages are pure YAML with sections
-- Theme components are Single Directory Components (SDC) in `themes/<name>/components/`
-- UI strings live in `config/translations/<lang>.yaml` — not hardcoded in JSX
+- UI strings in `config/translations/<lang>.yaml` — not hardcoded in JSX
+- Update `BARKA_PLAN.md` checklist as you complete each step
 ````
 
 ---
