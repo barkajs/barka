@@ -299,9 +299,32 @@ If the user provided a website URL:
    Here's what I suggest migrating..."
 7. Ask the user to confirm or adjust
 
-## Phase 3 — Create the plan
+## Phase 3 — Choose starter and create project
 
-Based on all answers, create a file called `BARKA_PLAN.md` in the project root with:
+Based on answers, pick the best starter:
+
+| Starter | Best for | Theme style |
+|---------|----------|-------------|
+| `lokatech` | IT, software, consulting, digital agencies | Dark navy + emerald |
+| `kadoservices` | HR, staffing, recruitment, business services | Warm amber + deep plum |
+| `blank` | Custom design, e-commerce, portfolio | Minimal base theme |
+
+> More starters coming. Pick the closest match and customize.
+
+Tell the user which starter you recommend and why. After confirmation, create the project:
+
+```bash
+npx create-barka-app [project-name] --starter <recommended>
+cd [project-name]
+```
+
+This installs `@barkajs/barka` from npm and initializes with the chosen starter
+(copies content, config, and theme). Read `CLAUDE.md` and `INVARIANTS.json` — follow
+these rules strictly throughout the project.
+
+## Phase 4 — Create the plan
+
+Create a file called `BARKA_PLAN.md` in the project root:
 
 ```markdown
 # Barka Site Plan — [Company Name]
@@ -312,22 +335,18 @@ Based on all answers, create a file called `BARKA_PLAN.md` in the project root w
 - Languages: [list]
 - Existing site: [URL or "none"]
 - Brand colors: primary [#xxx], secondary [#yyy], accent [#zzz]
-
-## Starter selection
-- Chosen: [lokatech / kadoservices / blank]
-- Reason: [why this starter fits]
+- Starter: [chosen starter and reason]
 
 ## Checklist
 
-### Setup
-- [ ] Create project: `npx create-barka-app [name]`
-- [ ] Init starter: `barka init --starter [name] --force`
-- [ ] Configure settings.yaml (site name, URL, colors)
+### Configuration
+- [ ] Configure settings.yaml (site name, URL, brand colors)
 - [ ] Configure languages.yaml
 - [ ] Configure sites.yaml (domain, localhost)
+- [ ] Update translations (config/translations/*.yaml) — nav, footer, CTA text
 
-### Content migration
-- [ ] Homepage — hero, features, CTA sections
+### Content
+- [ ] Homepage — customize hero, features, CTA sections
 - [ ] About page — company story, mission, values
 - [ ] Services — [list each service page]
 - [ ] Blog posts — [number] articles to create/migrate
@@ -336,7 +355,7 @@ Based on all answers, create a file called `BARKA_PLAN.md` in the project root w
 - [ ] Contact page — address, form, map
 - [ ] [Other pages found on existing site]
 
-### Translations (per language)
+### Translations (per non-default language)
 - [ ] [lang] — homepage.yaml
 - [ ] [lang] — navigation labels (config/translations/[lang].yaml)
 - [ ] [lang] — service pages
@@ -346,7 +365,7 @@ Based on all answers, create a file called `BARKA_PLAN.md` in the project root w
 - [ ] Update brand colors in theme CSS/settings
 - [ ] Replace logo
 - [ ] Adjust typography if needed
-- [ ] Update footer links and social media
+- [ ] Update footer links and social media URLs
 
 ### Verification
 - [ ] `barka dev` — all pages render correctly
@@ -358,40 +377,19 @@ Based on all answers, create a file called `BARKA_PLAN.md` in the project root w
 
 **Show this plan to the user and wait for approval before executing.**
 
-## Phase 4 — Execute the plan
+## Phase 5 — Execute the plan
 
-After plan approval:
+After plan approval, work through the checklist:
 
-1. Set up the project:
-   ```bash
-   npx create-barka-app [name]
-   cd [name]
-   ```
-
-2. Read `CLAUDE.md` and `INVARIANTS.json` — follow these rules strictly.
-
-3. Choose the best starter:
-
-   | Starter | Best for | Theme style |
-   |---------|----------|-------------|
-   | `lokatech` | IT, software, consulting, digital agencies | Dark navy + emerald |
-   | `kadoservices` | HR, staffing, recruitment, business services | Warm amber + deep plum |
-   | `blank` | Custom design, e-commerce, portfolio | Minimal base theme |
-
-   > More starters coming. Pick the closest match and customize.
-
-   ```bash
-   barka init --starter <recommended> --force
-   ```
-
-4. Customize `config/settings.yaml` — site name, URL, brand colors from scan.
-5. Configure `config/languages.yaml` and `config/translations/*.yaml`.
-6. Replace demo content in `content/` with real pages.
+1. Customize `config/settings.yaml` — site name, URL, brand colors from scan.
+2. Configure `config/languages.yaml` and `config/translations/*.yaml`.
+3. Replace demo content in `content/` with real pages tailored to the company.
    - For each page migrated from the old site, create the content file
    - For each non-default language, create translated files (`.pl.md`, `.pl.yaml`)
-7. Update `BARKA_PLAN.md` — check off each completed item as `[x]`.
+4. Customize the theme — colors, logo, typography, footer links.
+5. Mark each completed item as `[x]` in `BARKA_PLAN.md`.
 
-## Phase 5 — Verify
+## Phase 6 — Verify
 
 ```bash
 barka dev
