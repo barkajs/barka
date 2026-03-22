@@ -31,7 +31,7 @@
 
 # What is Barka?
 
-Barka is the first **progressive CMS built for AI agents**. It bridges the gap between static site generators and traditional content management systems — combining the simplicity of Astro/Hugo (Markdown files, free hosting) with the power of Drupal/WordPress (structured content, page builder, multi-language, admin UI).
+Barka is the first **progressive CMS built for AI agents**. It bridges the gap between static site generators and traditional content management systems — combining the simplicity of Astro/Hugo (Markdown files, free hosting) with the power of a full CMS (structured content, page builder, multi-language, admin UI).
 
 **Born from real frustration.** Barka was created after extensive work with AI coding agents (Claude Code, Cursor, Codex, Copilot) on existing CMS platforms — Payload, Astro, Drupal, WordPress, Strapi. The problems hit hardest in the scenarios that matter most for marketing teams: multi-language sites across multiple domains, rapid creation of custom landing pages, and high-volume content publishing (blog posts, case studies, service pages). Every existing CMS made these tasks painful with AI — complex configs, binary formats, database-dependent workflows, and opaque abstractions meant that building a simple landing page with AI required fighting the framework instead of creating content.
 
@@ -47,7 +47,7 @@ Barka is the first **progressive CMS built for AI agents**. It bridges the gap b
 - **Progressive Complexity** — Start with files only, add a database when you actually need one. No upfront infrastructure decisions.
 - **Zero JavaScript on Frontend** — Public pages ship 0 bytes of JS. Pure server-rendered HTML with perfect Lighthouse scores.
 - **Full Code Ownership** — No vendor lock-in, no SaaS fees. Your content lives in Git. Self-host anywhere or deploy static for free.
-- **Drupal-Grade Features** — Page builder with 15 section types, multi-language, multi-site, taxonomy, revisions — without the Drupal complexity.
+- **Enterprise-Grade Features** — Page builder with 15 section types, multi-language, multi-site, taxonomy, revisions — without the complexity of traditional CMS platforms.
 
 ---
 
@@ -57,7 +57,7 @@ Barka is the first **progressive CMS built for AI agents**. It bridges the gap b
 Write content in Markdown with YAML frontmatter. Define content types, taxonomies, and section types in simple YAML config files. Everything is a file — version-controlled, diffable, AI-friendly.
 
 **Page Builder — 15 Section Types**
-Compose landing pages from reusable sections: Hero, Features, CTA, Testimonials, FAQ, Pricing, Gallery, Counters, Logo Slider, Text with Image, Blog Listing, Columns, Video, Form, and Text — inspired by [Droopler](https://droopler.dev). Each section supports per-instance settings (background, spacing, width, CSS class).
+Compose landing pages from reusable sections: Hero, Features, CTA, Testimonials, FAQ, Pricing, Gallery, Counters, Logo Slider, Text with Image, Blog Listing, Columns, Video, Form, and Text. Each section supports per-instance settings (background, spacing, width, CSS class).
 
 **Single Directory Components (SDC)**
 Each section component lives in its own directory with co-located template (`.tsx`), scoped styles (`.css`), and schema definition (`schema.yaml`). CSS is automatically collected and served via a dynamic `/static/components.css` route — no build step needed.
@@ -76,7 +76,7 @@ themes/lokatech/components/
 ```
 
 **Starter Profiles (Distributions)**
-Self-contained starter profiles — like Drupal distributions (Droopler, OpenIntranet). Each starter bundles themes, config, and demo content. After `barka init`, everything in `content/`, `config/`, and `themes/` is yours — framework updates never touch these directories.
+Ready-made starter templates for different industries. Each starter bundles a premium theme, config, and demo content. After `barka init`, everything is yours to customize — framework updates never touch your files.
 
 **Admin UI with HTMX**
 A full content management interface at `/admin` — content CRUD with revisions, section builder, media library, taxonomy management, user accounts, settings. Built with server-rendered HTML + HTMX for instant interactivity. No React, no JS build step.
@@ -97,7 +97,7 @@ languages:
 ```
 
 **UI strings (theme / admin copy)**
-Navigation labels, mega-menu copy, footer headings, and other **non-content** strings are not stored in Markdown. They live in `config/translations/<lang>.yaml` (dot keys, e.g. `nav.services: "Services"`). At render time the active theme receives a Drupal-style **`t()`** helper via theme settings (`themeSettings._t`) with fallback to the site default language. Add or edit keys there — same idea as Drupal’s string translations.
+Navigation labels, mega-menu copy, footer headings, and other **non-content** strings are not stored in Markdown. They live in `config/translations/<lang>.yaml` (dot keys, e.g. `nav.services: "Services"`). At render time the active theme receives a `t()` helper via theme settings (`themeSettings._t`) with fallback to the site default language.
 
 **Base path & internal URLs**
 Templates get **`_basePath`** (empty for the default language, or `/<lang>` when prefixed) and **`_url('/path')`** so links stay correct when the user is on `/pl/...` (logo, nav, footer, CTAs). You don’t hardcode `/pl` in JSX.
@@ -124,7 +124,7 @@ sites:
 ```
 
 **Themes**
-Drupal-style theme system with inheritance and a resolution chain: `active theme → base theme → built-in fallback`. Themes include layouts, SDC components, partials, and static assets. Slug-specific templates (`page--contact.tsx`), collection listings (`index--articles.tsx`). Shipped inside starters so they're fully customizable.
+Theme system with inheritance and a resolution chain: `active theme → base theme → built-in fallback`. Themes include layouts, section components, partials, and static assets. Slug-specific templates (`page--contact.tsx`), collection listings (`index--articles.tsx`). Shipped inside starters so they're fully customizable.
 
 **Bidirectional Sync**
 Edit in files, edit in admin UI — it all stays in sync. `barka sync` merges changes from both directions with conflict detection. Export from DB to files for Git versioning anytime.
@@ -195,7 +195,7 @@ That's it. No Docker, no PostgreSQL, no Redis — unless you want them later.
 
 <h2 id="starters">Starter Profiles</h2>
 
-Starters are self-contained distributions — like Drupal installation profiles (Droopler, OpenIntranet). Each starter bundles a premium theme, full configuration, demo content, and translations. After `barka init`, everything becomes yours to customize. More starters are coming.
+Starters are ready-made website templates for different industries. Each starter bundles a premium theme, full configuration, demo content, and translations. Pick a starter, customize it for your company, and you're live. More starters are coming.
 
 ```bash
 barka starters                       # list available starters
@@ -549,7 +549,7 @@ The Barka wrapper documents a fuller checklist in `.claude/skills/role-qa-testin
 | Content in files | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: | :white_check_mark: |
 | Admin UI for editors | :x: | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | Partial | :white_check_mark: |
 | Page builder / sections | :x: | :x: | :white_check_mark: | :white_check_mark: | :white_check_mark: | :x: | :white_check_mark: |
-| Starter distributions | :x: | :x: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: |
+| Starter templates | :x: | :x: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: |
 | Database optional | :white_check_mark: | :white_check_mark: | :x: | :x: | :x: | :white_check_mark: | :white_check_mark: |
 | Multi-language | Plugin | Built-in | Built-in | Plugin | Plugin | :x: | Built-in |
 | Multi-site | :x: | :x: | :white_check_mark: | :white_check_mark: | :x: | :x: | :white_check_mark: |
@@ -596,7 +596,7 @@ my-site/
 │   │   └── static/           # CSS, images, fonts
 │   └── starter/              # Base theme (fallback)
 ├── starters/                 # Starter profiles (framework-managed)
-│   ├── lokatech/             # Enterprise demo distribution
+│   ├── lokatech/             # Enterprise IT starter
 │   └── blank/                # Clean starting point
 ├── src/                      # Framework source code
 │   ├── lib/                  # Content engine, i18n, themes, SEO
