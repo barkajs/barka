@@ -1,0 +1,26 @@
+label: Hero
+icon: star
+description: "Full-width hero banner with heading, subheading, CTA buttons."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+    required: true
+  subheading:
+    type: textarea
+    label: Subheading
+  image:
+    type: media
+    label: Background Image
+  cta_text:
+    type: text
+    label: CTA Button Text
+  cta_url:
+    type: text
+    label: CTA Button URL
+  alignment:
+    type: select
+    label: Alignment
+    options: [left, center, right]
+    default: center

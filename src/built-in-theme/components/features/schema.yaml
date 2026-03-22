@@ -1,0 +1,22 @@
+label: Features
+icon: grid
+description: "Minimal fallback feature grid."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  columns:
+    type: number
+    label: Columns
+    default: 3
+  items:
+    type: repeater
+    label: Items
+    fields:
+      title:
+        type: text
+        label: Title
+      description:
+        type: text
+        label: Description

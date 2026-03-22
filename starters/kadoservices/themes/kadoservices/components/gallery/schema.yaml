@@ -1,0 +1,27 @@
+label: Gallery
+icon: grid
+description: "Responsive image grid with captions and alt text."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  columns:
+    type: select
+    label: Columns
+    options: ["2", "3", "4"]
+    default: "3"
+  items:
+    type: repeater
+    label: Images
+    fields:
+      image:
+        type: media
+        label: Image
+        required: true
+      caption:
+        type: text
+        label: Caption
+      alt:
+        type: text
+        label: Alt Text

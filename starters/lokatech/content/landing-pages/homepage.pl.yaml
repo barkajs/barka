@@ -1,0 +1,182 @@
+uuid: "nt-homepage-001-pl"
+title: "LokaTech Solutions"
+type: landing_page
+status: published
+langcode: pl
+slug: homepage
+date: 2026-03-21
+seo:
+  title: "LokaTech Solutions — Usługi IT dla przedsiębiorstw i transformacja cyfrowa"
+  description: "Tworzymy technologie, które napędzają przedsiębiorstwa. Oprogramowanie na zamówienie, chmura, AI, cyberbezpieczeństwo — 800+ inżynierów w Europie."
+
+sections:
+
+  - type: hero
+    alignment: center
+    heading: "Tworzymy *technologie*, które napędzają przedsiębiorstwa"
+    subheading: "Oprogramowanie na zamówienie, infrastruktura chmurowa, AI i cyberbezpieczeństwo — dostarczane przez 800+ inżynierów z 6 europejskich biur."
+    cta_text: "Rozpocznij projekt"
+    cta_url: "/contact"
+    cta_secondary_text: "Zobacz realizacje"
+    cta_secondary_url: "/case-studies"
+    settings:
+      background: dark
+      spacing: xlarge
+      width: wide
+      background_image: /static/images/hero-bg.png
+
+  - type: logo_slider
+    heading: "Zaufali nam liderzy branży"
+    items:
+      - alt: "Droptica"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Droptica"
+      - alt: "Open Intranet"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Open+Intranet"
+      - alt: "Deutsche Bank"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Deutsche+Bank"
+      - alt: "Siemens"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Siemens"
+      - alt: "Roche"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Roche"
+      - alt: "Volkswagen"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Volkswagen"
+      - alt: "T-Mobile"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=T-Mobile"
+      - alt: "ING Bank"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=ING+Bank"
+      - alt: "Bosch"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Bosch"
+      - alt: "Philips"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Philips"
+    settings:
+      spacing: medium
+
+  - type: features
+    heading: "Kompleksowe usługi *inżynieryjne*"
+    subheading: "Od strategii po wdrożenie — jeden partner na cały stos technologiczny."
+    columns: "3"
+    items:
+      - title: "Oprogramowanie na zamówienie"
+        description: "Dedykowane aplikacje budowane w nowoczesnych architekturach z dostawą w metodyce agile — od MVP po platformy enterprise."
+        icon: code
+      - title: "Chmura i DevOps"
+        description: "AWS, Azure, GCP — migracja, infrastruktura jako kod, Kubernetes i zarządzane usługi 24/7."
+        icon: cloud
+      - title: "AI i dane"
+        description: "Uczenie maszynowe, integracja LLM, pipeline'y danych i analityka przekształcająca informacje w przewagę konkurencyjną."
+        icon: brain
+      - title: "Cyberbezpieczeństwo"
+        description: "Audyty bezpieczeństwa, usługi SOC, frameworki compliance i architektura zero-trust dla regulowanych branż."
+        icon: shield
+      - title: "Rozszerzenie zespołu"
+        description: "Dedykowane zespoły inżynierskie, które skalują się od 1 specjalisty do 50-osobowych zespołów w ciągu tygodni."
+        icon: users
+      - title: "Transformacja cyfrowa"
+        description: "Modernizacja systemów legacy, automatyzacja procesów i doradztwo strategiczne przyspieszające cyfrową transformację."
+        icon: rocket
+    settings:
+      spacing: large
+
+  - type: counters
+    heading: "Sprawdzeni w *skali*"
+    items:
+      - number: "800"
+        label: "Inżynierów"
+        suffix: "+"
+      - number: "15"
+        label: "Lat doświadczenia"
+        suffix: "+"
+      - number: "200"
+        label: "Zrealizowanych projektów"
+        suffix: "+"
+      - number: "6"
+        label: "Biur w Europie"
+    settings:
+      background: dark
+      spacing: large
+
+  - type: text_with_image
+    heading: "Twój dedykowany zespół inżynierski"
+    body: "Nie outsourcujemy. Każdy projekt obsługują seniorzy z naszych europejskich biur — architekci, eksperci domenowi i liderzy delivery, którzy towarzyszą Ci od odkrycia po produkcję. Nasze zespoły integrują się z Twoją organizacją, poznają Twój codebase i działają jako rozszerzenie Twojego działu inżynierii."
+    image: "/static/images/team-collaboration.jpg"
+    image_alt: "Zespół inżynierów LokaTech współpracujący nad architekturą systemu"
+    image_position: right
+    cta_text: "Poznaj nasz zespół"
+    cta_url: "/about"
+    settings:
+      spacing: large
+      background: light
+
+  - type: features
+    heading: "Realne wyniki dla *prawdziwych przedsiębiorstw*"
+    subheading: "Zobacz, jak pomogliśmy liderom branży transformować ich technologię."
+    columns: "3"
+    items:
+      - title: "Modernizacja platformy bankowej"
+        description: "Migracja legacy systemu core banking do mikroserwisów dla europejskiego banku Tier-1. 85% szybsze wdrożenia, 99,99% uptime, 2,4M € rocznych oszczędności."
+        icon: building
+      - title: "Pipeline AI dla służby zdrowia"
+        description: "Budowa pipeline'u ML w czasie rzeczywistym przetwarzającego 2M+ rekordów pacjentów dziennie z pełną zgodnością HIPAA. Skrócenie czasu diagnostyki o 40%."
+        icon: heart
+      - title: "Migracja chmurowa dla retailu"
+        description: "Przeniesienie 40+ aplikacji do AWS dla retailera z Fortune 500. 60% redukcja kosztów infrastruktury, 3× wzrost wydajności, zero przestojów."
+        icon: shopping-cart
+    settings:
+      spacing: large
+      background: light
+
+  - type: testimonials
+    heading: "Co mówią nasi *klienci*"
+    items:
+      - quote: "LokaTech zastąpił naszych trzech offshore'owych dostawców jednym zintegrowanym zespołem. Szybkość delivery podwoiła się, a wskaźnik defektów spadł o 70%. Są teraz naszym strategicznym partnerem technologicznym."
+        author: "Thomas Müller"
+        role: "CTO, Deutsche Industriebank"
+      - quote: "Migracja do chmury była najsprawniejszym projektem infrastrukturalnym, jaki realizowaliśmy w ciągu 15 lat. Zespół LokaTech rozumiał nasze ograniczenia regulacyjne od pierwszego dnia i dotrzymał każdego kamienia milowego."
+        author: "Dr. Sarah van den Berg"
+        role: "VP Engineering, Roche Digital"
+      - quote: "Przeszliśmy od pomysłu do produkcyjnego pipeline'u ML w 12 tygodni. Ich zespół AI nie tylko zbudował — przekazał wiedzę, aby nasz wewnętrzny zespół mógł utrzymywać i rozwijać system."
+        author: "Marek Kowalczyk"
+        role: "Head of Data, mBank"
+    settings:
+      spacing: large
+      background: light
+
+  - type: text_with_image
+    heading: "Od pierwszej rozmowy do produkcji"
+    body: "Każda współpraca zaczyna się od 60-minutowego warsztatu discovery prowadzonego przez architekta rozwiązań i eksperta domenowego. Mapujemy Twoje wyzwania, oceniamy opcje i dostarczamy konkretną roadmapę — zanim zostanie napisana pierwsza linia kodu. Żadnego pitchu sprzedażowego, żadnych generycznych propozycji. Tylko inżynieryjna jasność."
+    image: "/static/images/team-strategy-session.jpg"
+    image_alt: "Architekci LokaTech przeglądający strategię infrastruktury chmurowej"
+    image_position: left
+    cta_text: "Umów warsztat"
+    cta_url: "/contact"
+    settings:
+      spacing: large
+      background: light
+
+  - type: cta
+    eyebrow: "Gotowy, aby zacząć?"
+    heading: "Zbudujmy coś wyjątkowego"
+    description: "Opowiedz nam o swoim projekcie. Nasi architekci rozwiązań odpowiedzą w ciągu 24 godzin z dopasowaną propozycją."
+    button_text: "Rozpocznij rozmowę"
+    button_url: "/contact"
+    secondary_text: "Zobacz nasze usługi"
+    secondary_url: "/services"
+    settings:
+      background: dark
+      spacing: large
+
+  - type: logo_slider
+    heading: "Nagrody i certyfikaty"
+    items:
+      - alt: "ISO 27001"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=ISO+27001"
+      - alt: "AWS Partner"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=AWS+Partner"
+      - alt: "Microsoft Gold"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=Microsoft+Gold"
+      - alt: "Clutch Top 100"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=Clutch+Top+100"
+      - alt: "Great Place to Work"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=GPTW"
+    settings:
+      spacing: medium

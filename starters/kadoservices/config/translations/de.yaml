@@ -1,0 +1,120 @@
+# German UI translations (stub)
+# Keys use dot-notation: section.key
+
+# Navigation
+nav.services: "Dienstleistungen"
+nav.industries: "Branchen"
+nav.case_studies: "Fallstudien"
+nav.insights: "Wissen"
+nav.about: "Über uns"
+nav.careers: "Karriere"
+nav.contact: "Kontakt"
+nav.home: "Startseite"
+nav.view_all_services: "Alle Dienstleistungen"
+nav.view_all_industries: "Alle Branchen"
+
+# Dual CTA
+nav.for_employers: "Für Arbeitgeber"
+nav.find_a_job: "Job finden"
+
+# Pre-footer
+prefooter.need_to_hire: "Personal gesucht?"
+prefooter.hire_desc: "Erzählen Sie uns von Ihrem Personalbedarf — Kandidaten in wenigen Tagen."
+prefooter.hire_cta: "Jetzt einstellen"
+prefooter.looking_for_work: "Job gesucht?"
+prefooter.jobs_desc: "Durchsuchen Sie offene Stellen und lassen Sie unsere Recruiter Ihre nächste Rolle finden."
+prefooter.jobs_cta: "Jobs durchsuchen"
+
+# Language switcher
+lang.label: "Sprache"
+
+# Footer
+footer.services: "Dienstleistungen"
+footer.company: "Unternehmen"
+footer.resources: "Ressourcen"
+footer.rights: "Alle Rechte vorbehalten."
+footer.crafted_with: "Talente verbinden mit"
+
+# Mega menu — Services
+mega.services.recruitment: "Personalvermittlung"
+mega.services.recruitment_desc: "Top-Talente für Festanstellungen finden"
+mega.services.temporary: "Zeitarbeit"
+mega.services.temporary_desc: "Flexible Personallösungen für Saison- und Projektbedarf"
+mega.services.outsourcing: "Outsourcing & RPO"
+mega.services.outsourcing_desc: "End-to-End Recruitment Process Outsourcing"
+mega.services.consulting: "HR-Beratung"
+mega.services.consulting_desc: "Strategische Personalplanung & HR-Transformation"
+mega.services.branding: "Employer Branding"
+mega.services.branding_desc: "Arbeitgebermarke aufbauen, um Top-Kandidaten zu gewinnen"
+mega.services.payroll: "Lohnabrechnung & HR-Admin"
+mega.services.payroll_desc: "Gehaltsabrechnung, Verträge & HR-Administration"
+
+# Mega menu — Industries
+mega.industries.manufacturing: "Fertigung"
+mega.industries.manufacturing_desc: "Produktionsmitarbeiter, Ingenieure & Qualitätskontrolle"
+mega.industries.logistics: "Logistik & Transport"
+mega.industries.logistics_desc: "Lager, Fahrer & Supply-Chain-Spezialisten"
+mega.industries.retail: "Handel & FMCG"
+mega.industries.retail_desc: "Filialteams, Merchandiser & Regionalleiter"
+mega.industries.it: "IT & Technologie"
+mega.industries.it_desc: "Entwickler, Admins & IT-Projektmanager"
+mega.industries.finance: "Finanzen & SSC"
+mega.industries.finance_desc: "Buchhalter, Analysten & Shared-Services-Personal"
+mega.industries.healthcare: "Gesundheitswesen"
+mega.industries.healthcare_desc: "Pflegepersonal, Betreuer & medizinische Fachkräfte"
+
+# Mega menu — Insights
+mega.insights.blog: "Blog"
+mega.insights.ebooks: "Berichte"
+mega.insights.webinars: "Webinare"
+mega.insights.tools: "Gehaltsreports"
+mega.insights.demo: "Demo"
+mega.insights.talks: "Veranstaltungen"
+mega.insights.opensource: "Ressourcen"
+
+# Footer links
+footer.recruitment: "Personalvermittlung"
+footer.temporary_staffing: "Zeitarbeit"
+footer.outsourcing: "Outsourcing & RPO"
+footer.hr_consulting: "HR-Beratung"
+footer.employer_branding: "Employer Branding"
+footer.payroll: "Lohnabrechnung & HR-Admin"
+footer.about_us: "Über uns"
+footer.leadership: "Führungsteam"
+footer.careers: "Karriere"
+footer.locations: "Standorte"
+footer.contact: "Kontakt"
+footer.blog: "Blog"
+footer.case_studies: "Fallstudien"
+footer.salary_guides: "Gehaltsreports"
+footer.webinars: "Webinare"
+
+blog.view_all: "Alle Artikel ansehen"
+
+# Common UI
+ui.read_more: "Weiterlesen"
+ui.back: "Zurück"
+ui.search: "Suche"
+ui.loading: "Wird geladen..."
+ui.page_not_found: "Seite nicht gefunden"
+ui.page_not_found_desc: "Die gesuchte Seite existiert nicht oder wurde verschoben."
+ui.go_home: "Zur Startseite"
+
+# Services page
+services.hero_label: "Unsere Leistungen"
+services.stats_areas: "Servicebereiche"
+services.stats_recruiters: "Recruiter"
+services.stats_placements: "Vermittlungen / Jahr"
+services.stats_offices: "Büros in Polen"
+services.core_capability: "Kernkompetenz"
+services.all_services: "Alle Dienstleistungen"
+services.how_we_work: "Wie wir arbeiten"
+services.lets_talk: "Sprechen wir"
+
+# Mobile nav
+mobile.home: "Start"
+mobile.services: "Leistungen"
+mobile.case_studies: "Fallstudien"
+mobile.articles: "Wissen"
+mobile.about: "Über uns"
+mobile.contact: "Kontakt"

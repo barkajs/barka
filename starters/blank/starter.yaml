@@ -1,0 +1,14 @@
+name: blank
+label: "Blank — Empty Project"
+description: >
+  A clean starting point with no demo content.
+  Just a minimal homepage and site configuration.
+  Ships with the Starter base theme.
+theme: starter
+copies:
+  - from: content/
+    to: content/
+  - from: config/
+    to: config/
+  - from: themes/
+    to: themes/

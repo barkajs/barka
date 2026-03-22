@@ -1,0 +1,12 @@
+label: Text
+icon: text
+description: "Minimal fallback rich text block."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  body:
+    type: textarea
+    label: Body
+    required: true

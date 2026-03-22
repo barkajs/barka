@@ -1,0 +1,17 @@
+label: Call to Action
+icon: megaphone
+description: "Minimal fallback call-to-action block."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  body:
+    type: textarea
+    label: Body Text
+  button_text:
+    type: text
+    label: Button Text
+  button_url:
+    type: text
+    label: Button URL

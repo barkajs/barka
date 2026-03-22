@@ -1,0 +1,15 @@
+name: kadoservices
+label: "KadoServices — Staffing & HR Demo"
+description: >
+  Full demo site for a fictional staffing and HR services company.
+  Includes 6 services, 6 industries, 3 case studies, articles, team pages,
+  office locations, and a landing page with 10 sections.
+  Ships with the premium KadoServices theme (warm amber + deep plum).
+theme: kadoservices
+copies:
+  - from: content/
+    to: content/
+  - from: config/
+    to: config/
+  - from: themes/
+    to: themes/

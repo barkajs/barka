@@ -1,0 +1,115 @@
+_defaults:
+  settings:
+    background:
+      type: select
+      label: Background
+      options: [light, dark, primary, custom]
+      default: light
+    spacing:
+      type: select
+      label: Spacing
+      options: [none, small, medium, large, xlarge]
+      default: medium
+    width:
+      type: select
+      label: Width
+      options: [contained, wide, full]
+      default: contained
+    css_class:
+      type: text
+      label: CSS Class
+    anchor_id:
+      type: text
+      label: Anchor ID
+    hidden:
+      type: boolean
+      label: Hidden
+      default: false
+
+hero:
+  label: Hero
+  icon: star
+  fields:
+    heading:
+      type: text
+      label: Heading
+      required: true
+    subheading:
+      type: textarea
+      label: Subheading
+    cta_text:
+      type: text
+      label: CTA Button Text
+    cta_url:
+      type: text
+      label: CTA Button URL
+
+features:
+  label: Features
+  icon: grid
+  fields:
+    heading:
+      type: text
+      label: Heading
+    subheading:
+      type: textarea
+      label: Subheading
+    columns:
+      type: select
+      label: Columns
+      options: ["2", "3", "4"]
+      default: "3"
+    items:
+      type: textarea
+      label: Feature Items (YAML)
+
+cta:
+  label: Call to Action
+  icon: megaphone
+  fields:
+    heading:
+      type: text
+      label: Heading
+      required: true
+    body:
+      type: textarea
+      label: Body Text
+    button_text:
+      type: text
+      label: Button Text
+    button_url:
+      type: text
+      label: Button URL
+
+text:
+  label: Text
+  icon: text
+  fields:
+    heading:
+      type: text
+      label: Heading
+    body:
+      type: textarea
+      label: Body
+      required: true
+
+text_with_image:
+  label: Text with Image
+  icon: image
+  fields:
+    heading:
+      type: text
+      label: Heading
+    body:
+      type: textarea
+      label: Body
+      required: true
+    image:
+      type: media
+      label: Image
+      required: true
+    image_position:
+      type: select
+      label: Image Position
+      options: [left, right]
+      default: right

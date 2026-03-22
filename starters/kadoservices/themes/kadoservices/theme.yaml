@@ -1,0 +1,21 @@
+name: kadoservices
+label: "KadoServices Theme"
+description: "Premium staffing theme. Deep plum-charcoal + warm amber accent."
+version: "1.0.0"
+base: starter
+settings:
+  primary_color:
+    type: color
+    label: "Accent Color"
+    default: "#F59E0B"
+  nav_color:
+    type: color
+    label: "Navigation Background"
+    default: "#14101E"
+  logo:
+    type: media
+    label: "Site Logo"
+  footer_text:
+    type: text
+    label: "Footer Tagline"
+    default: "Connecting talent with opportunity."

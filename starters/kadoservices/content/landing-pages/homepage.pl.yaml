@@ -1,0 +1,198 @@
+uuid: "ks-002"
+title: "Strona główna"
+type: landing_page
+status: published
+langcode: pl
+slug: homepage
+date: 2026-03-15
+seo:
+  title: "KadoServices — Rekrutacja, HR i rozwiązania kadrowe"
+  description: "Wiodąca agencja rekrutacyjna w Polsce. Ponad 15 000 zatrudnień rocznie. Rekrutacja stała, praca tymczasowa, outsourcing, doradztwo HR."
+
+sections:
+
+  # ───────────────────────────────────────────
+  # 1. HERO
+  # ───────────────────────────────────────────
+  - type: hero
+    alignment: left
+    heading: "Łączymy *firmy* z wyjątkowymi talentami"
+    subheading: "Wiodący partner rekrutacyjny w Polsce. Ponad 15 000 zatrudnień rocznie w produkcji, logistyce, IT, finansach i ochronie zdrowia."
+    image: "/static/images/hero-bg.jpg"
+    cta_text: "Nasze usługi"
+    cta_url: "/services/permanent-recruitment"
+    cta_secondary_text: "Szukaj pracy"
+    cta_secondary_url: "/careers"
+    settings:
+      background: dark
+      spacing: xlarge
+      width: wide
+
+
+  # ───────────────────────────────────────────
+  # 3. USŁUGI
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Nasze usługi"
+    subheading: "Kompleksowe rozwiązania kadrowe i HR dopasowane do potrzeb Twojej firmy."
+    columns: "3"
+    items:
+      - title: "Rekrutacja stała"
+        description: "Znajdź odpowiednie talenty na długoterminowy sukces. Od kadry zarządzającej po specjalistów."
+        icon: "users"
+        url: "/services/permanent-recruitment"
+      - title: "Praca tymczasowa"
+        description: "Elastyczne rozwiązania kadrowe na szczyty sezonowe i potrzeby projektowe."
+        icon: "clock"
+        url: "/services/temporary-staffing"
+      - title: "Outsourcing i RPO"
+        description: "Kompleksowy outsourcing procesów rekrutacyjnych. Stajemy się Twoim działem HR."
+        icon: "briefcase"
+        url: "/services/outsourcing-rpo"
+      - title: "Doradztwo HR"
+        description: "Strategiczne planowanie zatrudnienia, benchmarking wynagrodzeń i transformacja HR."
+        icon: "brain"
+        url: "/services/hr-consulting"
+      - title: "Employer Branding"
+        description: "Buduj markę pracodawcy, aby przyciągać i zatrzymywać najlepsze talenty na konkurencyjnym rynku."
+        icon: "star"
+        url: "/services/employer-branding"
+      - title: "Kadry i płace"
+        description: "Obsługa kadrowo-płacowa, umowy o pracę i pełna administracja HR."
+        icon: "file-text"
+        url: "/services/payroll-hr-admin"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 4. BRANŻE
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Branże, które obsługujemy"
+    subheading: "Głęboka ekspertyza sektorowa w kluczowych branżach Polski."
+    columns: "3"
+    items:
+      - title: "Produkcja"
+        description: "Pracownicy produkcyjni, inżynierowie, specjaliści kontroli jakości."
+        icon: "factory"
+        url: "/industries/manufacturing"
+      - title: "Logistyka i transport"
+        description: "Pracownicy magazynowi, kierowcy, specjaliści łańcucha dostaw."
+        icon: "truck"
+        url: "/industries/logistics"
+      - title: "Handel i FMCG"
+        description: "Zespoły sklepowe, merchandiserzy, kierownicy regionalni."
+        icon: "store"
+        url: "/industries/retail"
+      - title: "IT i technologie"
+        description: "Programiści, administratorzy systemów, kierownicy projektów IT."
+        icon: "code"
+        url: "/industries/it-technology"
+      - title: "Finanse i SSC"
+        description: "Księgowi, analitycy finansowi, pracownicy centrów usług wspólnych."
+        icon: "landmark"
+        url: "/industries/finance-shared-services"
+      - title: "Ochrona zdrowia"
+        description: "Pielęgniarki, opiekunowie, personel medyczny."
+        icon: "heart"
+        url: "/industries/healthcare"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 5. LICZBY
+  # ───────────────────────────────────────────
+  - type: counters
+    heading: "KadoServices w liczbach"
+    items:
+      - number: "15000"
+        suffix: "+"
+        label: "Zatrudnień rocznie"
+      - number: "200"
+        suffix: "+"
+        label: "Rekruterów"
+      - number: "12"
+        label: "Biur w Polsce"
+      - number: "98"
+        suffix: "%"
+        label: "Retencja klientów"
+    settings:
+      background: dark
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 6. KOLUMNY — Wyróżniki
+  # ───────────────────────────────────────────
+  - type: columns
+    layout: "3"
+    items:
+      - heading: "Szybka realizacja"
+        body: "Średni czas obsadzenia stanowiska to **5 dni roboczych** dla ról tymczasowych i **21 dni** dla stanowisk stałych. Nasz wstępnie zweryfikowany talent pool oznacza natychmiastowe dostarczanie kandydatów."
+      - heading: "Duża baza kandydatów"
+        body: "Dostęp do naszej bazy **120 000+ aktywnych kandydatów** ze wszystkich specjalizacji. Stale odświeżana przez portale pracy, polecenia i sourcing bezpośredni."
+      - heading: "Zasięg ogólnopolski"
+        body: "**12 biur w całej Polsce** — od Gdańska po Katowice. Lokalne zespoły z głęboką znajomością regionalnych rynków pracy i oczekiwań płacowych."
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 7. HISTORIE SUKCESU
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Historie sukcesu"
+    subheading: "Zobacz, jak pomogliśmy firmom budować zwycięskie zespoły."
+    columns: "3"
+    items:
+      - title: "500 zatrudnień w 3 miesiące"
+        description: "Rekrutacja masowa dla rozbudowy zakładu motoryzacyjnego. Terminowo i poniżej budżetu."
+        icon: "factory"
+        url: "/case-studies/manufacturing-mass-recruitment"
+      - title: "1200 pracowników sezonowych"
+        description: "Obsada świąteczna dla ogólnopolskiej sieci handlowej. 98% wskaźnik obsadzenia w 40 lokalizacjach."
+        icon: "store"
+        url: "/case-studies/retail-seasonal-staffing"
+      - title: "Pełny program RPO"
+        description: "Kompleksowy outsourcing rekrutacji dla centrum usług wspólnych. 40% redukcja kosztów."
+        icon: "landmark"
+        url: "/case-studies/finance-rpo-program"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 8. CTA — Kandydaci
+  # ───────────────────────────────────────────
+  - type: cta
+    heading: "Szukasz nowej pracy?"
+    body: "Przeglądaj tysiące ofert pracy w całej Polsce. Zarejestruj swoje CV i pozwól naszym rekruterom dopasować Cię do idealnej okazji."
+    button_text: "Zobacz oferty pracy"
+    button_url: "/careers"
+    secondary_text: "Prześlij swoje CV"
+    secondary_url: "/contact"
+    settings:
+      background: primary
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 9. BLOG
+  # ───────────────────────────────────────────
+  - type: blog_listing
+    heading: "Najnowsze artykuły"
+    content_type: article
+    limit: 3
+    columns: "3"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 10. CTA — Pracodawcy
+  # ───────────────────────────────────────────
+  - type: cta
+    heading: "Gotowy, aby budować swój zespół?"
+    body: "Opowiedz nam o swoich potrzebach kadrowych. Nasi konsultanci przygotują spersonalizowaną ofertę w ciągu 24 godzin."
+    button_text: "Zamów konsultację"
+    button_url: "/contact"
+    secondary_text: "Zadzwoń: +48 22 123 4567"
+    secondary_url: "tel:+48221234567"
+    settings:
+      background: dark
+      spacing: large

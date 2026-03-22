@@ -1,0 +1,15 @@
+site_name: "Barka"
+base_url: "http://localhost:3101"
+theme: lokatech
+theme_settings:
+  logo: "/static/images/barka-logo.png"
+
+seo:
+  title_separator: " — "
+  default_description: "LokaTech Solutions — Enterprise IT Services & Digital Transformation. 800+ engineers across Europe."
+  default_image: "https://placehold.co/1200x630/0B1222/10B981?text=LokaTech+Solutions"
+  feeds:
+    - type: rss
+      path: /feed.xml
+      content_types: [article]
+      limit: 20

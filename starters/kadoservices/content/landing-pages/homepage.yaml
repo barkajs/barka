@@ -1,0 +1,198 @@
+uuid: "ks-001"
+title: "Homepage"
+type: landing_page
+status: published
+langcode: en
+slug: homepage
+date: 2026-03-15
+seo:
+  title: "KadoServices — Staffing, HR & Workforce Solutions"
+  description: "Poland's leading staffing agency. 15,000+ placements per year. Permanent recruitment, temporary staffing, outsourcing, HR consulting."
+
+sections:
+
+  # ───────────────────────────────────────────
+  # 1. HERO
+  # ───────────────────────────────────────────
+  - type: hero
+    alignment: left
+    heading: "We connect great companies with *exceptional talent*"
+    subheading: "Poland's leading staffing partner. 15,000+ placements per year across manufacturing, logistics, IT, finance, and healthcare."
+    image: "/static/images/hero-bg.jpg"
+    cta_text: "Our Services"
+    cta_url: "/services/permanent-recruitment"
+    cta_secondary_text: "Find a Job"
+    cta_secondary_url: "/careers"
+    settings:
+      background: dark
+      spacing: xlarge
+      width: wide
+
+
+  # ───────────────────────────────────────────
+  # 3. SERVICES — 6 capabilities
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Our Services"
+    subheading: "Comprehensive staffing and HR solutions tailored to your business needs."
+    columns: "3"
+    items:
+      - title: "Permanent Recruitment"
+        description: "Find the right talent for long-term success. From executives to specialists."
+        icon: "users"
+        url: "/services/permanent-recruitment"
+      - title: "Temporary Staffing"
+        description: "Flexible workforce solutions for seasonal peaks and project-based needs."
+        icon: "clock"
+        url: "/services/temporary-staffing"
+      - title: "Outsourcing & RPO"
+        description: "End-to-end recruitment process outsourcing. We become your HR department."
+        icon: "briefcase"
+        url: "/services/outsourcing-rpo"
+      - title: "HR Consulting"
+        description: "Strategic workforce planning, compensation benchmarking, and HR transformation."
+        icon: "brain"
+        url: "/services/hr-consulting"
+      - title: "Employer Branding"
+        description: "Build your employer brand to attract and retain top talent in competitive markets."
+        icon: "star"
+        url: "/services/employer-branding"
+      - title: "Payroll & HR Admin"
+        description: "Payroll processing, employment contracts, and full HR administration."
+        icon: "file-text"
+        url: "/services/payroll-hr-admin"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 4. INDUSTRIES — 6 sectors
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Industries We Serve"
+    subheading: "Deep sector expertise across Poland's key industries."
+    columns: "3"
+    items:
+      - title: "Manufacturing"
+        description: "Production workers, engineers, quality control specialists."
+        icon: "factory"
+        url: "/industries/manufacturing"
+      - title: "Logistics & Transport"
+        description: "Warehouse staff, drivers, supply chain specialists."
+        icon: "truck"
+        url: "/industries/logistics"
+      - title: "Retail & FMCG"
+        description: "Store teams, merchandisers, regional managers."
+        icon: "store"
+        url: "/industries/retail"
+      - title: "IT & Technology"
+        description: "Developers, system administrators, IT project managers."
+        icon: "code"
+        url: "/industries/it-technology"
+      - title: "Finance & SSC"
+        description: "Accountants, financial analysts, shared services staff."
+        icon: "landmark"
+        url: "/industries/finance-shared-services"
+      - title: "Healthcare"
+        description: "Nurses, caregivers, medical support staff."
+        icon: "heart"
+        url: "/industries/healthcare"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 5. COUNTERS — Impact numbers
+  # ───────────────────────────────────────────
+  - type: counters
+    heading: "KadoServices in Numbers"
+    items:
+      - number: "15000"
+        suffix: "+"
+        label: "Placements per year"
+      - number: "200"
+        suffix: "+"
+        label: "Recruiters"
+      - number: "12"
+        label: "Offices in Poland"
+      - number: "98"
+        suffix: "%"
+        label: "Client retention"
+    settings:
+      background: dark
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 6. COLUMNS — Key differentiators
+  # ───────────────────────────────────────────
+  - type: columns
+    layout: "3"
+    items:
+      - heading: "Fast Delivery"
+        body: "Average time-to-fill of **5 business days** for temporary roles and **21 days** for permanent positions. Our pre-screened talent pool means we start delivering candidates immediately."
+      - heading: "Large Talent Pool"
+        body: "Access our database of **120,000+ active candidates** across all specializations. Continuously refreshed through job boards, referrals, and direct sourcing."
+      - heading: "National Coverage"
+        body: "**12 offices across Poland** — from Gdańsk to Katowice. Local teams with deep knowledge of regional labor markets and wage expectations."
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 7. SUCCESS STORIES
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Success Stories"
+    subheading: "See how we've helped companies build winning teams."
+    columns: "3"
+    items:
+      - title: "500 Hires in 3 Months"
+        description: "Mass recruitment for an automotive plant expansion. Delivered on time, under budget."
+        icon: "factory"
+        url: "/case-studies/manufacturing-mass-recruitment"
+      - title: "1,200 Seasonal Workers"
+        description: "Holiday staffing for a national retail chain. 98% fill rate across 40 locations."
+        icon: "store"
+        url: "/case-studies/retail-seasonal-staffing"
+      - title: "Full RPO Program"
+        description: "End-to-end recruitment outsourcing for a shared services center. 40% cost reduction."
+        icon: "landmark"
+        url: "/case-studies/finance-rpo-program"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 8. CTA — Candidates
+  # ───────────────────────────────────────────
+  - type: cta
+    heading: "Looking for your next career move?"
+    body: "Browse thousands of job openings across Poland. Register your CV and let our recruiters match you with the perfect opportunity."
+    button_text: "View Open Positions"
+    button_url: "/careers"
+    secondary_text: "Upload Your CV"
+    secondary_url: "/contact"
+    settings:
+      background: primary
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 9. BLOG — Latest insights
+  # ───────────────────────────────────────────
+  - type: blog_listing
+    heading: "Latest Insights"
+    content_type: article
+    limit: 3
+    columns: "3"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 10. CTA — Employers
+  # ───────────────────────────────────────────
+  - type: cta
+    heading: "Ready to build your workforce?"
+    body: "Tell us about your staffing needs. Our consultants will prepare a customized proposal within 24 hours."
+    button_text: "Request a Consultation"
+    button_url: "/contact"
+    secondary_text: "Call us: +48 22 123 4567"
+    secondary_url: "tel:+48221234567"
+    settings:
+      background: dark
+      spacing: large

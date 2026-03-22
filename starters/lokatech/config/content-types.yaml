@@ -1,0 +1,226 @@
+article:
+  label: Article
+  path_pattern: "/articles/{slug}"
+  fields:
+    summary:
+      type: textarea
+      label: Summary
+      required: false
+    featured_image:
+      type: media
+      label: Featured Image
+    category:
+      type: select
+      label: Category
+      options:
+        - technology
+        - design
+        - business
+        - lifestyle
+    tags:
+      type: text
+      label: Tags
+
+page:
+  label: Page
+  path_pattern: "/{slug}"
+  fields:
+    subtitle:
+      type: text
+      label: Subtitle
+    featured_image:
+      type: media
+      label: Featured Image
+
+landing_page:
+  label: Landing Page
+  path_pattern: "/{slug}"
+  fields:
+    subtitle:
+      type: text
+      label: Subtitle
+    cta_text:
+      type: text
+      label: CTA Button Text
+    cta_url:
+      type: text
+      label: CTA Button URL
+
+service:
+  label: Service
+  path_pattern: "/services/{slug}"
+  fields:
+    short_description:
+      type: textarea
+      label: Short Description
+      required: true
+    icon:
+      type: text
+      label: Icon Name
+    process_steps:
+      type: textarea
+      label: "Process Steps (YAML)"
+    technologies:
+      type: text
+      label: Technologies
+    related_industries:
+      type: text
+      label: Related Industries
+    related_case_studies:
+      type: text
+      label: Related Case Studies
+
+industry:
+  label: Industry
+  path_pattern: "/industries/{slug}"
+  fields:
+    short_description:
+      type: textarea
+      label: Short Description
+      required: true
+    icon:
+      type: text
+      label: Icon Name
+    challenges:
+      type: textarea
+      label: "Industry Challenges (YAML)"
+    compliance_tags:
+      type: text
+      label: Compliance & Standards
+    related_services:
+      type: text
+      label: Related Services
+
+case_study:
+  label: Case Study
+  path_pattern: "/case-studies/{slug}"
+  fields:
+    client_name:
+      type: text
+      label: Client Name
+      required: true
+    industry:
+      type: text
+      label: Industry
+    service:
+      type: text
+      label: Service
+    duration:
+      type: text
+      label: Project Duration
+    team_size:
+      type: text
+      label: Team Size
+    metrics:
+      type: textarea
+      label: "Key Metrics (YAML)"
+    technologies:
+      type: text
+      label: Technologies Used
+    client_quote:
+      type: textarea
+      label: Client Quote
+    client_quote_author:
+      type: text
+      label: Quote Author
+    client_quote_role:
+      type: text
+      label: Quote Author Role
+    featured_image:
+      type: media
+      label: Featured Image
+
+person:
+  label: Person
+  path_pattern: "/team/{slug}"
+  fields:
+    role:
+      type: text
+      label: Role / Title
+      required: true
+    photo:
+      type: media
+      label: Photo
+    linkedin:
+      type: text
+      label: LinkedIn URL
+    department:
+      type: text
+      label: Department
+    quote:
+      type: textarea
+      label: Personal Quote
+
+job_posting:
+  label: Job Posting
+  path_pattern: "/careers/{slug}"
+  fields:
+    department:
+      type: text
+      label: Department
+      required: true
+    location:
+      type: text
+      label: Location
+      required: true
+    seniority:
+      type: select
+      label: Seniority Level
+      options:
+        - junior
+        - mid
+        - senior
+        - lead
+        - manager
+        - director
+    employment_type:
+      type: select
+      label: Employment Type
+      options:
+        - full-time
+        - contract
+        - part-time
+    remote_policy:
+      type: select
+      label: Remote Policy
+      options:
+        - remote
+        - hybrid
+        - onsite
+    requirements:
+      type: textarea
+      label: Requirements
+    benefits:
+      type: textarea
+      label: Benefits
+    apply_url:
+      type: text
+      label: Application URL
+
+location:
+  label: Location
+  path_pattern: "/locations/{slug}"
+  fields:
+    city:
+      type: text
+      label: City
+      required: true
+    address:
+      type: text
+      label: Address
+    country:
+      type: text
+      label: Country
+      required: true
+    photo:
+      type: media
+      label: Office Photo
+    employee_count:
+      type: number
+      label: Employee Count
+    specializations:
+      type: text
+      label: Specializations
+    coordinates:
+      type: text
+      label: "Coordinates (lat,lng)"

@@ -1,0 +1,12 @@
+site_name: "My Barka Site"
+base_url: "http://localhost:3000"
+theme: starter
+
+seo:
+  title_separator: " | "
+  default_description: "Built with Barka CMS"
+  feeds:
+    - type: rss
+      path: /feed.xml
+      content_types: [article]
+      limit: 20

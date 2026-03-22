@@ -1,0 +1,55 @@
+title: "Welcome to Barka"
+type: landing_page
+status: published
+langcode: en
+slug: homepage
+date: 2026-01-01
+seo:
+  title: "Welcome"
+  description: "Built with Barka — the progressive Content-as-Code CMS."
+
+sections:
+  - type: hero
+    weight: 0
+    data:
+      heading: "Welcome to Barka"
+      subheading: "The progressive Content-as-Code CMS. Edit your content in content/ — files are the source of truth."
+      alignment: center
+      cta_text: "Get Started"
+      cta_url: "/about"
+    settings:
+      spacing: xlarge
+      width: contained
+
+  - type: features
+    weight: 1
+    data:
+      heading: "Why Barka?"
+      subheading: "A CMS that grows with you — from simple files to full enterprise"
+      columns: 3
+      items:
+        - icon: code
+          title: "Files-First"
+          description: "Content lives in Markdown and YAML. Edit with any text editor, AI, or the admin UI."
+        - icon: rocket
+          title: "Progressive Complexity"
+          description: "Start with files only. Add a database, admin UI, and workflows when you need them."
+        - icon: shield
+          title: "Content-as-Code"
+          description: "Version your content with Git. Deploy with CI/CD. Roll back anytime."
+    settings:
+      spacing: large
+      width: contained
+      background: light
+
+  - type: cta
+    weight: 2
+    data:
+      heading: "Ready to build?"
+      description: "Edit the files in content/ to start creating your site."
+      button_text: "Read the Docs"
+      button_url: "/docs"
+    settings:
+      spacing: large
+      width: contained
+      background: dark

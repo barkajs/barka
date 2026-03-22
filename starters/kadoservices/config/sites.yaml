@@ -1,0 +1,14 @@
+sites:
+  main:
+    label: "KadoServices"
+    domain: "kadoservices.com"
+    localhost: "kadoservices.localhost"
+    default_lang: en
+    languages: [en, pl, de]
+
+  careers:
+    label: "Careers"
+    domain: "careers.kadoservices.com"
+    localhost: "careers.localhost"
+    default_lang: en
+    languages: [en, pl]

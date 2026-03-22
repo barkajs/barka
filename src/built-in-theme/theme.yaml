@@ -1,0 +1,4 @@
+name: _builtin
+label: "Built-in Fallback"
+description: "Ultra-minimal fallback theme. Used when no user theme is found."
+version: "0.1.0"

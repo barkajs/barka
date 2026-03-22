@@ -1,0 +1,30 @@
+label: Call to Action
+icon: megaphone
+description: "Prominent call-to-action with optional eyebrow, primary and secondary buttons."
+status: stable
+fields:
+  eyebrow:
+    type: text
+    label: Eyebrow
+  heading:
+    type: text
+    label: Heading
+    required: true
+  body:
+    type: textarea
+    label: Body Text
+  description:
+    type: textarea
+    label: Description
+  button_text:
+    type: text
+    label: Button Text
+  button_url:
+    type: text
+    label: Button URL
+  secondary_text:
+    type: text
+    label: Secondary Button Text
+  secondary_url:
+    type: text
+    label: Secondary Button URL

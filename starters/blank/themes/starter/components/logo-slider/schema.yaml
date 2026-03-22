@@ -1,0 +1,23 @@
+label: Logo Slider
+icon: layers
+description: "Infinite-scroll logo marquee with grayscale-to-color hover effect."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  items:
+    type: repeater
+    label: Logos
+    fields:
+      image:
+        type: media
+        label: Logo Image
+        required: true
+      alt:
+        type: text
+        label: Company Name
+        required: true
+      url:
+        type: text
+        label: Link URL

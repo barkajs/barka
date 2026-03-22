@@ -1,0 +1,120 @@
+# English UI translations (source language)
+# Keys use dot-notation: section.key
+
+# Navigation
+nav.services: "Services"
+nav.industries: "Industries"
+nav.case_studies: "Case Studies"
+nav.insights: "Insights"
+nav.about: "About"
+nav.careers: "Careers"
+nav.contact: "Contact Us"
+nav.home: "Home"
+nav.view_all_services: "View all services"
+nav.view_all_industries: "View all industries"
+
+# Dual CTA
+nav.for_employers: "For Employers"
+nav.find_a_job: "Find a Job"
+
+# Pre-footer
+prefooter.need_to_hire: "Need to hire?"
+prefooter.hire_desc: "Tell us about your staffing needs and get candidates within days."
+prefooter.hire_cta: "Start Hiring"
+prefooter.looking_for_work: "Looking for work?"
+prefooter.jobs_desc: "Browse open positions and let our recruiters find your next role."
+prefooter.jobs_cta: "Browse Jobs"
+
+# Language switcher
+lang.label: "Language"
+
+# Footer
+footer.services: "Services"
+footer.company: "Company"
+footer.resources: "Resources"
+footer.rights: "All rights reserved."
+footer.crafted_with: "Connecting talent with"
+
+# Mega menu — Services
+mega.services.recruitment: "Permanent Recruitment"
+mega.services.recruitment_desc: "Find and hire top talent for permanent roles"
+mega.services.temporary: "Temporary Staffing"
+mega.services.temporary_desc: "Flexible workforce solutions for seasonal & project needs"
+mega.services.outsourcing: "Outsourcing & RPO"
+mega.services.outsourcing_desc: "End-to-end recruitment process outsourcing"
+mega.services.consulting: "HR Consulting"
+mega.services.consulting_desc: "Strategic workforce planning & HR transformation"
+mega.services.branding: "Employer Branding"
+mega.services.branding_desc: "Build your employer brand to attract top candidates"
+mega.services.payroll: "Payroll & HR Admin"
+mega.services.payroll_desc: "Payroll processing, contracts & HR administration"
+
+# Mega menu — Industries
+mega.industries.manufacturing: "Manufacturing"
+mega.industries.manufacturing_desc: "Production staff, engineers & quality control"
+mega.industries.logistics: "Logistics & Transport"
+mega.industries.logistics_desc: "Warehouse, drivers & supply chain specialists"
+mega.industries.retail: "Retail & FMCG"
+mega.industries.retail_desc: "Store teams, merchandisers & regional managers"
+mega.industries.it: "IT & Technology"
+mega.industries.it_desc: "Developers, admins & IT project managers"
+mega.industries.finance: "Finance & SSC"
+mega.industries.finance_desc: "Accounting, analysts & shared services staff"
+mega.industries.healthcare: "Healthcare"
+mega.industries.healthcare_desc: "Nurses, caregivers & medical support staff"
+
+# Mega menu — Insights
+mega.insights.blog: "Blog"
+mega.insights.ebooks: "Reports"
+mega.insights.webinars: "Webinars"
+mega.insights.tools: "Salary Guides"
+mega.insights.demo: "Demo"
+mega.insights.talks: "Events"
+mega.insights.opensource: "Resources"
+
+# Footer links
+footer.recruitment: "Permanent Recruitment"
+footer.temporary_staffing: "Temporary Staffing"
+footer.outsourcing: "Outsourcing & RPO"
+footer.hr_consulting: "HR Consulting"
+footer.employer_branding: "Employer Branding"
+footer.payroll: "Payroll & HR Admin"
+footer.about_us: "About Us"
+footer.leadership: "Leadership"
+footer.careers: "Careers"
+footer.locations: "Locations"
+footer.contact: "Contact"
+footer.blog: "Blog"
+footer.case_studies: "Case Studies"
+footer.salary_guides: "Salary Guides"
+footer.webinars: "Webinars"
+
+blog.view_all: "View all insights"
+
+# Common UI
+ui.read_more: "Read more"
+ui.back: "Back"
+ui.search: "Search"
+ui.loading: "Loading..."
+ui.page_not_found: "Page not found"
+ui.page_not_found_desc: "The page you're looking for doesn't exist or has been moved."
+ui.go_home: "Go to homepage"
+
+# Services page
+services.hero_label: "What We Do"
+services.stats_areas: "Service Areas"
+services.stats_recruiters: "Recruiters"
+services.stats_placements: "Placements / Year"
+services.stats_offices: "Offices in Poland"
+services.core_capability: "Core Capability"
+services.all_services: "All Services"
+services.how_we_work: "How We Work"
+services.lets_talk: "Let's Talk"
+
+# Mobile nav
+mobile.home: "Home"
+mobile.services: "Services"
+mobile.case_studies: "Case Studies"
+mobile.articles: "Insights"
+mobile.about: "About"
+mobile.contact: "Contact"

@@ -1,0 +1,108 @@
+# German UI translations
+# Keys use dot-notation: section.key
+
+# Navigation
+nav.services: "Dienstleistungen"
+nav.industries: "Branchen"
+nav.case_studies: "Fallstudien"
+nav.insights: "Wissen"
+nav.about: "Über uns"
+nav.careers: "Karriere"
+nav.contact: "Kontakt"
+nav.home: "Startseite"
+nav.view_all_services: "Alle Dienstleistungen"
+nav.view_all_industries: "Alle Branchen"
+
+# Language switcher
+lang.label: "Sprache"
+
+# Footer
+footer.services: "Dienstleistungen"
+footer.company: "Unternehmen"
+footer.resources: "Ressourcen"
+footer.rights: "Alle Rechte vorbehalten."
+footer.crafted_with: "Erstellt mit"
+
+# Mega menu — Services
+mega.services.custom_software: "Softwareentwicklung"
+mega.services.custom_software_desc: "Maßgeschneiderte Anwendungen mit modernen Architekturen"
+mega.services.cloud: "Cloud & Infrastruktur"
+mega.services.cloud_desc: "AWS, Azure, GCP Migration & Managed Services"
+mega.services.data_ai: "Daten & KI"
+mega.services.data_ai_desc: "ML-Pipelines, Analytik & Datenplattformen"
+mega.services.cybersecurity: "Cybersicherheit"
+mega.services.cybersecurity_desc: "Audits, SOC-Dienste & Compliance-Frameworks"
+mega.services.devops: "DevOps & SRE"
+mega.services.devops_desc: "CI/CD, Observability & Site Reliability"
+mega.services.ai_ml: "KI & Machine Learning"
+mega.services.ai_ml_desc: "Intelligente Automatisierung & prädiktive Modelle"
+
+# Mega menu — Industries
+mega.industries.financial: "Finanzdienstleistungen"
+mega.industries.financial_desc: "Zahlungen, Trading & Risikomanagement"
+mega.industries.healthcare: "Gesundheitswesen"
+mega.industries.healthcare_desc: "HIPAA-konforme Plattformen & Telemedizin"
+mega.industries.manufacturing: "Fertigung"
+mega.industries.manufacturing_desc: "IoT, vorausschauende Wartung & Lieferkette"
+mega.industries.retail: "Handel & E-Commerce"
+mega.industries.retail_desc: "Omnichannel-Plattformen & Personalisierung"
+mega.industries.telecom: "Telekommunikation & Medien"
+mega.industries.telecom_desc: "5G-Infrastruktur & Content Delivery"
+mega.industries.energy: "Energie & Versorgung"
+mega.industries.energy_desc: "Smart Grid & ESG-Reporting-Plattformen"
+
+# Mega menu — Insights
+mega.insights.blog: "Blog"
+mega.insights.ebooks: "E-Books"
+mega.insights.webinars: "Webinare"
+mega.insights.tools: "Checklisten & Tools"
+mega.insights.demo: "Demo"
+mega.insights.talks: "Konferenzvorträge"
+mega.insights.opensource: "Open Source"
+
+# Footer links
+footer.cloud_infrastructure: "Cloud-Infrastruktur"
+footer.data_engineering: "Data Engineering"
+footer.custom_software: "Individualsoftware"
+footer.devops_sre: "DevOps & SRE"
+footer.ai_ml: "KI & Machine Learning"
+footer.about_us: "Über uns"
+footer.leadership: "Führungsteam"
+footer.careers: "Karriere"
+footer.partners: "Partner"
+footer.contact: "Kontakt"
+footer.blog: "Blog"
+footer.case_studies: "Fallstudien"
+footer.ebooks: "E-Books"
+footer.webinars: "Webinare"
+footer.opensource: "Open Source"
+
+blog.view_all: "Alle Artikel ansehen"
+
+# Common UI
+ui.read_more: "Weiterlesen"
+ui.back: "Zurück"
+ui.search: "Suche"
+ui.loading: "Wird geladen..."
+ui.page_not_found: "Seite nicht gefunden"
+ui.page_not_found_desc: "Die gesuchte Seite existiert nicht oder wurde verschoben."
+ui.go_home: "Zur Startseite"
+
+# Services page
+services.hero_label: "Unsere Leistungen"
+services.stats_areas: "Servicebereiche"
+services.stats_engineers: "Ingenieure"
+services.stats_delivered: "Projekte geliefert"
+services.stats_offices: "Europäische Büros"
+services.core_capability: "Kernkompetenz"
+services.all_services: "Alle Dienstleistungen"
+services.how_we_work: "Wie wir arbeiten"
+services.lets_talk: "Sprechen wir"
+
+# Mobile nav
+mobile.home: "Start"
+mobile.services: "Leistungen"
+mobile.case_studies: "Fallstudien"
+mobile.articles: "Wissen"
+mobile.about: "Über uns"
+mobile.contact: "Kontakt"

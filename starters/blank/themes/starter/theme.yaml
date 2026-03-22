@@ -1,0 +1,16 @@
+name: starter
+label: "Starter Theme"
+description: "Clean, minimal theme. The default starting point for Barka sites."
+version: "1.0.0"
+settings:
+  primary_color:
+    type: color
+    label: "Primary Color"
+    default: "#2563eb"
+  logo:
+    type: media
+    label: "Site Logo"
+  footer_text:
+    type: text
+    label: "Footer Text"
+    default: "Powered by Barka CMS"

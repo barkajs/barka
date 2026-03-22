@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "description": "Machine-readable project invariants. AI agents: read this before modifying code. Hooks and tests validate against these rules.",
+  "protected_paths": {
+    "user_owned": ["content/", "config/", "themes/"],
+    "never_commit": ["apps/smoke-crm/", ".env", "data/barka.db"],
+    "never_delete": ["starters/", "src/built-in-theme/"]
+  },
+  "required_before_push": ["npm test", "npm run typecheck"],
+  "i18n": {
+    "components_must_use": ["_url()", "_t()"],
+    "never_hardcode_lang_prefix": true,
+    "lang_prefix_added_by": "framework routing, not content files",
+    "translation_files": "config/translations/<lang>.yaml"
+  },
+  "theme": {
+    "resolution_chain": ["active", "base", "starter", "built-in"],
+    "starter_sync_rule": "changes to any starter must be checked against all starters",
+    "component_props": ["data", "settings", "themeSettings"],
+    "url_helper": "themeSettings._url(path)",
+    "translation_helper": "themeSettings._t(key)"
+  },
+  "build": {
+    "must_mirror": "app.ts rendering pipeline",
+    "static_assets_path": "/static/",
+    "zero_frontend_js": true,
+    "translations_required": true,
+    "languages_required": true,
+    "langcode_filter_on_listings": true
+  },
+  "starters": {
+    "available": ["lokatech", "kadoservices", "blank"],
+    "init_force_cleans_dirs": true,
+    "after_init_user_owns": ["content/", "config/", "themes/"]
+  },
+  "npm_package": {
+    "name": "@barkajs/barka",
+    "content_config_themes_gitignored": true,
+    "starters_shipped_with_package": true,
+    "builtin_theme_shipped_as_source": true,
+    "path_resolution": "getPackageRoot() from src/lib/paths.ts"
+  }
+}

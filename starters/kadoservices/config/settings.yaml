@@ -1,0 +1,15 @@
+site_name: "KadoServices"
+base_url: "http://localhost:3102"
+theme: kadoservices
+theme_settings:
+  logo: ""
+
+seo:
+  title_separator: " — "
+  default_description: "KadoServices — Staffing, HR & Workforce Solutions. 15,000+ placements per year across Poland."
+  default_image: "https://placehold.co/1200x630/14101E/F59E0B?text=KadoServices"
+  feeds:
+    - type: rss
+      path: /feed.xml
+      content_types: [article]
+      limit: 20

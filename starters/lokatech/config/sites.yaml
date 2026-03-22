@@ -1,0 +1,21 @@
+sites:
+  main:
+    label: "Barka"
+    domain: "barka.dev"
+    localhost: "barka.localhost"
+    default_lang: en
+    languages: [en, pl, de]
+
+  blog:
+    label: "Blog"
+    domain: "blog.barka.dev"
+    localhost: "blog.localhost"
+    default_lang: en
+    languages: [en]
+
+  docs:
+    label: "Documentation"
+    domain: "docs.barka.dev"
+    localhost: "docs.localhost"
+    default_lang: en
+    languages: [en]

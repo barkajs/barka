@@ -1,0 +1,23 @@
+label: Columns
+icon: columns
+description: "Multi-column layout with configurable column ratios."
+status: stable
+fields:
+  layout:
+    type: select
+    label: Layout
+    options: ["2", "3", "4", "1-2", "2-1"]
+    default: "2"
+  items:
+    type: repeater
+    label: Column Content
+    fields:
+      heading:
+        type: text
+        label: Heading
+      body:
+        type: textarea
+        label: "Body (Markdown)"
+      image:
+        type: media
+        label: Image

@@ -1,0 +1,236 @@
+uuid: "nt-homepage-001"
+title: "LokaTech Solutions"
+type: landing_page
+status: published
+langcode: en
+slug: homepage
+date: 2026-03-21
+seo:
+  title: "LokaTech Solutions — Enterprise IT Services & Digital Transformation"
+  description: "We engineer technology that moves enterprises forward. Custom software, cloud, AI, cybersecurity — 800+ engineers across Europe."
+
+sections:
+
+  # ───────────────────────────────────────────
+  # 1. HERO — Halo Effect: one bold statement
+  # ───────────────────────────────────────────
+  - type: hero
+    alignment: center
+    heading: "We engineer *technology* that moves enterprises forward"
+    subheading: "Custom software, cloud infrastructure, AI, and cybersecurity — delivered by 800+ engineers across 6 European offices."
+    cta_text: "Start a Project"
+    cta_url: "/contact"
+    cta_secondary_text: "View Case Studies"
+    cta_secondary_url: "/case-studies"
+    settings:
+      background: dark
+      spacing: xlarge
+      width: wide
+      background_image: /static/images/hero-bg.png
+
+  # ───────────────────────────────────────────
+  # 2. SOCIAL PROOF — Logo marquee
+  # ───────────────────────────────────────────
+  - type: logo_slider
+    heading: "Trusted by industry leaders"
+    items:
+      - alt: "Droptica"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Droptica"
+      - alt: "Open Intranet"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Open+Intranet"
+      - alt: "Deutsche Bank"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Deutsche+Bank"
+      - alt: "Siemens"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Siemens"
+      - alt: "Roche"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Roche"
+      - alt: "Volkswagen"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Volkswagen"
+      - alt: "T-Mobile"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=T-Mobile"
+      - alt: "ING Bank"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=ING+Bank"
+      - alt: "Bosch"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Bosch"
+      - alt: "Philips"
+        image: "https://placehold.co/160x60/e2e8f0/64748b?text=Philips"
+    settings:
+      spacing: medium
+
+  # ───────────────────────────────────────────
+  # 3. SERVICES — 6 capabilities, clean grid
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Full-spectrum *engineering* services"
+    subheading: "From strategy to delivery — one partner for your entire technology stack."
+    columns: "3"
+    items:
+      - title: "Custom Software"
+        description: "Bespoke applications built with modern architectures and agile delivery — from MVPs to enterprise platforms."
+        icon: code
+      - title: "Cloud & DevOps"
+        description: "AWS, Azure, GCP — migration, infrastructure-as-code, Kubernetes, and 24/7 managed services."
+        icon: cloud
+      - title: "AI & Data"
+        description: "Machine learning, LLM integration, data pipelines, and analytics that turn information into competitive advantage."
+        icon: brain
+      - title: "Cybersecurity"
+        description: "Security audits, SOC services, compliance frameworks, and zero-trust architecture for regulated industries."
+        icon: shield
+      - title: "Team Extension"
+        description: "Embedded engineering squads that scale from 1 specialist to 50-person delivery teams within weeks."
+        icon: users
+      - title: "Digital Transformation"
+        description: "Legacy modernization, process automation, and strategic advisory to accelerate your digital roadmap."
+        icon: rocket
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 4. COUNTERS — Impact numbers
+  # ───────────────────────────────────────────
+  - type: counters
+    heading: "Proven at *scale*"
+    items:
+      - number: "800"
+        label: "Engineers"
+        suffix: "+"
+      - number: "15"
+        label: "Years in Business"
+        suffix: "+"
+      - number: "200"
+        label: "Projects Delivered"
+        suffix: "+"
+      - number: "6"
+        label: "European Offices"
+    settings:
+      background: dark
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 5. TEAM — Human element (Halo Effect)
+  # ───────────────────────────────────────────
+  - type: text_with_image
+    heading: "Your dedicated engineering team"
+    body: "We don't outsource. Every project is staffed with senior engineers from our European offices — architects, domain experts, and delivery leads who stay with you from discovery to production. Our teams embed with your organization, learn your codebase, and operate as an extension of your engineering department."
+    image: "/static/images/team-collaboration.jpg"
+    image_alt: "LokaTech engineering team collaborating on system architecture"
+    image_position: right
+    cta_text: "Meet Our Team"
+    cta_url: "/about"
+    settings:
+      spacing: large
+      background: light
+
+  # ───────────────────────────────────────────
+  # 6. CASE STUDIES — Featured results
+  # ───────────────────────────────────────────
+  - type: features
+    heading: "Real results for *real enterprises*"
+    subheading: "See how we've helped industry leaders transform their technology."
+    columns: "3"
+    items:
+      - title: "Banking Platform Modernization"
+        description: "Migrated a legacy core banking system to microservices for a Tier-1 European bank. 85% faster deployments, 99.99% uptime, €2.4M annual savings."
+        icon: building
+      - title: "Healthcare AI Pipeline"
+        description: "Built a real-time ML pipeline processing 2M+ patient records daily with full HIPAA compliance. Reduced diagnostic wait times by 40%."
+        icon: heart
+      - title: "Retail Cloud Migration"
+        description: "Moved 40+ applications to AWS for a Fortune 500 retailer. 60% infrastructure cost reduction, 3× performance improvement, zero downtime."
+        icon: shopping-cart
+    settings:
+      spacing: large
+      background: light
+
+  # ───────────────────────────────────────────
+  # 6. TESTIMONIALS — Social proof from clients
+  # ───────────────────────────────────────────
+  - type: testimonials
+    heading: "What our *clients* say"
+    items:
+      - quote: "LokaTech replaced our three offshore vendors with a single integrated team. Delivery speed doubled and defect rate dropped by 70%. They're now our strategic technology partner."
+        author: "Thomas Müller"
+        role: "CTO, Deutsche Industriebank"
+      - quote: "The cloud migration was the smoothest infrastructure project we've run in 15 years. LokaTech's team understood our regulatory constraints from day one and delivered on every milestone."
+        author: "Dr. Sarah van den Berg"
+        role: "VP Engineering, Roche Digital"
+      - quote: "We went from idea to production ML pipeline in 12 weeks. Their AI team didn't just build — they transferred knowledge so our internal team could maintain and extend the system."
+        author: "Marek Kowalczyk"
+        role: "Head of Data, mBank"
+    settings:
+      spacing: large
+      background: light
+
+  # ───────────────────────────────────────────
+  # 7. INSIGHTS — Latest articles (inline)
+  # ───────────────────────────────────────────
+  - type: blog_listing
+    heading: "Latest *insights*"
+    items:
+      - title: "Platform Engineering: Building Internal Developer Portals That Teams Actually Use"
+        url: "/articles/platform-engineering-internal-developer-portals"
+        excerpt: "How we treat internal platforms as products, not tickets — and what that means for golden paths, self-service, and measurable developer experience."
+        image: "/static/images/hero-bg.png"
+        date: "Mar 20, 2026"
+      - title: "Fine-Tuning LLMs on Enterprise Data: When It Helps — and When It Hurts"
+        url: "/articles/llm-fine-tuning-enterprise-data"
+        excerpt: "A practical look at supervised fine-tuning for domain language, data governance constraints, and the baseline you should beat with retrieval before you train."
+        image: "/static/images/hero-bg.png"
+        date: "Mar 18, 2026"
+      - title: "Event-Driven Microservices: Patterns We Reach For — and the Coupling We Avoid"
+        url: "/articles/event-driven-architecture-microservices"
+        excerpt: "From outbox and idempotent consumers to saga trade-offs: how we design event-driven systems that stay understandable as they grow."
+        image: "/static/images/hero-bg.png"
+        date: "Mar 15, 2026"
+    settings:
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 9. STRATEGY — Peak-end personal touch
+  # ───────────────────────────────────────────
+  - type: text_with_image
+    heading: "From first call to production"
+    body: "Every engagement starts with a 60-minute discovery workshop led by a solution architect and a domain expert. We map your challenges, evaluate options, and deliver a concrete roadmap — before a single line of code is written. No sales pitch, no generic proposals. Just engineering clarity."
+    image: "/static/images/team-strategy-session.jpg"
+    image_alt: "LokaTech architects reviewing cloud infrastructure strategy"
+    image_position: left
+    cta_text: "Book a Workshop"
+    cta_url: "/contact"
+    settings:
+      spacing: large
+      background: light
+
+  # ───────────────────────────────────────────
+  # 10. CTA — Strong closing
+  # ───────────────────────────────────────────
+  - type: cta
+    eyebrow: "Ready to start?"
+    heading: "Let's build something extraordinary"
+    description: "Tell us about your project. Our solution architects will respond within 24 hours with a tailored proposal."
+    button_text: "Start a Conversation"
+    button_url: "/contact"
+    secondary_text: "View Our Services"
+    secondary_url: "/services"
+    settings:
+      background: dark
+      spacing: large
+
+  # ───────────────────────────────────────────
+  # 9. AWARDS — Logo marquee
+  # ───────────────────────────────────────────
+  - type: logo_slider
+    heading: "Awards & Certifications"
+    items:
+      - alt: "ISO 27001"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=ISO+27001"
+      - alt: "AWS Partner"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=AWS+Partner"
+      - alt: "Microsoft Gold"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=Microsoft+Gold"
+      - alt: "Clutch Top 100"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=Clutch+Top+100"
+      - alt: "Great Place to Work"
+        image: "https://placehold.co/120x60/e2e8f0/64748b?text=GPTW"
+    settings:
+      spacing: medium

@@ -1,0 +1,13 @@
+content_types:
+  - name: article
+    label: Article
+    plural: Articles
+    path_prefix: /articles
+  - name: page
+    label: Page
+    plural: Pages
+    path_prefix: ""
+  - name: landing_page
+    label: Landing Page
+    plural: Landing Pages
+    path_prefix: ""

@@ -1,0 +1,12 @@
+default: en
+
+languages:
+  en:
+    label: "English"
+    direction: ltr
+  pl:
+    label: "Polski"
+    direction: ltr
+  de:
+    label: "Deutsch"
+    direction: ltr

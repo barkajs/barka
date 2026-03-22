@@ -1,0 +1,19 @@
+label: Video Embed
+icon: play-circle
+description: "YouTube or Vimeo video embed with optional heading and caption."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  video_url:
+    type: text
+    label: "Video URL (YouTube/Vimeo)"
+    required: true
+  caption:
+    type: text
+    label: Caption
+  autoplay:
+    type: boolean
+    label: Autoplay
+    default: false

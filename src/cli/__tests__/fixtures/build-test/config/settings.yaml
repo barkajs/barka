@@ -1,0 +1,12 @@
+site_name: "Test Site"
+base_url: "http://localhost:3000"
+theme: starter
+
+seo:
+  title_separator: " — "
+  default_description: "Test site description"
+  feeds:
+    - type: rss
+      path: /feed.xml
+      content_types: [article]
+      limit: 20

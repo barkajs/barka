@@ -1,0 +1,17 @@
+label: Hero
+icon: star
+description: "Minimal fallback hero with heading, subheading, and CTA."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  subheading:
+    type: textarea
+    label: Subheading
+  cta_text:
+    type: text
+    label: CTA Button Text
+  cta_url:
+    type: text
+    label: CTA Button URL

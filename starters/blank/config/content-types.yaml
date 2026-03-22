@@ -1,0 +1,47 @@
+article:
+  label: Article
+  path_pattern: "/articles/{slug}"
+  fields:
+    summary:
+      type: textarea
+      label: Summary
+      required: false
+    featured_image:
+      type: media
+      label: Featured Image
+    category:
+      type: select
+      label: Category
+      options:
+        - technology
+        - design
+        - business
+        - lifestyle
+    tags:
+      type: text
+      label: Tags
+
+page:
+  label: Page
+  path_pattern: "/{slug}"
+  fields:
+    subtitle:
+      type: text
+      label: Subtitle
+    featured_image:
+      type: media
+      label: Featured Image
+
+landing_page:
+  label: Landing Page
+  path_pattern: "/{slug}"
+  fields:
+    subtitle:
+      type: text
+      label: Subtitle
+    cta_text:
+      type: text
+      label: CTA Button Text
+    cta_url:
+      type: text
+      label: CTA Button URL

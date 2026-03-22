@@ -1,0 +1,65 @@
+service_category:
+  label: Service Category
+  terms:
+    - custom-software
+    - cloud
+    - ai-data
+    - cybersecurity
+    - outsourcing
+    - consulting
+
+industry:
+  label: Industry
+  terms:
+    - banking
+    - healthcare
+    - manufacturing
+    - retail
+    - telecom
+    - energy
+
+technology:
+  label: Technology
+  terms:
+    - aws
+    - azure
+    - gcp
+    - kubernetes
+    - python
+    - java
+    - dotnet
+    - react
+    - angular
+    - terraform
+    - docker
+    - postgresql
+
+article_category:
+  label: Article Category
+  terms:
+    - engineering
+    - cloud
+    - ai-data
+    - industry-trends
+    - company-news
+
+department:
+  label: Department
+  terms:
+    - engineering
+    - product
+    - design
+    - sales
+    - hr
+    - finance
+    - marketing
+
+seniority:
+  label: Seniority Level
+  terms:
+    - junior
+    - mid
+    - senior
+    - lead
+    - manager
+    - director

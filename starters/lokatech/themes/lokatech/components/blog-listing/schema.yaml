@@ -1,0 +1,21 @@
+label: Blog Listing
+icon: list
+description: "Featured blog post with side listing of recent articles."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  content_type:
+    type: text
+    label: Content Type
+    default: article
+  limit:
+    type: number
+    label: Max Items
+    default: 6
+  columns:
+    type: select
+    label: Columns
+    options: ["2", "3", "4"]
+    default: "3"

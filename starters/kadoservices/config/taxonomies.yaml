@@ -1,0 +1,61 @@
+service_category:
+  label: Service Category
+  terms:
+    - recruitment
+    - temporary-staffing
+    - outsourcing-rpo
+    - hr-consulting
+    - employer-branding
+    - payroll
+
+industry:
+  label: Industry
+  terms:
+    - manufacturing
+    - logistics
+    - retail
+    - it-technology
+    - finance
+    - healthcare
+
+specialization:
+  label: Specialization
+  terms:
+    - engineering
+    - warehouse
+    - drivers
+    - accounting
+    - it-support
+    - customer-service
+    - management
+    - healthcare-staff
+    - production
+
+article_category:
+  label: Article Category
+  terms:
+    - hiring-trends
+    - hr-strategy
+    - labor-law
+    - employer-branding
+    - workforce-management
+
+department:
+  label: Department
+  terms:
+    - recruitment
+    - sales
+    - operations
+    - finance
+    - hr
+    - marketing
+
+seniority:
+  label: Seniority Level
+  terms:
+    - junior
+    - mid
+    - senior
+    - lead
+    - manager
+    - director

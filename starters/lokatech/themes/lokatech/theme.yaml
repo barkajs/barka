@@ -1,0 +1,21 @@
+name: lokatech
+label: "LokaTech Theme"
+description: "Premium enterprise theme inspired by Nodion. Dark navy + green accent."
+version: "1.0.0"
+base: starter
+settings:
+  primary_color:
+    type: color
+    label: "Accent Color"
+    default: "#10B981"
+  nav_color:
+    type: color
+    label: "Navigation Background"
+    default: "#0B1222"
+  logo:
+    type: media
+    label: "Site Logo"
+  footer_text:
+    type: text
+    label: "Footer Tagline"
+    default: "Engineering technology that moves enterprises forward."
