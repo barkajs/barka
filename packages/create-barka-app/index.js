@@ -67,6 +67,21 @@ fs.writeFileSync(
   JSON.stringify(pkg, null, 2) + '\n',
 );
 
+// Write tsconfig.json (required for tsx to handle JSX in theme templates)
+fs.writeFileSync(
+  path.join(targetDir, 'tsconfig.json'),
+  JSON.stringify(
+    {
+      compilerOptions: {
+        jsx: 'react-jsx',
+        jsxImportSource: 'hono/jsx',
+      },
+    },
+    null,
+    2,
+  ) + '\n',
+);
+
 // Write .gitignore
 fs.writeFileSync(
   path.join(targetDir, '.gitignore'),
