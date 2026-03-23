@@ -68,17 +68,20 @@ Ask me (the human) these questions one by one. Wait for all answers before proce
 1. **Company / website name** — What is the company called? What should the site title be?
 2. **Existing website URL** — Do you have a current website? Paste the URL so I can:
    - Scan the site structure (pages, services, blog, about, contact)
-   - Extract color palette and typography from the design
    - Identify content that should be migrated (service descriptions, team, case studies)
    - Detect languages currently in use
-3. **Logo** — Paste a link to your logo file, or describe the brand colors if no logo yet.
-4. **Main goal** — What is the primary goal of the website?
+   *(Note: automated color extraction from websites is unreliable — ask for colors separately.)*
+3. **Brand colors** — Provide hex codes for your brand: primary, secondary, accent, and background
+   colors (e.g. `#1E3A5F`, `#10B981`). If you don't have them yet, we'll use the starter defaults
+   and you can customize later.
+4. **Logo** — Paste a link to your logo file, or describe it if no file yet.
+5. **Main goal** — What is the primary goal of the website?
    (lead generation, brand awareness, recruitment, e-commerce, portfolio, etc.)
-5. **Services / products** — What does the company offer? List the main services or product
+6. **Services / products** — What does the company offer? List the main services or product
    categories. (If I already scanned your website, I'll suggest what I found — confirm or correct.)
-6. **Target audience** — Who are the ideal customers? Which industries?
-7. **Languages** — How many languages are needed and which ones? (e.g. EN + PL, EN only)
-8. **Content plan** — What content do you want to publish regularly?
+7. **Target audience** — Who are the ideal customers? Which industries?
+8. **Languages** — How many languages are needed and which ones? (e.g. EN + PL, EN only)
+9. **Content plan** — What content do you want to publish regularly?
    (blog posts, case studies, landing pages for campaigns, job offers, etc.)
 
 ## Phase 2 — Analyze existing site (if URL provided)
@@ -87,11 +90,12 @@ If the user provided a website URL:
 
 1. Use web fetch / browser tools to scan the site
 2. List all pages found (nav structure, footer links, sitemap if available)
-3. Extract the color palette (primary, secondary, accent, background colors)
-4. Note the typography (heading font, body font)
-5. Identify content types present (services, blog, case studies, team, locations, etc.)
-6. Report findings to the user: "I found X pages, Y services, Z blog posts. Colors: #xxx, #yyy.
+3. Identify content types present (services, blog, case studies, team, locations, etc.)
+4. Note the typography if visible in inline styles (heading font, body font)
+5. Report findings to the user: "I found X pages, Y services, Z blog posts.
    Here's what I suggest migrating..."
+6. If the user didn't provide brand hex codes in Phase 1, ask for them now.
+   Web fetch cannot reliably extract colors from bundled/dynamic CSS.
 7. Ask the user to confirm or adjust
 
 ## Phase 3 — Choose starter and create project
@@ -117,6 +121,9 @@ cd [project-name]
 This installs `@barkajs/barka` from npm and initializes with the chosen starter
 (copies content, config, and theme). Read `CLAUDE.md` and `INVARIANTS.json` — follow
 these rules strictly throughout the project.
+
+> **Tips:** If port 3000 is busy, use `barka dev --port <free_port>`.
+> The `public/ not found` warning is harmless — static files are served from `themes/*/static/`.
 
 ## Phase 4 — Create the plan
 
@@ -158,10 +165,11 @@ Create a file called `BARKA_PLAN.md` in the project root:
 - [ ] [lang] — about, contact pages
 
 ### Theme customization
-- [ ] Update brand colors in theme CSS/settings
+- [ ] Update navigation in `layouts/base.tsx` — mega menu, footer links, mobile nav (see ⚠️ below)
+- [ ] Sync translation keys — every `_t()` key in base.tsx must exist in `config/translations/*.yaml`
+- [ ] Update brand colors in `theme.yaml` → `design_tokens` section
 - [ ] Replace logo
-- [ ] Adjust typography if needed
-- [ ] Update footer links and social media URLs
+- [ ] Verify contact info (address, phone, email) matches the real company
 
 ### Verification
 - [ ] `barka dev` — all pages render correctly
@@ -182,7 +190,19 @@ After plan approval, work through the checklist:
 3. Replace demo content in `content/` with real pages tailored to the company.
    - For each page migrated from the old site, create the content file
    - For each non-default language, create translated files (`.pl.md`, `.pl.yaml`)
-4. Customize the theme — colors, logo, typography, footer links.
+4. Customize the theme:
+   - ⚠️ **Navigation lives in `themes/[theme]/layouts/base.tsx`**, NOT in `partials/header.tsx`
+     or `partials/footer.tsx`. The partials exist but are NOT used by the default base layout.
+     Editing them has no visible effect.
+   - In `base.tsx`, find all `const` arrays with nav/footer links (names vary per starter,
+     e.g. `megaServices`, `footerCompany`, `navItems`). Update them to match your site structure.
+   - After changing any `_t('key')` reference in base.tsx, add the same key to
+     `config/translations/*.yaml` for **every** configured language. Missing keys render as raw
+     key strings on the page.
+   - Update brand colors in `theme.yaml` → `design_tokens`, not in CSS files directly.
+   - Blog listing sections use `content_type` to auto-query articles from `content/` —
+     no need for inline items with hardcoded URLs.
+   - Verify contact data (address, phone, email) is from the real company, not the demo starter.
 5. Mark each completed item as `[x]` in `BARKA_PLAN.md`.
 
 ## Phase 6 — Verify
@@ -199,6 +219,8 @@ Mark verification items as done in `BARKA_PLAN.md`.
 
 - NEVER delete content/, config/, or themes/ directories
 - NEVER hardcode language prefixes (/pl/, /de/) — use `_url()` and `_t()`
+- NEVER edit `partials/header.tsx` or `partials/footer.tsx` for navigation — edit `layouts/base.tsx` instead
+- Every `_t()` key used in templates MUST have a matching entry in `config/translations/*.yaml` for all languages
 - Content files use YAML frontmatter; landing pages are pure YAML with sections
 - UI strings in `config/translations/<lang>.yaml` — not hardcoded in JSX
 - Update `BARKA_PLAN.md` checklist as you complete each step
