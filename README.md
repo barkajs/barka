@@ -364,6 +364,19 @@ barka init --starter blank           # clean starting point
 
 A complete website for a fictional enterprise IT services company. Dark navy + emerald green theme with premium animations (floating blobs, grid patterns, glow lines, stagger reveals).
 
+> **Live demo:** [demo01.barka.dev](https://demo01.barka.dev)
+
+<table>
+<tr>
+<td><a href="https://demo01.barka.dev"><img src="docs/screenshots/demo01-lokatech-homepage.png" alt="LokaTech — Homepage" width="480" /></a></td>
+<td><a href="https://demo01.barka.dev/articles"><img src="docs/screenshots/demo01-lokatech-articles.png" alt="LokaTech — Articles" width="480" /></a></td>
+</tr>
+<tr>
+<td align="center"><em>Homepage</em></td>
+<td align="center"><em>Articles</em></td>
+</tr>
+</table>
+
 - **Content**: 62 files — 6 services, 6 industries, 8 case studies, 22 articles, 5 team members, 5 locations, homepage with 10 sections
 - **Theme**: 14 layouts, 15 SDC section components, CSS-only mega menu, mobile drawer nav, frosted glass header
 - **Languages**: EN + PL translations, language switcher, hreflang tags
@@ -372,6 +385,19 @@ A complete website for a fictional enterprise IT services company. Dark navy + e
 ### KadoServices — Staffing & HR Demo
 
 A complete website for a fictional staffing and HR services company. Warm amber + deep plum theme with a completely different visual language (numbered rows, split hero, dual CTA, slim dropdowns).
+
+> **Live demo:** [demo02.barka.dev](https://demo02.barka.dev)
+
+<table>
+<tr>
+<td><a href="https://demo02.barka.dev"><img src="docs/screenshots/demo02-kadoservices-homepage.png" alt="KadoServices — Homepage" width="480" /></a></td>
+<td><a href="https://demo02.barka.dev/services"><img src="docs/screenshots/demo02-kadoservices-services.png" alt="KadoServices — Services" width="480" /></a></td>
+</tr>
+<tr>
+<td align="center"><em>Homepage</em></td>
+<td align="center"><em>Services</em></td>
+</tr>
+</table>
 
 - **Content**: 42 files — 6 services (recruitment, temp staffing, RPO, consulting, branding, payroll), 6 industries, 3 case studies, 4 articles, 5 team members, 4 locations, homepage with 10 sections
 - **Theme**: 14 layouts, 15 SDC components, DM Sans + Source Sans 3 typography, pre-footer dual audience strip
