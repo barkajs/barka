@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token } from '../../lib/tokens.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -29,7 +30,6 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#2563eb';
   const items: Array<{
     quote: string;
     author: string;
@@ -39,7 +39,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
 
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -62,7 +62,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
         <div class={`grid gap-8 ${cols}`}>
           {items.map((item) => (
             <div class="relative rounded-xl border border-gray-200 bg-white p-6 shadow-sm">
-              <div class="mb-4 text-4xl leading-none opacity-20" style={{ color: primaryColor }}>"</div>
+              <div class="mb-4 text-4xl leading-none opacity-20" style={{ color: token.primary }}>"</div>
               <blockquote class="mb-6 text-base italic leading-relaxed text-gray-600">
                 {item.quote}
               </blockquote>
@@ -77,7 +77,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 ) : (
                   <div
                     class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white"
-                    style={{ backgroundColor: primaryColor }}
+                    style={{ backgroundColor: token.primary }}
                   >
                     {item.author.charAt(0).toUpperCase()}
                   </div>

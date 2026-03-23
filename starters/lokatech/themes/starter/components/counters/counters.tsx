@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token } from '../../lib/tokens.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -29,13 +30,12 @@ const Counters: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#2563eb';
   const items: Array<{ value: number | string; suffix?: string; label: string }> =
     data.items ?? [];
 
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -63,7 +63,7 @@ const Counters: FC<SectionProps> = ({ data, settings, themeSettings }) => {
         <div class={`grid gap-8 text-center ${cols}`}>
           {items.map((item) => (
             <div class="p-4">
-              <div class="text-4xl font-extrabold tracking-tight sm:text-5xl" style={{ color: settings.background === 'light' ? primaryColor : undefined }}>
+              <div class="text-4xl font-extrabold tracking-tight sm:text-5xl" style={{ color: settings.background === 'light' ? token.primary : undefined }}>
                 {item.value}
                 {item.suffix && <span class="text-3xl sm:text-4xl">{item.suffix}</span>}
               </div>

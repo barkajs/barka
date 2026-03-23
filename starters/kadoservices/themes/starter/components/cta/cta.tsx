@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token } from '../../lib/tokens.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -19,13 +20,11 @@ const widthMap: Record<string, string> = {
 const Cta: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
-  const primaryColor = themeSettings.primary_color ?? '#2563eb';
-
   return (
     <section
       class={`${spacing} text-white ${settings.css_class ?? ''}`}
       id={settings.anchor_id}
-      style={{ backgroundColor: primaryColor }}
+      style={{ backgroundColor: token.primary }}
     >
       <div class={`${width} text-center`}>
         {data.heading && (
@@ -43,7 +42,7 @@ const Cta: FC<SectionProps> = ({ data, settings, themeSettings }) => {
             <a
               href={data.button_url ?? '#'}
               class="inline-block rounded-lg bg-white px-8 py-3 text-sm font-semibold shadow-lg transition-transform hover:scale-105"
-              style={{ color: primaryColor }}
+              style={{ color: token.primary }}
             >
               {data.button_text}
             </a>

@@ -27,6 +27,7 @@ import { renderContent } from './lib/template-renderer.js';
 import { createAdminRoutes } from './routes/admin/index.js';
 import { loadLanguages, loadTranslations, createT, type Language, type TranslationFn } from './lib/i18n.js';
 import { loadSites, resolveSite, filterContentBySite, type SiteDefinition } from './lib/multisite.js';
+import { generateTokenCss } from './lib/design-tokens.js';
 
 function render404Fallback(siteConfig: SiteConfig): string {
   return `<!DOCTYPE html>
@@ -82,6 +83,7 @@ export function createApp(options: {
       )
     : {};
   const themeSettings = { ...themeDefaults, ...siteConfig.theme_settings };
+  const tokenCss = generateTokenCss(themeConfig, themeSettings);
   const languagesConfig = loadLanguages(path.resolve(options.configDir));
   const availableLanguages = Object.keys(languagesConfig.languages);
   const nonDefaultLangs = availableLanguages.filter((l) => l !== languagesConfig.default);
@@ -392,6 +394,7 @@ export function createApp(options: {
       _url: (path: string) => `${basePath}${path}`,
       _t: createT(lang, siteLangs.default),
       _siteId: site?.id,
+      _tokenCss: tokenCss,
     };
   }
 

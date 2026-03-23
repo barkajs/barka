@@ -12,6 +12,10 @@ settings:
     type: color
     label: "Navigation Background"
     default: "#14101E"
+  accent_color:
+    type: color
+    label: "Gradient Accent Color"
+    default: "#EF4444"
   logo:
     type: media
     label: "Site Logo"
@@ -19,3 +23,24 @@ settings:
     type: text
     label: "Footer Tagline"
     default: "Connecting talent with opportunity."
+design_tokens:
+  colors:
+    primary: "{{primary_color}}"
+    primary_dark: "#D97706"
+    primary_light: "#FEF3C7"
+    navy: "{{nav_color}}"
+    navy_light: "#1D1828"
+    surface: "#F8FAFC"
+    text: "#1E293B"
+    text_light: "#F8FAFC"
+    muted: "#64748B"
+    border: "#E2E8F0"
+    accent: "{{accent_color}}"
+  fonts:
+    heading: "'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif"
+    sans: "'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif"
+  font_imports:
+    - "https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400;1,9..40,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+  transitions:
+    base: "0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    slow: "0.5s cubic-bezier(0.4, 0, 0.2, 1)"

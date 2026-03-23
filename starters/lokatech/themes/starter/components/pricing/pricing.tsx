@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token } from '../../lib/tokens.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -29,7 +30,6 @@ const Pricing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#2563eb';
   const plans: Array<{
     name: string;
     price: string;
@@ -43,7 +43,7 @@ const Pricing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
 
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -81,12 +81,12 @@ const Pricing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                     ? 'border-2 scale-105'
                     : 'border-gray-200 bg-white'
                 }`}
-                style={isHighlighted ? { borderColor: primaryColor, backgroundColor: '#fff' } : undefined}
+                style={isHighlighted ? { borderColor: token.primary, backgroundColor: '#fff' } : undefined}
               >
                 {isHighlighted && (
                   <div
                     class="absolute -top-3 left-1/2 -translate-x-1/2 rounded-full px-4 py-1 text-xs font-semibold text-white"
-                    style={{ backgroundColor: primaryColor }}
+                    style={{ backgroundColor: token.primary }}
                   >
                     {data.highlighted_label ?? 'Popular'}
                   </div>
@@ -109,7 +109,7 @@ const Pricing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                   <ul class="mt-6 flex-1 space-y-3">
                     {featureList.map((feature) => (
                       <li class="flex items-start gap-2 text-sm text-gray-600">
-                        <svg class="mt-0.5 h-4 w-4 flex-shrink-0" style={{ color: primaryColor }} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                        <svg class="mt-0.5 h-4 w-4 flex-shrink-0" style={{ color: token.primary }} fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                           <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
                         </svg>
                         {feature}
@@ -124,7 +124,7 @@ const Pricing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                     class={`mt-8 block rounded-lg py-3 text-center text-sm font-semibold transition-transform hover:scale-105 ${
                       isHighlighted ? 'text-white shadow-lg' : 'border border-gray-300 text-gray-900 hover:border-gray-400'
                     }`}
-                    style={isHighlighted ? { backgroundColor: primaryColor } : undefined}
+                    style={isHighlighted ? { backgroundColor: token.primary } : undefined}
                   >
                     {plan.cta_text}
                   </a>

@@ -1,19 +1,8 @@
 /** @jsxImportSource hono/jsx */
-import { raw } from 'hono/html';
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
-
-function renderGradient(text: string, color: string): any {
-  const parts = text.split(/(\*[^*]+\*)/g);
-  const html = parts
-    .map((p) =>
-      p.startsWith('*') && p.endsWith('*')
-        ? `<em class="not-italic" style="background:linear-gradient(135deg,${color},${color}99,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${p.slice(1, -1)}</em>`
-        : p,
-    )
-    .join('');
-  return raw(html);
-}
+import { token, alpha } from '../../lib/tokens.js';
+import { renderGradient } from '../../lib/gradient.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -42,8 +31,6 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const items: Array<{
     quote: string;
     author: string;
@@ -53,9 +40,9 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
 
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'dark') {
-    bgStyle.backgroundColor = navColor;
+    bgStyle.backgroundColor = token.navy;
   } else if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -74,7 +61,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
       <div class={width}>
         {data.heading && (
           <h2 class="reveal-heading mb-16 max-w-2xl text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
-            {data.heading.includes('*') ? renderGradient(data.heading, primaryColor) : data.heading}
+            {data.heading.includes('*') ? renderGradient(data.heading) : data.heading}
           </h2>
         )}
 
@@ -89,7 +76,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                   : 'border-gray-100 bg-white shadow-sm hover:shadow-xl hover:shadow-slate-200/50'
               }`}
             >
-              <div class="mb-6 text-7xl font-serif leading-none" style={{ color: `${primaryColor}30` }}>"</div>
+              <div class="mb-6 text-7xl font-serif leading-none" style={{ color: `${alpha(token.primary, 19)}` }}>"</div>
               <blockquote class={`mb-8 text-xl leading-relaxed ${isDark ? 'text-gray-200' : 'text-slate-700'}`}>
                 {featured.quote}
               </blockquote>
@@ -97,7 +84,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 {featured.avatar ? (
                   <img src={featured.avatar} alt={featured.author} class="h-14 w-14 rounded-full object-cover ring-2 ring-gray-100" loading="lazy" />
                 ) : (
-                  <div class="flex h-14 w-14 items-center justify-center rounded-full text-lg font-bold text-white" style={{ backgroundColor: primaryColor }}>
+                  <div class="flex h-14 w-14 items-center justify-center rounded-full text-lg font-bold text-white" style={{ backgroundColor: token.primary }}>
                     {featured.author.charAt(0).toUpperCase()}
                   </div>
                 )}
@@ -107,7 +94,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 </div>
               </div>
               {/* Accent corner */}
-              <div class="absolute bottom-0 right-0 h-1 w-24 rounded-tl-full" style={{ backgroundColor: primaryColor }} />
+              <div class="absolute bottom-0 right-0 h-1 w-24 rounded-tl-full" style={{ backgroundColor: token.primary }} />
             </div>
           )}
 
@@ -121,7 +108,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                     : 'border-gray-100 bg-white shadow-sm hover:shadow-lg hover:shadow-slate-200/50'
                 }`}
               >
-                <div class="mb-4 text-4xl font-serif leading-none" style={{ color: `${primaryColor}25` }}>"</div>
+                <div class="mb-4 text-4xl font-serif leading-none" style={{ color: `${alpha(token.primary, 15)}` }}>"</div>
                 <blockquote class={`mb-6 text-sm leading-relaxed ${isDark ? 'text-gray-300' : 'text-slate-600'}`}>
                   {item.quote}
                 </blockquote>
@@ -129,7 +116,7 @@ const Testimonials: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                   {item.avatar ? (
                     <img src={item.avatar} alt={item.author} class="h-10 w-10 rounded-full object-cover ring-2 ring-gray-100" loading="lazy" />
                   ) : (
-                    <div class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: primaryColor }}>
+                    <div class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: token.primary }}>
                       {item.author.charAt(0).toUpperCase()}
                     </div>
                   )}

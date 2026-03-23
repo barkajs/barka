@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 const values = [
@@ -23,9 +24,6 @@ const milestones = [
 
 const PageAbout: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
-
   return (
     <Base {...props}>
       {/* Hero with team photo */}
@@ -37,7 +35,7 @@ const PageAbout: FC<LayoutProps> = (props) => {
           loading="eager"
         />
         <div class="absolute inset-0" style={{
-          background: `linear-gradient(to bottom, ${navColor}c0 0%, ${navColor}dd 50%, ${navColor}f0 100%)`,
+          background: `linear-gradient(to bottom, ${alpha(token.navy, 75)} 0%, ${alpha(token.navy, 87)} 50%, ${alpha(token.navy, 94)} 100%)`,
         }} />
         <div class="relative z-10 flex min-h-[520px] items-center py-28">
           <div class="mx-auto max-w-4xl px-6 text-center">
@@ -77,7 +75,7 @@ const PageAbout: FC<LayoutProps> = (props) => {
           <div class="grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
             {values.map((v) => (
               <div class="group rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:shadow-xl hover:shadow-slate-200/50">
-                <div class="mb-5 text-2xl" style={{ color: primaryColor }}>{v.icon}</div>
+                <div class="mb-5 text-2xl" style={{ color: token.primary }}>{v.icon}</div>
                 <h3 class="mb-3 text-lg font-semibold text-slate-900">{v.title}</h3>
                 <p class="text-sm leading-relaxed text-slate-500">{v.desc}</p>
               </div>
@@ -90,9 +88,9 @@ const PageAbout: FC<LayoutProps> = (props) => {
       <section class="py-24">
         <div class="mx-auto max-w-4xl px-6 text-center">
           <blockquote class="text-3xl font-bold leading-snug tracking-[-0.02em] text-slate-900 sm:text-4xl">
-            "We <span style={{ color: primaryColor }}>engineer</span> because we build with rigor.
-            <span style={{ color: primaryColor }}> Technology</span> because it's what we know deeply.
-            <span style={{ color: primaryColor }}> Moves enterprises forward</span> because our work has no value unless it creates measurable outcomes."
+            "We <span style={{ color: token.primary }}>engineer</span> because we build with rigor.
+            <span style={{ color: token.primary }}> Technology</span> because it's what we know deeply.
+            <span style={{ color: token.primary }}> Moves enterprises forward</span> because our work has no value unless it creates measurable outcomes."
           </blockquote>
         </div>
       </section>
@@ -104,7 +102,7 @@ const PageAbout: FC<LayoutProps> = (props) => {
           <div class="space-y-0">
             {milestones.map((m, i) => (
               <div class="group flex items-start gap-8 py-6" style={{ borderBottom: i < milestones.length - 1 ? '1px solid #f1f5f9' : 'none' }}>
-                <div class="w-20 shrink-0 text-right text-2xl font-extrabold tracking-[-0.02em]" style={{ color: primaryColor }}>
+                <div class="w-20 shrink-0 text-right text-2xl font-extrabold tracking-[-0.02em]" style={{ color: token.primary }}>
                   {m.year}
                 </div>
                 <div class="pt-1 text-base text-slate-600">
@@ -127,7 +125,7 @@ const PageAbout: FC<LayoutProps> = (props) => {
               { value: '6', label: 'European Offices' },
             ].map((stat) => (
               <div>
-                <div class="text-5xl font-extrabold tracking-[-0.03em]" style={{ color: primaryColor }}>{stat.value}</div>
+                <div class="text-5xl font-extrabold tracking-[-0.03em]" style={{ color: token.primary }}>{stat.value}</div>
                 <div class="mt-2 text-sm font-medium uppercase tracking-[0.1em] text-slate-400">{stat.label}</div>
               </div>
             ))}
@@ -136,13 +134,13 @@ const PageAbout: FC<LayoutProps> = (props) => {
       </section>
 
       {/* CTA */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">Let's build something great together</h2>
           <p class="mt-6 text-lg text-gray-300/90">Whether you need a dedicated team or a strategic partner — we're ready.</p>
           <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a href="/contact" class="inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+            <a href="/contact" class="inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
               Get in Touch
             </a>
             <a href="/case-studies" class="inline-block rounded-lg border border-white/20 px-8 py-3.5 text-sm font-semibold text-white/90 transition-all duration-200 hover:border-white/50 hover:text-white hover:no-underline">

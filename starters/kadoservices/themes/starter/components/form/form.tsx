@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token } from '../../lib/tokens.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -29,11 +30,9 @@ const Form: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#2563eb';
-
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -106,7 +105,7 @@ const Form: FC<SectionProps> = ({ data, settings, themeSettings }) => {
             <button
               type="submit"
               class="inline-block rounded-lg px-8 py-3 text-sm font-semibold text-white shadow-lg transition-transform hover:scale-105"
-              style={{ backgroundColor: primaryColor }}
+              style={{ backgroundColor: token.primary }}
             >
               {data.button_text ?? 'Send message'}
             </button>

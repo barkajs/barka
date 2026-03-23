@@ -2,11 +2,10 @@
 import type { FC } from 'hono/jsx';
 import type { LayoutProps, Content } from '../_types.js';
 import Base from './base.js';
+import { token, alpha } from '../lib/tokens.js';
 
 const CaseStudies: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const items: Content[] = (content.fields.items ?? []).sort(
     (a: Content, b: Content) => (b.publishedAt?.getTime?.() ?? 0) - (a.publishedAt?.getTime?.() ?? 0),
   );
@@ -29,10 +28,10 @@ const CaseStudies: FC<LayoutProps> = (props) => {
   return (
     <Base {...props}>
       {/* Hero */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
         <div class="grid-pattern pointer-events-none absolute inset-0" />
-        <div class="blob blob-lg" style={{ top: '-15%', right: '-5%', background: `${primaryColor}10` }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 60%, ${primaryColor}10 0%, transparent 50%)` }} />
+        <div class="blob blob-lg" style={{ top: '-15%', right: '-5%', background: alpha(token.primary, 6) }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 60%, ${alpha(token.primary, 6)} 0%, transparent 50%)` }} />
         <div class="relative mx-auto max-w-7xl px-6">
           <p class="reveal-sub mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-gray-400">Our Work</p>
           <h1 class="reveal-heading max-w-3xl text-4xl font-extrabold tracking-[-0.04em] leading-[1.05] sm:text-5xl lg:text-6xl">
@@ -86,7 +85,7 @@ const CaseStudies: FC<LayoutProps> = (props) => {
                 {featured.fields.industry && (
                   <span
                     class="mb-4 inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold text-white"
-                    style={{ backgroundColor: industryColors[featured.fields.industry] ?? primaryColor }}
+                    style={{ backgroundColor: industryColors[featured.fields.industry] ?? token.primary }}
                   >
                     {String(featured.fields.industry).replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}
                   </span>
@@ -102,13 +101,13 @@ const CaseStudies: FC<LayoutProps> = (props) => {
                   <div class="mt-6 flex flex-wrap gap-6">
                     {(featured.fields.metrics as Array<{ value: string; label: string }>).slice(0, 3).map((m) => (
                       <div>
-                        <div class="text-xl font-extrabold" style={{ color: primaryColor }}>{m.value}</div>
+                        <div class="text-xl font-extrabold" style={{ color: token.primary }}>{m.value}</div>
                         <div class="text-xs text-slate-400">{m.label}</div>
                       </div>
                     ))}
                   </div>
                 )}
-                <div class="mt-6 flex items-center gap-1 text-sm font-semibold" style={{ color: primaryColor }}>
+                <div class="mt-6 flex items-center gap-1 text-sm font-semibold" style={{ color: token.primary }}>
                   View success story
                   <span class="transition-transform duration-200 group-hover:translate-x-2">&rarr;</span>
                 </div>
@@ -148,7 +147,7 @@ const CaseStudies: FC<LayoutProps> = (props) => {
                           {item.fields.industry && (
                             <span
                               class="rounded-full px-2.5 py-0.5 text-[10px] font-semibold text-white"
-                              style={{ backgroundColor: industryColors[item.fields.industry] ?? primaryColor }}
+                              style={{ backgroundColor: industryColors[item.fields.industry] ?? token.primary }}
                             >
                               {String(item.fields.industry).replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}
                             </span>
@@ -170,19 +169,19 @@ const CaseStudies: FC<LayoutProps> = (props) => {
                           <div class="mt-5 flex flex-wrap gap-5">
                             {(item.fields.metrics as Array<{ value: string; label: string }>).slice(0, 3).map((m) => (
                               <div>
-                                <div class="text-lg font-extrabold" style={{ color: primaryColor }}>{m.value}</div>
+                                <div class="text-lg font-extrabold" style={{ color: token.primary }}>{m.value}</div>
                                 <div class="text-[10px] uppercase tracking-wider text-slate-400">{m.label}</div>
                               </div>
                             ))}
                           </div>
                         )}
-                        <div class="mt-4 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100" style={{ color: primaryColor }}>
+                        <div class="mt-4 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100" style={{ color: token.primary }}>
                           Read success story <span class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                         </div>
                       </div>
                     </div>
                     {/* Accent line */}
-                    <div class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full" style={{ backgroundColor: primaryColor }} />
+                    <div class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full" style={{ backgroundColor: token.primary }} />
                   </a>
                 );
               })}
@@ -192,10 +191,10 @@ const CaseStudies: FC<LayoutProps> = (props) => {
       )}
 
       {/* CTA */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
         <div class="grid-pattern pointer-events-none absolute inset-0" />
-        <div class="blob blob-sm" style={{ bottom: '-10%', right: '10%', background: `${primaryColor}10`, animationDelay: '-4s' }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}10 0%, transparent 60%)` }} />
+        <div class="blob blob-sm" style={{ bottom: '-10%', right: '10%', background: alpha(token.primary, 6), animationDelay: '-4s' }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 6)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-7xl px-6">
           <div class="grid items-center gap-10 lg:grid-cols-5">
             <div class="lg:col-span-3">
@@ -210,7 +209,7 @@ const CaseStudies: FC<LayoutProps> = (props) => {
               <a
                 href="/contact"
                 class="inline-block rounded-lg px-8 py-4 text-center text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: token.primary }}
               >
                 Discuss Your Hiring Needs
               </a>

@@ -2,18 +2,17 @@
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
 import Base from './base.js';
+import { token, alpha } from '../lib/tokens.js';
 
 const Industry: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const fields = content.fields;
 
   return (
     <Base {...props}>
       {/* Hero */}
-      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 70%, ${primaryColor}10 0%, transparent 50%)` }} />
+      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 70%, ${alpha(token.primary, 6)} 0%, transparent 50%)` }} />
         <div class="relative mx-auto max-w-4xl px-6">
           <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">Industries We Staff</p>
           <h1 class="text-4xl font-extrabold tracking-[-0.03em] leading-[1.1] sm:text-5xl lg:text-6xl">
@@ -36,7 +35,7 @@ const Industry: FC<LayoutProps> = (props) => {
             <div class="grid gap-6 sm:grid-cols-2">
               {fields.challenges.map((challenge: string) => (
                 <div class="group rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50">
-                  <div class="mb-4 h-1 w-8 rounded transition-all duration-300 group-hover:w-12" style={{ backgroundColor: primaryColor }} />
+                  <div class="mb-4 h-1 w-8 rounded transition-all duration-300 group-hover:w-12" style={{ backgroundColor: token.primary }} />
                   <p class="leading-relaxed text-slate-600">{challenge}</p>
                 </div>
               ))}
@@ -59,7 +58,7 @@ const Industry: FC<LayoutProps> = (props) => {
                     <p class="text-sm leading-relaxed text-slate-500">{solution.description}</p>
                   )}
                   {solution.url && (
-                    <a href={solution.url} class="mt-4 inline-flex items-center gap-1 text-sm font-medium transition-colors hover:no-underline" style={{ color: primaryColor }}>
+                    <a href={solution.url} class="mt-4 inline-flex items-center gap-1 text-sm font-medium transition-colors hover:no-underline" style={{ color: token.primary }}>
                       Learn more
                       <span class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                     </a>
@@ -78,7 +77,7 @@ const Industry: FC<LayoutProps> = (props) => {
             <h2 class="mb-12 text-3xl font-bold tracking-[-0.02em] text-slate-900">Compliance & Accreditations</h2>
             <div class="flex flex-wrap gap-4">
               {fields.compliance.map((badge: string) => (
-                <span class="rounded-xl border-2 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:shadow-md" style={{ borderColor: primaryColor, color: primaryColor }}>
+                <span class="rounded-xl border-2 px-6 py-3 text-sm font-semibold transition-all duration-200 hover:shadow-md" style={{ borderColor: token.primary, color: token.primary }}>
                   {badge}
                 </span>
               ))}
@@ -97,13 +96,13 @@ const Industry: FC<LayoutProps> = (props) => {
       )}
 
       {/* CTA */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">Partner with staffing experts</h2>
           <p class="mt-6 text-lg text-gray-300/90">We understand the unique workforce challenges of your sector. Let's solve them together.</p>
           <div class="mt-10 flex flex-wrap items-center justify-center gap-4">
-            <a href="/contact" class="inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+            <a href="/contact" class="inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
               Discuss Your Workforce Needs
             </a>
             <a href="/case-studies" class="inline-block rounded-lg border border-white/20 px-8 py-3.5 text-sm font-semibold text-white/90 transition-all duration-200 hover:border-white/50 hover:text-white hover:no-underline">

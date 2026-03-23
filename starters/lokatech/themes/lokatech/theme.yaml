@@ -19,3 +19,22 @@ settings:
     type: text
     label: "Footer Tagline"
     default: "Engineering technology that moves enterprises forward."
+design_tokens:
+  colors:
+    primary: "{{primary_color}}"
+    primary_dark: "#059669"
+    primary_light: "#D1FAE5"
+    navy: "{{nav_color}}"
+    navy_light: "#162032"
+    surface: "#F8FAFC"
+    text: "#1E293B"
+    text_light: "#F8FAFC"
+    muted: "#64748B"
+    border: "#E2E8F0"
+  fonts:
+    sans: "'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif"
+  font_imports:
+    - "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+  transitions:
+    base: "0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    slow: "0.5s cubic-bezier(0.4, 0, 0.2, 1)"

@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 const perks = [
@@ -23,14 +24,11 @@ const openings = [
 
 const PageCareers: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
-
   return (
     <Base {...props}>
       {/* Hero */}
-      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 70%, ${primaryColor}10 0%, transparent 50%)` }} />
+      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 70%, ${alpha(token.primary, 6)} 0%, transparent 50%)` }} />
         <div class="relative mx-auto max-w-4xl px-6 text-center">
           <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">Careers</p>
           <h1 class="text-4xl font-extrabold tracking-[-0.03em] leading-[1.1] sm:text-5xl lg:text-6xl">
@@ -39,7 +37,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
           <p class="mx-auto mt-8 max-w-2xl text-lg leading-relaxed text-gray-300/90">
             Join 800+ engineers solving complex problems for the world's most ambitious enterprises.
           </p>
-          <a href="#openings" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+          <a href="#openings" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
             View Open Positions
           </a>
         </div>
@@ -83,7 +81,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
       <section class="py-24" id="openings">
         <div class="mx-auto max-w-4xl px-6">
           <h2 class="mb-4 text-3xl font-bold tracking-[-0.02em] text-slate-900">Open Positions</h2>
-          <p class="mb-12 text-lg text-slate-500">Can't find a perfect fit? Send your CV to <a href="mailto:careers@barka.dev" class="hover:no-underline" style={{ color: primaryColor }}>careers@barka.dev</a></p>
+          <p class="mb-12 text-lg text-slate-500">Can't find a perfect fit? Send your CV to <a href="mailto:careers@barka.dev" class="hover:no-underline" style={{ color: token.primary }}>careers@barka.dev</a></p>
 
           <div class="divide-y divide-gray-100">
             {openings.map((job) => (
@@ -98,7 +96,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
                     <span>{job.type}</span>
                   </div>
                 </div>
-                <span class="hidden text-sm font-medium transition-transform duration-200 group-hover:translate-x-1 sm:block" style={{ color: primaryColor }}>
+                <span class="hidden text-sm font-medium transition-transform duration-200 group-hover:translate-x-1 sm:block" style={{ color: token.primary }}>
                   Apply &rarr;
                 </span>
               </a>
@@ -108,12 +106,12 @@ const PageCareers: FC<LayoutProps> = (props) => {
       </section>
 
       {/* CTA */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">Don't see your role?</h2>
           <p class="mt-6 text-lg text-gray-300/90">We're always looking for exceptional engineers. Send us your CV and we'll reach out when a position opens.</p>
-          <a href="mailto:careers@barka.dev" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+          <a href="mailto:careers@barka.dev" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
             Send Your CV
           </a>
         </div>

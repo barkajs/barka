@@ -1,3 +1,10 @@
+export interface DesignTokens {
+  colors?: Record<string, string>;
+  fonts?: Record<string, string>;
+  font_imports?: string[];
+  transitions?: Record<string, string>;
+}
+
 export interface ThemeConfig {
   name: string;
   label: string;
@@ -6,6 +13,7 @@ export interface ThemeConfig {
   author?: string;
   base?: string;
   settings?: Record<string, ThemeSettingDefinition>;
+  design_tokens?: DesignTokens;
 }
 
 export interface ThemeSettingDefinition {

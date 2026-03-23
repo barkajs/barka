@@ -2,19 +2,17 @@
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
 import Base from './base.js';
+import { token, alpha } from '../lib/tokens.js';
 
 const NotFound: FC<LayoutProps> = (props) => {
   const { themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
-
   return (
     <Base {...props}>
-      <section class="relative flex min-h-[75vh] items-center justify-center overflow-hidden" style={{ backgroundColor: navColor }}>
+      <section class="relative flex min-h-[75vh] items-center justify-center overflow-hidden" style={{ backgroundColor: token.navy }}>
         {/* Ambient glow */}
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 30%, ${primaryColor}12 0%, transparent 50%)` }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 20% 70%, ${primaryColor}06 0%, transparent 40%)` }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 80% 80%, ${primaryColor}06 0%, transparent 40%)` }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 30%, ${alpha(token.primary, 7)} 0%, transparent 50%)` }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 20% 70%, ${alpha(token.primary, 2)} 0%, transparent 40%)` }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 80% 80%, ${alpha(token.primary, 2)} 0%, transparent 40%)` }} />
 
         {/* Grid pattern overlay */}
         <div class="pointer-events-none absolute inset-0 opacity-[0.03]" style={{ backgroundImage: 'linear-gradient(rgba(255,255,255,.1) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,.1) 1px, transparent 1px)', backgroundSize: '60px 60px' }} />
@@ -23,15 +21,15 @@ const NotFound: FC<LayoutProps> = (props) => {
           {/* Giant 404 — faded background element */}
           <div
             class="select-none text-[12rem] font-extrabold leading-none tracking-[-0.06em] sm:text-[16rem] lg:text-[20rem]"
-            style={{ color: `${primaryColor}08` }}
+            style={{ color: `${alpha(token.primary, 3)}` }}
           >
             404
           </div>
 
           {/* Content overlay */}
           <div class="-mt-20 sm:-mt-28 lg:-mt-36">
-            <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl" style={{ backgroundColor: `${primaryColor}15` }}>
-              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={primaryColor} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <div class="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl" style={{ backgroundColor: `${alpha(token.primary, 8)}` }}>
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke={token.primary} stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                 <circle cx="11" cy="11" r="8" />
                 <line x1="21" y1="21" x2="16.65" y2="16.65" />
                 <line x1="8" y1="11" x2="14" y2="11" />
@@ -49,7 +47,7 @@ const NotFound: FC<LayoutProps> = (props) => {
               <a
                 href="/"
                 class="group inline-flex items-center gap-2 rounded-lg px-7 py-3 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: token.primary }}
               >
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:-translate-x-0.5">
                   <line x1="19" y1="12" x2="5" y2="12" />

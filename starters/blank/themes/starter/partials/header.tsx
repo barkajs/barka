@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SiteConfig, ThemeConfig } from '../_types.js';
+import { token } from '../lib/tokens.js';
 
 interface HeaderProps {
   site: SiteConfig;
@@ -9,12 +10,10 @@ interface HeaderProps {
 }
 
 const Header: FC<HeaderProps> = ({ site, themeSettings }) => {
-  const primaryColor = themeSettings.primary_color ?? '#2563eb';
-
   return (
     <header class="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-lg">
       <nav class="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-        <a href="/" class="text-xl font-bold tracking-tight" style={{ color: primaryColor }}>
+        <a href="/" class="text-xl font-bold tracking-tight" style={{ color: token.primary }}>
           {themeSettings.logo
             ? <img src={themeSettings.logo} alt={site.site_name} class="h-8" />
             : site.site_name}

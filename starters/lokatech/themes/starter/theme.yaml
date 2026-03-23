@@ -14,3 +14,14 @@ settings:
     type: text
     label: "Footer Text"
     default: "Powered by Barka CMS"
+design_tokens:
+  colors:
+    primary: "{{primary_color}}"
+    text: "#111827"
+    muted: "#6b7280"
+    border: "#e5e7eb"
+    surface: "#f9fafb"
+  fonts:
+    sans: "'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif"
+  font_imports:
+    - "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"

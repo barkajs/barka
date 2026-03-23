@@ -52,11 +52,10 @@ const Base: FC<LayoutProps> = ({ content, site, theme, themeSettings, children }
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <style>{`
-          :root {
-            --color-primary: ${primaryColor};
-          }
-        `}</style>
+        {themeSettings._tokenCss
+          ? <style dangerouslySetInnerHTML={{ __html: themeSettings._tokenCss }} />
+          : <style>{`:root { --color-primary: ${primaryColor}; }`}</style>
+        }
       </head>
       <body class="min-h-screen flex flex-col bg-white text-gray-900 antialiased">
         <header class="sticky top-0 z-50 border-b border-gray-100 bg-white/80 backdrop-blur-lg">

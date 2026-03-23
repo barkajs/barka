@@ -24,6 +24,7 @@ export function loadThemeConfig(themePath: string): ThemeConfig {
     author: data.author,
     base: data.base,
     settings: data.settings,
+    design_tokens: data.design_tokens,
   };
 }
 

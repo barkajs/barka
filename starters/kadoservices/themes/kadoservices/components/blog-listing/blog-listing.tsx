@@ -1,19 +1,8 @@
 /** @jsxImportSource hono/jsx */
-import { raw } from 'hono/html';
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
-
-function renderGradient(text: string, color: string): any {
-  const parts = text.split(/(\*[^*]+\*)/g);
-  const html = parts
-    .map((p) =>
-      p.startsWith('*') && p.endsWith('*')
-        ? `<em class="not-italic" style="background:linear-gradient(135deg,${color},${color}99,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${p.slice(1, -1)}</em>`
-        : p,
-    )
-    .join('');
-  return raw(html);
-}
+import { token } from '../../lib/tokens.js';
+import { renderGradient } from '../../lib/gradient.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -44,14 +33,11 @@ const BlogListing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
-
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'dark') {
-    bgStyle.backgroundColor = navColor;
+    bgStyle.backgroundColor = token.navy;
   } else if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -81,14 +67,14 @@ const BlogListing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
           <div class="max-w-2xl">
             {data.heading && (
               <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
-                {data.heading.includes('*') ? renderGradient(data.heading, primaryColor) : data.heading}
+                {data.heading.includes('*') ? renderGradient(data.heading) : data.heading}
               </h2>
             )}
           </div>
           <a
             href={urlFn('/articles')}
             class="reveal-sub hidden shrink-0 items-center gap-1 text-sm font-semibold transition-colors duration-200 hover:no-underline sm:flex"
-            style={{ color: primaryColor }}
+            style={{ color: token.primary }}
           >
             {t('blog.view_all')}
             <span class="transition-transform duration-200 hover:translate-x-1">&rarr;</span>
@@ -130,7 +116,7 @@ const BlogListing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                         {featured.excerpt}
                       </p>
                     )}
-                    <div class="mt-5 flex items-center gap-1 text-sm font-semibold" style={{ color: primaryColor }}>
+                    <div class="mt-5 flex items-center gap-1 text-sm font-semibold" style={{ color: token.primary }}>
                       Read more
                       <span class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                     </div>
@@ -168,7 +154,7 @@ const BlogListing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                       <h3 class={`mt-1 text-sm font-semibold leading-snug ${isDark ? 'text-white' : 'text-slate-900'}`}>
                         {item.title}
                       </h3>
-                      <div class="mt-2 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-200 group-hover:opacity-100" style={{ color: primaryColor }}>
+                      <div class="mt-2 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-200 group-hover:opacity-100" style={{ color: token.primary }}>
                         Read <span class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                       </div>
                     </div>
@@ -185,7 +171,7 @@ const BlogListing: FC<SectionProps> = ({ data, settings, themeSettings }) => {
 
         {/* Mobile "View all" */}
         <div class="mt-10 text-center sm:hidden">
-          <a href={urlFn('/articles')} class="text-sm font-semibold hover:no-underline" style={{ color: primaryColor }}>
+          <a href={urlFn('/articles')} class="text-sm font-semibold hover:no-underline" style={{ color: token.primary }}>
             {t('blog.view_all')} &rarr;
           </a>
         </div>
