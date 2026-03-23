@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SiteConfig, ThemeConfig } from '../_types.js';
+import { token } from '../lib/tokens.js';
 
 interface HeaderProps {
   site: SiteConfig;
@@ -18,11 +19,8 @@ const navLinks = [
 ];
 
 const Header: FC<HeaderProps> = ({ site, themeSettings }) => {
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
-
   return (
-    <header class="sticky top-0 z-50" style={{ backgroundColor: navColor }}>
+    <header class="sticky top-0 z-50" style={{ backgroundColor: token.navy }}>
       <nav class="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <a href="/" class="flex items-center gap-2">
           {themeSettings.logo
@@ -41,7 +39,7 @@ const Header: FC<HeaderProps> = ({ site, themeSettings }) => {
         <a
           href="/contact"
           class="hidden rounded-lg px-5 py-2.5 text-sm font-semibold text-white transition-all hover:brightness-110 hover:no-underline md:inline-block"
-          style={{ backgroundColor: primaryColor }}
+          style={{ backgroundColor: token.primary }}
         >
           Contact Us
         </a>

@@ -1,22 +1,21 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 const Service: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
   const fields = content.fields;
 
   return (
     <Base {...props}>
       {/* ═══ Hero — with grid, blobs, stats bar ═══ */}
-      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: navColor }}>
+      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: token.navy }}>
         <div class="grid-pattern pointer-events-none absolute inset-0" />
-        <div class="blob blob-lg" style={{ top: '-15%', right: '-10%', background: `${primaryColor}12` }} />
+        <div class="blob blob-lg" style={{ top: '-15%', right: '-10%', background: `${alpha(token.primary, 7)}` }} />
         <div class="blob blob-sm" style={{ bottom: '10%', left: '5%', background: `#3b82f608`, animationDelay: '-4s' }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 70% 30%, ${primaryColor}12 0%, transparent 50%)` }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 70% 30%, ${alpha(token.primary, 7)} 0%, transparent 50%)` }} />
 
         <div class="relative mx-auto max-w-7xl px-6">
           <div class="max-w-3xl">
@@ -30,7 +29,7 @@ const Service: FC<LayoutProps> = (props) => {
               </p>
             )}
             <div class="reveal-sub mt-10 flex flex-wrap gap-4" style={{ animationDelay: '0.4s' }}>
-              <a href="/contact" class="inline-block rounded-lg px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline" style={{ backgroundColor: primaryColor }}>
+              <a href="/contact" class="inline-block rounded-lg px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline" style={{ backgroundColor: token.primary }}>
                 Get a Free Assessment
               </a>
               <a href="/case-studies" class="inline-block rounded-lg border border-white/20 px-8 py-4 text-sm font-semibold text-white/90 transition-all duration-300 hover:border-white/40 hover:text-white hover:no-underline">
@@ -57,19 +56,19 @@ const Service: FC<LayoutProps> = (props) => {
       {/* ═══ Challenges — left heading + staggered grid ═══ */}
       {fields.challenges && Array.isArray(fields.challenges) && fields.challenges.length > 0 && (
         <section class="relative overflow-hidden py-24">
-          <div class="blob blob-sm" style={{ top: '20%', right: '-3%', background: `${primaryColor}06` }} />
+          <div class="blob blob-sm" style={{ top: '20%', right: '-3%', background: `${alpha(token.primary, 2)}` }} />
           <div class="mx-auto max-w-7xl px-6">
             <div class="mb-16 max-w-2xl">
               <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
-                The challenges <em class="not-italic" style={{ background: `linear-gradient(135deg,${primaryColor},${primaryColor}99,#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>we solve</em>
+                The challenges <em class="not-italic" style={{ background: `linear-gradient(135deg,${token.primary},${alpha(token.primary, 60)},#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>we solve</em>
               </h2>
               <p class="reveal-sub mt-4 text-lg text-slate-500">Problems enterprises face every day — and the reason they call us.</p>
             </div>
             <div class="stagger-grid grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
               {fields.challenges.map((challenge: string, idx: number) => (
                 <div class={`group flex items-start gap-4 rounded-2xl border border-gray-100 bg-white p-6 transition-all duration-400 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-500/5 ${idx % 3 === 1 ? 'lg:translate-y-3' : ''}`}>
-                  <div class="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110" style={{ backgroundColor: `${primaryColor}15` }}>
-                    <div class="h-2 w-2 rounded-full" style={{ backgroundColor: primaryColor }} />
+                  <div class="mt-1 flex h-7 w-7 shrink-0 items-center justify-center rounded-lg transition-all duration-300 group-hover:scale-110" style={{ backgroundColor: `${alpha(token.primary, 8)}` }}>
+                    <div class="h-2 w-2 rounded-full" style={{ backgroundColor: token.primary }} />
                   </div>
                   <p class="text-sm leading-relaxed text-slate-600">{challenge}</p>
                 </div>
@@ -87,9 +86,9 @@ const Service: FC<LayoutProps> = (props) => {
               {/* Left heading — sticky */}
               <div class="lg:col-span-2">
                 <div class="lg:sticky lg:top-32">
-                  <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">Our proven <em class="not-italic" style={{ background: `linear-gradient(135deg,${primaryColor},${primaryColor}99,#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>approach</em></h2>
+                  <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">Our proven <em class="not-italic" style={{ background: `linear-gradient(135deg,${token.primary},${alpha(token.primary, 60)},#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>approach</em></h2>
                   <p class="reveal-sub mt-4 text-base text-slate-500">A methodology refined across hundreds of enterprise projects, from Fortune 500 to high-growth scaleups.</p>
-                  <div class="reveal-sub mt-8 hidden h-1 w-16 rounded lg:block" style={{ backgroundColor: primaryColor, animationDelay: '0.35s' }} />
+                  <div class="reveal-sub mt-8 hidden h-1 w-16 rounded lg:block" style={{ backgroundColor: token.primary, animationDelay: '0.35s' }} />
                 </div>
               </div>
 
@@ -97,7 +96,7 @@ const Service: FC<LayoutProps> = (props) => {
               <div class="stagger-grid space-y-8 lg:col-span-3">
                 {fields.process.map((step: { title: string; description: string }, i: number) => (
                   <div class="group flex gap-6 rounded-2xl border border-gray-100 bg-white p-7 transition-all duration-400 hover:shadow-lg hover:shadow-slate-200/50">
-                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-base font-bold text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" style={{ backgroundColor: primaryColor }}>
+                    <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl text-base font-bold text-white transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3" style={{ backgroundColor: token.primary }}>
                       {String(i + 1).padStart(2, '0')}
                     </div>
                     <div>
@@ -117,7 +116,7 @@ const Service: FC<LayoutProps> = (props) => {
         <section class="relative overflow-hidden py-24">
           <div class="mx-auto max-w-7xl px-6">
             <div class="mb-16 max-w-2xl">
-              <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">What we <em class="not-italic" style={{ background: `linear-gradient(135deg,${primaryColor},${primaryColor}99,#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>deliver</em></h2>
+              <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">What we <em class="not-italic" style={{ background: `linear-gradient(135deg,${token.primary},${alpha(token.primary, 60)},#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>deliver</em></h2>
             </div>
             <div class="stagger-grid grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {fields.capabilities.map((cap: string, idx: number) => {
@@ -125,7 +124,7 @@ const Service: FC<LayoutProps> = (props) => {
                 const desc = rest.join(' — ');
                 return (
                   <div class={`group rounded-2xl border border-gray-100 bg-white p-7 transition-all duration-400 hover:border-emerald-200 hover:shadow-xl hover:shadow-emerald-500/5 ${idx === 0 || idx === 6 ? 'sm:col-span-2 lg:col-span-1' : ''}`}>
-                    <div class="mb-4 h-1 w-8 rounded transition-all duration-400 group-hover:w-16" style={{ backgroundColor: primaryColor }} />
+                    <div class="mb-4 h-1 w-8 rounded transition-all duration-400 group-hover:w-16" style={{ backgroundColor: token.primary }} />
                     <h3 class="text-base font-semibold text-slate-900">{title}</h3>
                     {desc && <p class="mt-2 text-sm leading-relaxed text-slate-500">{desc}</p>}
                   </div>
@@ -142,7 +141,7 @@ const Service: FC<LayoutProps> = (props) => {
           <div class="mx-auto max-w-7xl px-6">
             <div class="grid items-start gap-12 lg:grid-cols-5">
               <div class="lg:col-span-2">
-                <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">Technology <em class="not-italic" style={{ background: `linear-gradient(135deg,${primaryColor},${primaryColor}99,#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>stack</em></h2>
+                <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">Technology <em class="not-italic" style={{ background: `linear-gradient(135deg,${token.primary},${alpha(token.primary, 60)},#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>stack</em></h2>
                 <p class="reveal-sub mt-4 text-base text-slate-500">Battle-tested tools and platforms our engineers use daily.</p>
               </div>
               <div class="flex flex-wrap gap-3 lg:col-span-3">
@@ -169,10 +168,10 @@ const Service: FC<LayoutProps> = (props) => {
           <div class="mx-auto max-w-7xl px-6">
             <div class="mb-16 flex items-end justify-between">
               <div class="max-w-2xl">
-                <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">Proven <em class="not-italic" style={{ background: `linear-gradient(135deg,${primaryColor},${primaryColor}99,#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>results</em></h2>
+                <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl">Proven <em class="not-italic" style={{ background: `linear-gradient(135deg,${token.primary},${alpha(token.primary, 60)},#60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent', backgroundClip: 'text' }}>results</em></h2>
                 <p class="reveal-sub mt-4 text-base text-slate-500">See how our expertise translates to measurable business outcomes.</p>
               </div>
-              <a href="/case-studies" class="reveal-sub hidden items-center gap-1 text-sm font-semibold transition-colors duration-200 hover:no-underline sm:flex" style={{ color: primaryColor }}>
+              <a href="/case-studies" class="reveal-sub hidden items-center gap-1 text-sm font-semibold transition-colors duration-200 hover:no-underline sm:flex" style={{ color: token.primary }}>
                 All case studies <span>&rarr;</span>
               </a>
             </div>
@@ -181,8 +180,8 @@ const Service: FC<LayoutProps> = (props) => {
                 <a href={cs.url} class="group rounded-2xl border border-gray-100 bg-white p-8 transition-all duration-400 hover:shadow-xl hover:shadow-slate-200/50 hover:no-underline">
                   <div class="mb-4 text-xs font-semibold uppercase tracking-widest text-slate-400">Case Study</div>
                   <h3 class="text-lg font-bold text-slate-900">{cs.title}</h3>
-                  <div class="mt-3 text-2xl font-extrabold" style={{ color: primaryColor }}>{cs.result}</div>
-                  <div class="mt-5 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100" style={{ color: primaryColor }}>
+                  <div class="mt-3 text-2xl font-extrabold" style={{ color: token.primary }}>{cs.result}</div>
+                  <div class="mt-5 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100" style={{ color: token.primary }}>
                     Read case study <span class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                   </div>
                 </a>
@@ -202,10 +201,10 @@ const Service: FC<LayoutProps> = (props) => {
       )}
 
       {/* ═══ CTA — asymmetric ═══ */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
         <div class="grid-pattern pointer-events-none absolute inset-0" />
-        <div class="blob blob-sm" style={{ bottom: '-10%', right: '10%', background: `${primaryColor}10`, animationDelay: '-5s' }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}10 0%, transparent 60%)` }} />
+        <div class="blob blob-sm" style={{ bottom: '-10%', right: '10%', background: `${alpha(token.primary, 6)}`, animationDelay: '-5s' }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 6)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-7xl px-6">
           <div class="grid items-center gap-10 lg:grid-cols-5">
             <div class="lg:col-span-3">
@@ -215,7 +214,7 @@ const Service: FC<LayoutProps> = (props) => {
               </p>
             </div>
             <div class="reveal-sub flex flex-col gap-4 lg:col-span-2" style={{ animationDelay: '0.35s' }}>
-              <a href="/contact" class="inline-block rounded-lg px-8 py-4 text-center text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline" style={{ backgroundColor: primaryColor }}>
+              <a href="/contact" class="inline-block rounded-lg px-8 py-4 text-center text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline" style={{ backgroundColor: token.primary }}>
                 Schedule a Free Assessment
               </a>
               <a href="/case-studies" class="inline-block rounded-lg border border-white/20 px-8 py-4 text-center text-sm font-semibold text-white/90 transition-all duration-300 hover:border-white/40 hover:text-white hover:no-underline">

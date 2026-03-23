@@ -1,23 +1,5 @@
 /* KadoServices Theme — Premium Staffing Design System */
-
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;0,9..40,800;0,9..40,900;1,9..40,400;1,9..40,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
-
-:root {
-  --color-primary: #F59E0B;
-  --color-primary-dark: #D97706;
-  --color-primary-light: #FEF3C7;
-  --color-navy: #14101E;  /* deep plum-charcoal */
-  --color-navy-light: #1D1828;  /* plum surface */
-  --color-surface: #F8FAFC;
-  --color-text: #1E293B;
-  --color-text-light: #F8FAFC;
-  --color-muted: #64748B;
-  --color-border: #E2E8F0;
-  --font-heading: 'DM Sans', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --font-sans: 'Source Sans 3', ui-sans-serif, system-ui, -apple-system, sans-serif;
-  --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
-}
+/* Design tokens (colors, fonts, transitions) are generated from theme.yaml design_tokens */
 
 *,
 *::before,

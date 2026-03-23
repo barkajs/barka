@@ -2,6 +2,7 @@
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
 import Base from './base.js';
+import { token, alpha } from '../lib/tokens.js';
 
 const perks = [
   { icon: '💰', title: 'Uncapped Commission', desc: 'No ceiling on your earnings. Transparent, competitive commission tiers.' },
@@ -38,8 +39,6 @@ const stats = [
 
 const PageCareers: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const t = (k: string) => themeSettings._t?.(k) ?? k;
   const url = (p: string) => themeSettings._url?.(p) ?? p;
 
@@ -50,7 +49,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
         <div class="mx-auto max-w-6xl px-6">
           <div class="grid items-center gap-12 lg:grid-cols-2">
             <div>
-              <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: primaryColor }}>Careers at KadoServices</p>
+              <p class="mb-4 text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: token.primary }}>Careers at KadoServices</p>
               <h1 class="text-4xl font-extrabold tracking-[-0.03em] leading-[1.1] text-slate-900 sm:text-5xl">
                 Build careers that matter
               </h1>
@@ -58,10 +57,10 @@ const PageCareers: FC<LayoutProps> = (props) => {
                 Join 200+ recruiters connecting top talent with Poland's most ambitious companies. No cold-call quotas — just meaningful work and uncapped earning potential.
               </p>
               <div class="mt-8 flex flex-wrap gap-4">
-                <a href="#openings" class="inline-block rounded-lg px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: primaryColor }}>
+                <a href="#openings" class="inline-block rounded-lg px-7 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: token.primary }}>
                   View {openings.length} Open Positions
                 </a>
-                <a href="mailto:careers@kadoservices.com" class="inline-block rounded-lg border-2 px-7 py-3.5 text-sm font-semibold transition-all duration-200 hover:no-underline" style={{ borderColor: primaryColor, color: primaryColor }}>
+                <a href="mailto:careers@kadoservices.com" class="inline-block rounded-lg border-2 px-7 py-3.5 text-sm font-semibold transition-all duration-200 hover:no-underline" style={{ borderColor: token.primary, color: token.primary }}>
                   Send Your CV
                 </a>
               </div>
@@ -78,7 +77,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
         <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-around gap-8 px-6">
           {stats.map((s) => (
             <div class="text-center">
-              <div class="text-3xl font-extrabold" style={{ color: primaryColor }}>{s.number}</div>
+              <div class="text-3xl font-extrabold" style={{ color: token.primary }}>{s.number}</div>
               <div class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-400">{s.label}</div>
             </div>
           ))}
@@ -101,7 +100,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
               <label class="mb-1 block text-[10px] font-semibold uppercase tracking-wider text-slate-400">Location</label>
               <div class="flex flex-wrap gap-1.5">
                 {locations.map((loc, i) => (
-                  <span class={`cursor-default rounded-full px-3 py-1 text-xs font-medium transition-colors ${i === 0 ? 'text-white' : 'bg-white text-slate-600 border border-gray-200'}`} style={i === 0 ? { backgroundColor: primaryColor } : {}}>
+                  <span class={`cursor-default rounded-full px-3 py-1 text-xs font-medium transition-colors ${i === 0 ? 'text-white' : 'bg-white text-slate-600 border border-gray-200'}`} style={i === 0 ? { backgroundColor: token.primary } : {}}>
                     {loc}
                   </span>
                 ))}
@@ -111,7 +110,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
               <label class="mb-1 block text-[10px] font-semibold uppercase tracking-wider text-slate-400">Department</label>
               <div class="flex flex-wrap gap-1.5">
                 {departments.map((dep, i) => (
-                  <span class={`cursor-default rounded-full px-3 py-1 text-xs font-medium transition-colors ${i === 0 ? 'text-white' : 'bg-white text-slate-600 border border-gray-200'}`} style={i === 0 ? { backgroundColor: primaryColor } : {}}>
+                  <span class={`cursor-default rounded-full px-3 py-1 text-xs font-medium transition-colors ${i === 0 ? 'text-white' : 'bg-white text-slate-600 border border-gray-200'}`} style={i === 0 ? { backgroundColor: token.primary } : {}}>
                     {dep}
                   </span>
                 ))}
@@ -121,7 +120,7 @@ const PageCareers: FC<LayoutProps> = (props) => {
               <label class="mb-1 block text-[10px] font-semibold uppercase tracking-wider text-slate-400">Level</label>
               <div class="flex flex-wrap gap-1.5">
                 {seniorities.map((s, i) => (
-                  <span class={`cursor-default rounded-full px-3 py-1 text-xs font-medium transition-colors ${i === 0 ? 'text-white' : 'bg-white text-slate-600 border border-gray-200'}`} style={i === 0 ? { backgroundColor: primaryColor } : {}}>
+                  <span class={`cursor-default rounded-full px-3 py-1 text-xs font-medium transition-colors ${i === 0 ? 'text-white' : 'bg-white text-slate-600 border border-gray-200'}`} style={i === 0 ? { backgroundColor: token.primary } : {}}>
                     {s}
                   </span>
                 ))}
@@ -159,14 +158,14 @@ const PageCareers: FC<LayoutProps> = (props) => {
                 </div>
                 <div class="col-span-1 hidden text-xs text-slate-400 sm:block">{job.seniority}</div>
                 <div class="col-span-1 hidden text-right sm:block">
-                  <span class="text-xs font-semibold opacity-0 transition-all duration-200 group-hover:opacity-100" style={{ color: primaryColor }}>Apply &rarr;</span>
+                  <span class="text-xs font-semibold opacity-0 transition-all duration-200 group-hover:opacity-100" style={{ color: token.primary }}>Apply &rarr;</span>
                 </div>
               </a>
             ))}
           </div>
 
           <p class="mt-6 text-sm text-slate-400">
-            Can't find a perfect fit? Send your CV to <a href="mailto:careers@kadoservices.com" class="font-medium hover:no-underline" style={{ color: primaryColor }}>careers@kadoservices.com</a>
+            Can't find a perfect fit? Send your CV to <a href="mailto:careers@kadoservices.com" class="font-medium hover:no-underline" style={{ color: token.primary }}>careers@kadoservices.com</a>
           </p>
         </div>
       </section>
@@ -197,12 +196,12 @@ const PageCareers: FC<LayoutProps> = (props) => {
       </section>
 
       {/* Bottom CTA */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">Don't see your role?</h2>
           <p class="mt-6 text-lg text-gray-300/90">We're always looking for exceptional recruiters and HR professionals. Send us your CV and we'll reach out when a position opens.</p>
-          <a href="mailto:careers@kadoservices.com" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+          <a href="mailto:careers@kadoservices.com" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
             Send Your CV
           </a>
         </div>

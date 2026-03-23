@@ -1,6 +1,6 @@
 site_name: "My Barka Site"
 base_url: "http://localhost:3000"
-theme: starter
+theme: base
 
 seo:
   title_separator: " | "

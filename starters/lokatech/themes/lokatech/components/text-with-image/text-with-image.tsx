@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token } from '../../lib/tokens.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -28,15 +29,13 @@ const TextWithImage: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
   const reversed = data.image_position === 'left';
 
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'dark') {
-    bgStyle.backgroundColor = navColor;
+    bgStyle.backgroundColor = token.navy;
   } else if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -67,7 +66,7 @@ const TextWithImage: FC<SectionProps> = ({ data, settings, themeSettings }) => {
               <a
                 href={urlFn(data.cta_url ?? '#')}
                 class="inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: token.primary }}
               >
                 {data.cta_text}
               </a>

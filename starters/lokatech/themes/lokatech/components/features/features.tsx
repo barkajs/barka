@@ -2,13 +2,14 @@
 import { raw } from 'hono/html';
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token, alpha } from '../../lib/tokens.js';
 
-function renderGradientHeading(text: string, color: string): any {
+function renderGradientHeading(text: string): any {
   const parts = text.split(/(\*[^*]+\*)/g);
   const html = parts
     .map((p) =>
       p.startsWith('*') && p.endsWith('*')
-        ? `<em class="not-italic" style="background:linear-gradient(135deg,${color},${color}99,#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${p.slice(1, -1)}</em>`
+        ? `<em class="not-italic" style="background:linear-gradient(135deg,${token.primary},${alpha(token.primary, 60)},#60a5fa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${p.slice(1, -1)}</em>`
         : p,
     )
     .join('');
@@ -66,17 +67,15 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
   const bg = bgMap[settings.background] ?? bgMap.light;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
   const items: Array<{ icon?: string; title: string; description?: string }> =
     data.items ?? [];
   const columns = String(data.columns ?? '3');
 
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'dark') {
-    bgStyle.backgroundColor = navColor;
+    bgStyle.backgroundColor = token.navy;
   } else if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -91,7 +90,7 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
     >
       {/* Decorative blob */}
       {!isDark && (
-        <div class="blob blob-sm" style={{ top: '10%', right: '-5%', background: `${primaryColor}08` }} />
+        <div class="blob blob-sm" style={{ top: '10%', right: '-5%', background: `${alpha(token.primary, 3)}` }} />
       )}
 
       <div class={width}>
@@ -99,7 +98,7 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
         <div class="mb-16 max-w-2xl">
           {data.heading && (
             <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
-              {data.heading.includes('*') ? renderGradientHeading(data.heading, primaryColor) : data.heading}
+              {data.heading.includes('*') ? renderGradientHeading(data.heading) : data.heading}
             </h2>
           )}
           {data.subheading && (
@@ -122,7 +121,7 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
               {item.icon && (
                 <div
                   class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl text-white transition-all duration-400 group-hover:scale-110 group-hover:rotate-3"
-                  style={{ backgroundColor: primaryColor }}
+                  style={{ backgroundColor: token.primary }}
                   dangerouslySetInnerHTML={{ __html: iconSvgs[item.icon] ?? `<span class="text-lg font-bold">${(item.icon as string).charAt(0).toUpperCase()}</span>` }}
                 />
               )}
@@ -135,7 +134,7 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 </p>
               )}
               {/* Hover arrow indicator */}
-              <div class={`mt-5 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1`} style={{ color: primaryColor }}>
+              <div class={`mt-5 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1`} style={{ color: token.primary }}>
                 Learn more <span>&rarr;</span>
               </div>
             </div>

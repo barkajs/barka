@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token, alpha } from '../../lib/tokens.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -20,10 +21,7 @@ const Cta: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const urlFn = (p: string) => themeSettings._url?.(p) ?? p;
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
-
-  const bgColor = settings.background === 'primary' ? primaryColor : navColor;
+  const bgColor = settings.background === 'primary' ? token.primary : token.navy;
   const isDarkBg = settings.background !== 'primary';
 
   return (
@@ -36,14 +34,14 @@ const Cta: FC<SectionProps> = ({ data, settings, themeSettings }) => {
       <div class="grid-pattern pointer-events-none absolute inset-0" />
 
       {/* Floating blobs */}
-      <div class="blob" style={{ top: '-20%', left: '-10%', width: '400px', height: '400px', background: `${primaryColor}12` }} />
+      <div class="blob" style={{ top: '-20%', left: '-10%', width: '400px', height: '400px', background: `${alpha(token.primary, 7)}` }} />
       <div class="blob blob-sm" style={{ bottom: '-10%', right: '5%', background: `#3b82f608`, animationDelay: '-6s' }} />
 
       {/* Glow effect */}
       <div
         class="pointer-events-none absolute inset-0"
         style={{
-          background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)`,
+          background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)`,
         }}
       />
 
@@ -74,7 +72,7 @@ const Cta: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 class={`inline-block rounded-lg px-8 py-4 text-center text-sm font-semibold shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline ${
                   isDarkBg ? 'text-white' : 'text-slate-900'
                 }`}
-                style={{ backgroundColor: isDarkBg ? primaryColor : '#fff' }}
+                style={{ backgroundColor: isDarkBg ? token.primary : '#fff' }}
               >
                 {data.button_text}
               </a>

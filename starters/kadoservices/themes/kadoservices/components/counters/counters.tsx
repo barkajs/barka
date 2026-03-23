@@ -1,19 +1,8 @@
 /** @jsxImportSource hono/jsx */
-import { raw } from 'hono/html';
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
-
-function renderGradient(text: string, color: string): any {
-  const parts = text.split(/(\*[^*]+\*)/g);
-  const html = parts
-    .map((p) =>
-      p.startsWith('*') && p.endsWith('*')
-        ? `<em class="not-italic" style="background:linear-gradient(135deg,${color},${color}99,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${p.slice(1, -1)}</em>`
-        : p,
-    )
-    .join('');
-  return raw(html);
-}
+import { token, alpha } from '../../lib/tokens.js';
+import { renderGradient } from '../../lib/gradient.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -34,8 +23,6 @@ const Counters: FC<SectionProps> = ({ data, settings, themeSettings }) => {
 
   const spacing = spacingMap[settings.spacing] ?? spacingMap.large;
   const width = widthMap[settings.width] ?? widthMap.contained;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const rawItems: Array<Record<string, any>> = data.items ?? [];
   const items = rawItems.map((item) => ({
     value: item.number ?? item.value ?? '',
@@ -45,9 +32,9 @@ const Counters: FC<SectionProps> = ({ data, settings, themeSettings }) => {
 
   const bgStyle: Record<string, string> = {};
   if (settings.background === 'dark') {
-    bgStyle.backgroundColor = navColor;
+    bgStyle.backgroundColor = token.navy;
   } else if (settings.background === 'primary') {
-    bgStyle.backgroundColor = primaryColor;
+    bgStyle.backgroundColor = token.primary;
   } else if (settings.background === 'custom' && settings.background_color) {
     bgStyle.backgroundColor = settings.background_color;
   }
@@ -64,12 +51,12 @@ const Counters: FC<SectionProps> = ({ data, settings, themeSettings }) => {
       {isDark && <div class="grid-pattern pointer-events-none absolute inset-0" />}
 
       {/* Floating blob */}
-      <div class="blob blob-sm" style={{ bottom: '10%', right: '5%', background: `${primaryColor}10`, animationDelay: '-4s' }} />
+      <div class="blob blob-sm" style={{ bottom: '10%', right: '5%', background: `${alpha(token.primary, 6)}`, animationDelay: '-4s' }} />
 
       <div class={width}>
         {data.heading && (
           <h2 class="reveal-heading mb-16 text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
-            {data.heading.includes('*') ? renderGradient(data.heading, primaryColor) : data.heading}
+            {data.heading.includes('*') ? renderGradient(data.heading) : data.heading}
           </h2>
         )}
 
@@ -83,7 +70,7 @@ const Counters: FC<SectionProps> = ({ data, settings, themeSettings }) => {
               <div class="min-w-[140px]">
                 <div
                   class="text-5xl font-extrabold tracking-[-0.04em] sm:text-6xl lg:text-7xl"
-                  style={{ color: isDark ? '#fff' : primaryColor }}
+                  style={{ color: isDark ? '#fff' : token.primary }}
                 >
                   {item.value}
                   {item.suffix && <span class="text-3xl sm:text-4xl lg:text-5xl">{item.suffix}</span>}

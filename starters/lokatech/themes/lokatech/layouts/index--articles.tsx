@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps, Content } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 const categories = [
@@ -16,8 +17,6 @@ const categories = [
 
 const Insights: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
   const allItems: Content[] = content.fields.items ?? [];
 
   const sorted = [...allItems].sort((a, b) => {
@@ -35,8 +34,8 @@ const Insights: FC<LayoutProps> = (props) => {
   return (
     <Base {...props}>
       {/* Hero */}
-      <section class="relative overflow-hidden py-16 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}08 0%, transparent 50%)` }} />
+      <section class="relative overflow-hidden py-16 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 3)} 0%, transparent 50%)` }} />
         <div class="relative mx-auto max-w-6xl px-6">
           <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em] text-gray-400">Insights & Articles</p>
           <h1 class="text-3xl font-extrabold tracking-[-0.03em] leading-[1.1] sm:text-4xl lg:text-5xl">
@@ -52,7 +51,7 @@ const Insights: FC<LayoutProps> = (props) => {
       <section class="py-16">
         <div class="mx-auto max-w-6xl px-6">
           <div class="mb-6 flex items-center gap-3">
-            <div class="h-1 w-6 rounded" style={{ backgroundColor: primaryColor }} />
+            <div class="h-1 w-6 rounded" style={{ backgroundColor: token.primary }} />
             <span class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">Top Articles</span>
           </div>
 
@@ -73,7 +72,7 @@ const Insights: FC<LayoutProps> = (props) => {
                   )}
                   <div class="mt-5">
                     {featured.fields.category && (
-                      <span class="rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ backgroundColor: primaryColor }}>
+                      <span class="rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ backgroundColor: token.primary }}>
                         {featured.fields.category}
                       </span>
                     )}
@@ -115,7 +114,7 @@ const Insights: FC<LayoutProps> = (props) => {
                     )}
                     <div class="min-w-0">
                       {item.fields.category && (
-                        <span class="text-xs font-semibold" style={{ color: primaryColor }}>
+                        <span class="text-xs font-semibold" style={{ color: token.primary }}>
                           {item.fields.category}
                         </span>
                       )}
@@ -143,7 +142,7 @@ const Insights: FC<LayoutProps> = (props) => {
             {categories.map((cat) => (
               <button
                 class="shrink-0 rounded-full px-4 py-2 text-sm font-medium text-slate-500 transition-all duration-200 hover:bg-white hover:text-slate-900 hover:shadow-sm"
-                style={cat === 'All' ? { backgroundColor: navColor, color: '#fff' } : {}}
+                style={cat === 'All' ? { backgroundColor: token.navy, color: '#fff' } : {}}
               >
                 {cat}
               </button>
@@ -171,7 +170,7 @@ const Insights: FC<LayoutProps> = (props) => {
                 <div class="mt-4">
                   <div class="flex items-center gap-2">
                     {item.fields.category && (
-                      <span class="text-xs font-semibold" style={{ color: primaryColor }}>
+                      <span class="text-xs font-semibold" style={{ color: token.primary }}>
                         {item.fields.category}
                       </span>
                     )}
@@ -219,7 +218,7 @@ const Insights: FC<LayoutProps> = (props) => {
             <button
               type="submit"
               class="shrink-0 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg"
-              style={{ backgroundColor: primaryColor }}
+              style={{ backgroundColor: token.primary }}
             >
               Subscribe
             </button>
@@ -229,12 +228,12 @@ const Insights: FC<LayoutProps> = (props) => {
       </section>
 
       {/* Bottom CTA */}
-      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}10 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 6)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">Have a project in mind?</h2>
           <p class="mt-4 text-lg text-gray-300/90">Let's discuss how our 800+ engineers can help you build it.</p>
-          <a href="/contact" class="mt-8 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+          <a href="/contact" class="mt-8 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
             Start a Conversation
           </a>
         </div>

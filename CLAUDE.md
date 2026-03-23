@@ -8,7 +8,9 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 
 - NEVER delete or overwrite content/, config/, themes/ — USER-OWNED directories
 - NEVER modify starters/ without syncing changes to ALL starters (lokatech + kadoservices + blank)
+- NEVER modify starters/*/themes/base/ without syncing ALL 3 copies — they MUST be identical
 - NEVER hardcode language prefixes (/pl/, /de/) in theme components — use _url() and _t()
+- NEVER hardcode colors in theme components — use `token.*` from `lib/tokens.ts`, alpha via `alpha(token.*, N)`
 - NEVER commit apps/smoke-crm/ — temporary test fixture
 - ALWAYS run `npm test && npm run typecheck` before push
 - ALWAYS verify with Playwright before reporting a fix as done
@@ -16,7 +18,7 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 
 ## Architecture decisions (settled — do not re-litigate)
 
-- Theme resolution order: active theme → base theme → starter → built-in fallback
+- Theme resolution order: active theme → base theme (`themes/base/`) → built-in fallback
 - ALL section components use _url() for href links, _t() for UI text (hero, cta, features, blog-listing, text-with-image, etc.)
 - init --force cleans content/, config/, themes/ before copying
 - barka build must mirror app.ts rendering pipeline exactly
@@ -31,10 +33,22 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 - Landing pages use YAML sections (content/landing-pages/*.yaml)
 - PL content: file suffix (.pl.md, .pl.yaml) — URLs get /pl/ prefix from framework, NOT from content
 
+## Design tokens
+
+- Single source of truth: `theme.yaml` `design_tokens` section defines colors, fonts, transitions
+- Framework generates CSS `:root` custom properties via `generateTokenCss()` in `src/lib/design-tokens.ts`
+- Injected as `themeSettings._tokenCss` into `<style>` tag in base layout `<head>`
+- Each theme has `lib/tokens.ts` with typed CSS var constants: `token.primary`, `token.navy`, etc.
+- Alpha transparency via `alpha(token.primary, 8)` — uses CSS `color-mix()`, not hex append
+- Kadoservices has shared `lib/gradient.ts` for gradient text rendering
+- To add a new design token: add to `theme.yaml` design_tokens + `lib/tokens.ts`, no component changes needed
+- `style.css` contains structural CSS only (animations, utilities) — no `:root` vars or `@import`
+
 ## Theme components (SDC)
 
 - Each component: directory with template.tsx + schema.yaml
 - Components receive: { data, settings, themeSettings }
+- Colors via `import { token, alpha } from '../../lib/tokens.js'` — NEVER extract from themeSettings
 - Use `themeSettings._url?.(path)` for localized links
 - Use `themeSettings._t?.(key)` for translated UI strings
 - Component CSS in colocated .css files, served via /static/components.css

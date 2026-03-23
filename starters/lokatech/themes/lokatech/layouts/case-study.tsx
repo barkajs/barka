@@ -1,12 +1,11 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 const CaseStudy: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
   const fields = content.fields;
   const tags: string[] = fields.tags ?? [];
   const gallery: { image: string; caption?: string }[] = fields.gallery ?? [];
@@ -14,9 +13,9 @@ const CaseStudy: FC<LayoutProps> = (props) => {
   return (
     <Base {...props}>
       {/* Hero — Halo Effect: bold first impression with floating product shot */}
-      <section class="relative overflow-hidden pb-0 pt-28 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 70% 20%, ${primaryColor}14 0%, transparent 55%)` }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 80%, ${primaryColor}08 0%, transparent 40%)` }} />
+      <section class="relative overflow-hidden pb-0 pt-28 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 70% 20%, ${alpha(token.primary, 8)} 0%, transparent 55%)` }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 80%, ${alpha(token.primary, 3)} 0%, transparent 40%)` }} />
 
         <div class="relative mx-auto max-w-5xl px-6">
           <div class="max-w-3xl">
@@ -69,7 +68,7 @@ const CaseStudy: FC<LayoutProps> = (props) => {
           <div class="mx-auto flex max-w-5xl flex-wrap items-center justify-center gap-12 px-6 lg:gap-20">
             {fields.metrics.map((metric: { value: string; label: string }) => (
               <div class="text-center">
-                <div class="text-4xl font-extrabold tracking-[-0.03em]" style={{ color: primaryColor }}>
+                <div class="text-4xl font-extrabold tracking-[-0.03em]" style={{ color: token.primary }}>
                   {metric.value}
                 </div>
                 <div class="mt-1 text-sm font-medium text-slate-400">{metric.label}</div>
@@ -137,13 +136,13 @@ const CaseStudy: FC<LayoutProps> = (props) => {
             {/* Client quote — peak-end rule "delight" moment */}
             {(fields.client_quote || fields.quote) && (
               <blockquote class="relative mt-16 overflow-hidden rounded-2xl border border-gray-100 bg-slate-50 p-8 sm:p-10">
-                <div class="pointer-events-none absolute -right-4 -top-4 text-[8rem] font-serif leading-none" style={{ color: `${primaryColor}08` }}>"</div>
+                <div class="pointer-events-none absolute -right-4 -top-4 text-[8rem] font-serif leading-none" style={{ color: `${alpha(token.primary, 3)}` }}>"</div>
                 <div class="relative">
-                  <div class="mb-6 text-3xl font-serif leading-none" style={{ color: `${primaryColor}50` }}>"</div>
+                  <div class="mb-6 text-3xl font-serif leading-none" style={{ color: `${alpha(token.primary, 31)}` }}>"</div>
                   <p class="text-lg italic leading-relaxed text-slate-700">{fields.client_quote ?? fields.quote}</p>
                   {(fields.client_quote_author || fields.quote_author) && (
                     <footer class="mt-8 flex items-center gap-4">
-                      <div class="flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: primaryColor }}>
+                      <div class="flex h-12 w-12 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: token.primary }}>
                         {(fields.client_quote_author ?? fields.quote_author ?? '').charAt(0).toUpperCase()}
                       </div>
                       <div>
@@ -205,7 +204,7 @@ const CaseStudy: FC<LayoutProps> = (props) => {
                 </div>
               )}
 
-              <a href="/contact" class="block rounded-xl py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: primaryColor }}>
+              <a href="/contact" class="block rounded-xl py-3.5 text-center text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: token.primary }}>
                 Start Your Project
               </a>
             </div>
@@ -214,12 +213,12 @@ const CaseStudy: FC<LayoutProps> = (props) => {
       </div>
 
       {/* CTA */}
-      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-24 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">Ready to achieve similar results?</h2>
           <p class="mt-6 text-lg text-gray-300/90">Our team is ready to help you tackle your biggest technology challenges.</p>
-          <a href="/contact" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+          <a href="/contact" class="mt-10 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
             Schedule a Consultation
           </a>
         </div>

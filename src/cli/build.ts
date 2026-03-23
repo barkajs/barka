@@ -5,6 +5,7 @@ import { loadSites, filterContentBySite } from '../lib/multisite.js';
 import { createThemeResolver } from '../lib/theme-loader.js';
 import { renderContent } from '../lib/template-renderer.js';
 import { loadLanguages, loadTranslations, createT } from '../lib/i18n.js';
+import { generateTokenCss } from '../lib/design-tokens.js';
 import type { Content, SiteConfig, ContentType } from '../lib/types.js';
 import {
   generateSitemap,
@@ -92,7 +93,7 @@ export async function runBuild(opts: BuildOptions): Promise<void> {
 
   // --- Set up theme engine (same as app.ts) --------------------------------
 
-  const themeName = siteConfig.theme ?? 'starter';
+  const themeName = siteConfig.theme ?? 'base';
   const themesDir = path.resolve(opts.themesDir);
   const themeResolver = createThemeResolver(themesDir, themeName);
   const themeConfig = themeResolver.getConfig();
@@ -129,6 +130,7 @@ export async function runBuild(opts: BuildOptions): Promise<void> {
       _languages: langsConfig.languages,
       _currentPath: '/',
       _t: t,
+      _tokenCss: generateTokenCss(themeConfig, { ...themeDefaults, ...siteConfig.theme_settings }),
     };
 
     // Filter content for this language:

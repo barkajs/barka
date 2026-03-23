@@ -2,11 +2,10 @@
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
 import Base from './base.js';
+import { token, alpha } from '../lib/tokens.js';
 
 const CaseStudy: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const url = (p: string) => themeSettings._url?.(p) ?? p;
   const fields = content.fields;
   const tags: string[] = fields.tags ?? [];
@@ -31,7 +30,7 @@ const CaseStudy: FC<LayoutProps> = (props) => {
           {/* Tags as pills */}
           <div class="mb-4 flex flex-wrap gap-2">
             {fields.industry && (
-              <span class="rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ backgroundColor: primaryColor }}>
+              <span class="rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ backgroundColor: token.primary }}>
                 {String(fields.industry).replace(/-/g, ' ').replace(/\b\w/g, (c: string) => c.toUpperCase())}
               </span>
             )}
@@ -59,7 +58,7 @@ const CaseStudy: FC<LayoutProps> = (props) => {
             <div class="grid grid-cols-2 lg:grid-cols-4">
               {metrics.map((metric: { value: string; label: string }, idx: number) => (
                 <div class={`py-8 text-center ${idx > 0 ? 'border-l border-gray-100' : ''}`}>
-                  <div class="text-3xl font-extrabold tracking-tight" style={{ color: primaryColor }}>{metric.value}</div>
+                  <div class="text-3xl font-extrabold tracking-tight" style={{ color: token.primary }}>{metric.value}</div>
                   <div class="mt-1 text-xs font-medium uppercase tracking-wider text-slate-400">{metric.label}</div>
                 </div>
               ))}
@@ -91,7 +90,7 @@ const CaseStudy: FC<LayoutProps> = (props) => {
           {fields.challenge && (
             <div class="mb-14">
               <div class="mb-4 flex items-center gap-3">
-                <span class="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: primaryColor }}>1</span>
+                <span class="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: token.primary }}>1</span>
                 <h2 class="text-2xl font-bold tracking-[-0.02em] text-slate-900">The Challenge</h2>
               </div>
               <div class="ml-11 text-base leading-relaxed text-slate-600" dangerouslySetInnerHTML={{ __html: typeof fields.challenge === 'string' ? fields.challenge : '' }} />
@@ -102,7 +101,7 @@ const CaseStudy: FC<LayoutProps> = (props) => {
           {fields.solution && (
             <div class="mb-14">
               <div class="mb-4 flex items-center gap-3">
-                <span class="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: primaryColor }}>2</span>
+                <span class="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: token.primary }}>2</span>
                 <h2 class="text-2xl font-bold tracking-[-0.02em] text-slate-900">Our Approach</h2>
               </div>
               <div class="ml-11 text-base leading-relaxed text-slate-600" dangerouslySetInnerHTML={{ __html: typeof fields.solution === 'string' ? fields.solution : '' }} />
@@ -113,7 +112,7 @@ const CaseStudy: FC<LayoutProps> = (props) => {
           {fields.results && (
             <div class="mb-14">
               <div class="mb-4 flex items-center gap-3">
-                <span class="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: primaryColor }}>3</span>
+                <span class="flex h-8 w-8 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: token.primary }}>3</span>
                 <h2 class="text-2xl font-bold tracking-[-0.02em] text-slate-900">The Results</h2>
               </div>
               <div class="ml-11 text-base leading-relaxed text-slate-600" dangerouslySetInnerHTML={{ __html: typeof fields.results === 'string' ? fields.results : '' }} />
@@ -150,13 +149,13 @@ const CaseStudy: FC<LayoutProps> = (props) => {
         <section class="border-y border-gray-100" style={{ backgroundColor: '#FFFBEB' }}>
           <div class="mx-auto max-w-4xl px-6 py-16">
             <div class="flex flex-col items-center text-center">
-              <div class="mb-6 text-5xl font-serif" style={{ color: `${primaryColor}40` }}>"</div>
+              <div class="mb-6 text-5xl font-serif" style={{ color: alpha(token.primary, 25) }}>"</div>
               <p class="max-w-2xl text-xl italic leading-relaxed text-slate-700">
                 {fields.client_quote ?? fields.quote}
               </p>
               {(fields.client_quote_author || fields.quote_author) && (
                 <div class="mt-8 flex items-center gap-3">
-                  <div class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: primaryColor }}>
+                  <div class="flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold text-white" style={{ backgroundColor: token.primary }}>
                     {(fields.client_quote_author ?? fields.quote_author ?? '').charAt(0).toUpperCase()}
                   </div>
                   <div class="text-left">
@@ -222,10 +221,10 @@ const CaseStudy: FC<LayoutProps> = (props) => {
           <h2 class="text-3xl font-bold tracking-[-0.02em] text-slate-900">Ready to achieve similar results?</h2>
           <p class="mt-4 text-lg text-slate-500">Our staffing consultants are ready to help you build your team.</p>
           <div class="mt-8 flex flex-wrap justify-center gap-4">
-            <a href={url('/contact')} class="inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: primaryColor }}>
+            <a href={url('/contact')} class="inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: token.primary }}>
               Start a Conversation
             </a>
-            <a href={url('/case-studies')} class="inline-block rounded-lg border-2 px-8 py-3.5 text-sm font-semibold transition-all duration-200 hover:no-underline" style={{ borderColor: primaryColor, color: primaryColor }}>
+            <a href={url('/case-studies')} class="inline-block rounded-lg border-2 px-8 py-3.5 text-sm font-semibold transition-all duration-200 hover:no-underline" style={{ borderColor: token.primary, color: token.primary }}>
               More Success Stories
             </a>
           </div>

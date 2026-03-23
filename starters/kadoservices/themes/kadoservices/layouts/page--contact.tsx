@@ -2,6 +2,7 @@
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
 import Base from './base.js';
+import { token, alpha } from '../lib/tokens.js';
 
 const contactChannels = [
   {
@@ -36,8 +37,6 @@ const offices = [
 
 const PageContact: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
 
   return (
     <Base {...props}>
@@ -58,16 +57,16 @@ const PageContact: FC<LayoutProps> = (props) => {
         <div class="mx-auto max-w-5xl px-6">
           <div class="grid gap-6 sm:grid-cols-3">
             {contactChannels.map((ch) => (
-              <div class="rounded-2xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50" style={{ borderTop: `3px solid ${primaryColor}` }}>
+              <div class="rounded-2xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50" style={{ borderTop: `3px solid ${token.primary}` }}>
                 <div
                   class="mb-4 flex h-12 w-12 items-center justify-center rounded-xl text-white"
-                  style={{ backgroundColor: primaryColor }}
+                  style={{ backgroundColor: token.primary }}
                   dangerouslySetInnerHTML={{ __html: ch.icon }}
                 />
                 <h3 class="text-lg font-bold text-slate-900">{ch.label}</h3>
                 <p class="mt-1 text-xs text-slate-400">{ch.description}</p>
                 <div class="mt-4 space-y-2">
-                  <a href={`mailto:${ch.email}`} class="flex items-center gap-2 text-sm hover:no-underline" style={{ color: primaryColor }}>
+                  <a href={`mailto:${ch.email}`} class="flex items-center gap-2 text-sm hover:no-underline" style={{ color: token.primary }}>
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
                     {ch.email}
                   </a>
@@ -157,7 +156,7 @@ const PageContact: FC<LayoutProps> = (props) => {
               <button
                 type="submit"
                 class="w-full rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: token.primary }}
               >
                 Send Message
               </button>
@@ -177,12 +176,12 @@ const PageContact: FC<LayoutProps> = (props) => {
           <div class="grid gap-4 sm:grid-cols-2">
             {offices.map((office) => (
               <div class="flex gap-4 rounded-xl border border-gray-100 bg-white p-5 transition-all duration-300 hover:shadow-md">
-                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: navColor }}>
+                <div class="flex h-10 w-10 shrink-0 items-center justify-center rounded-lg text-sm font-bold text-white" style={{ backgroundColor: token.navy }}>
                   {office.city.slice(0, 2).toUpperCase()}
                 </div>
                 <div class="min-w-0">
                   <h3 class="text-sm font-semibold text-slate-900">{office.city}</h3>
-                  <div class="text-xs font-medium" style={{ color: primaryColor }}>{office.label}</div>
+                  <div class="text-xs font-medium" style={{ color: token.primary }}>{office.label}</div>
                   <p class="mt-1 text-xs text-slate-400 leading-relaxed">{office.address}</p>
                   <p class="mt-0.5 text-xs text-slate-400">{office.hours}</p>
                 </div>
@@ -193,8 +192,8 @@ const PageContact: FC<LayoutProps> = (props) => {
       </section>
 
       {/* CTA */}
-      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">
             Prefer a scheduled call?
@@ -205,7 +204,7 @@ const PageContact: FC<LayoutProps> = (props) => {
           <a
             href="#"
             class="mt-8 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline"
-            style={{ backgroundColor: primaryColor }}
+            style={{ backgroundColor: token.primary }}
           >
             Book a Discovery Call
           </a>

@@ -1,7 +1,8 @@
 /** @jsxImportSource hono/jsx */
-import { raw } from 'hono/html';
 import type { FC } from 'hono/jsx';
 import type { SectionProps } from '../../_types.js';
+import { token, alpha } from '../../lib/tokens.js';
+import { renderGradient } from '../../lib/gradient.js';
 
 const spacingMap: Record<string, string> = {
   none: 'py-0',
@@ -17,33 +18,17 @@ const widthMap: Record<string, string> = {
   full: 'w-full px-6',
 };
 
-function renderHeading(heading: string, primaryColor: string): any {
-  const parts = heading.split(/(\*[^*]+\*)/g);
-  const html = parts
-    .map((part) => {
-      if (part.startsWith('*') && part.endsWith('*')) {
-        const inner = part.slice(1, -1);
-        return `<em class="hero-gradient-text not-italic" style="background:linear-gradient(135deg,${primaryColor},${primaryColor}99,#EF4444);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text">${inner}</em>`;
-      }
-      return part;
-    })
-    .join('');
-  return raw(html);
-}
-
 const Hero: FC<SectionProps> = ({ data, settings, themeSettings }) => {
   const urlFn = (p: string) => themeSettings._url?.(p) ?? p;
   const spacing = spacingMap[settings.spacing] ?? spacingMap.xlarge;
   const width = widthMap[settings.width] ?? widthMap.contained;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const centered = data.alignment === 'center';
 
   const bgStyle: Record<string, string> = {
-    backgroundColor: navColor,
+    backgroundColor: token.navy,
   };
   if (settings.background_image) {
-    bgStyle.backgroundImage = `linear-gradient(to right, ${navColor}ee, ${navColor}aa), url(${settings.background_image})`;
+    bgStyle.backgroundImage = `linear-gradient(to right, ${alpha(token.navy, 93)}, ${alpha(token.navy, 67)}), url(${settings.background_image})`;
     bgStyle.backgroundSize = 'cover';
     bgStyle.backgroundPosition = 'center';
   }
@@ -60,15 +45,15 @@ const Hero: FC<SectionProps> = ({ data, settings, themeSettings }) => {
       <div class="grid-pattern pointer-events-none absolute inset-0" />
 
       {/* Animated floating blobs */}
-      <div class="blob blob-lg" style={{ top: '-10%', left: '-5%', background: `${primaryColor}15` }} />
-      <div class="blob blob-sm" style={{ top: '20%', right: '10%', background: `${primaryColor}10`, animationDelay: '-3s' }} />
+      <div class="blob blob-lg" style={{ top: '-10%', left: '-5%', background: `${alpha(token.primary, 8)}` }} />
+      <div class="blob blob-sm" style={{ top: '20%', right: '10%', background: `${alpha(token.primary, 6)}`, animationDelay: '-3s' }} />
       <div class="blob" style={{ bottom: '-5%', left: '40%', width: '300px', height: '300px', background: `#F9731610`, animationDelay: '-5s' }} />
 
       {/* Radial glow */}
       <div
         class="pointer-events-none absolute inset-0"
         style={{
-          background: `radial-gradient(ellipse at 20% 50%, ${primaryColor}15 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, ${primaryColor}08 0%, transparent 40%)`,
+          background: `radial-gradient(ellipse at 20% 50%, ${alpha(token.primary, 8)} 0%, transparent 50%), radial-gradient(ellipse at 80% 80%, ${alpha(token.primary, 3)} 0%, transparent 40%)`,
         }}
       />
 
@@ -80,7 +65,7 @@ const Hero: FC<SectionProps> = ({ data, settings, themeSettings }) => {
             )}
             {data.heading && (
               <h1 class="reveal-heading text-4xl font-extrabold tracking-[-0.04em] leading-[1.05] sm:text-5xl lg:text-6xl xl:text-7xl">
-                {hasGradient ? renderHeading(data.heading, primaryColor) : data.heading}
+                {hasGradient ? renderGradient(data.heading) : data.heading}
               </h1>
             )}
             {data.subheading && (
@@ -93,7 +78,7 @@ const Hero: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 <a
                   href={urlFn(data.cta_url ?? '#')}
                   class="inline-block rounded-lg px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline"
-                  style={{ backgroundColor: primaryColor }}
+                  style={{ backgroundColor: token.primary }}
                 >
                   {data.cta_text}
                 </a>
@@ -116,7 +101,7 @@ const Hero: FC<SectionProps> = ({ data, settings, themeSettings }) => {
               )}
               {data.heading && (
                 <h1 class="reveal-heading text-4xl font-extrabold tracking-[-0.04em] leading-[1.05] sm:text-5xl lg:text-6xl">
-                  {hasGradient ? renderHeading(data.heading, primaryColor) : data.heading}
+                  {hasGradient ? renderGradient(data.heading) : data.heading}
                 </h1>
               )}
               {data.subheading && (
@@ -129,7 +114,7 @@ const Hero: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                   <a
                     href={urlFn(data.cta_url ?? '#')}
                     class="inline-block rounded-lg px-8 py-4 text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline"
-                    style={{ backgroundColor: primaryColor }}
+                    style={{ backgroundColor: token.primary }}
                   >
                     {data.cta_text}
                   </a>
@@ -156,8 +141,8 @@ const Hero: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 <div
                   class="rounded-3xl aspect-[4/3]"
                   style={{
-                    background: `linear-gradient(135deg, ${primaryColor}30, #F9731620)`,
-                    boxShadow: `0 25px 50px ${primaryColor}15`,
+                    background: `linear-gradient(135deg, ${alpha(token.primary, 19)}, #F9731620)`,
+                    boxShadow: `0 25px 50px ${alpha(token.primary, 8)}`,
                   }}
                 />
               )}

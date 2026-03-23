@@ -2,6 +2,7 @@
 import type { FC } from 'hono/jsx';
 import type { LayoutProps, Content } from '../_types.js';
 import Base from './base.js';
+import { token, alpha } from '../lib/tokens.js';
 
 const categories = [
   'All',
@@ -14,8 +15,6 @@ const categories = [
 
 const Insights: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
   const allItems: Content[] = content.fields.items ?? [];
 
   const sorted = [...allItems].sort((a, b) => {
@@ -32,7 +31,7 @@ const Insights: FC<LayoutProps> = (props) => {
       {/* Hero — light warm background, left-aligned */}
       <section class="py-16" style={{ backgroundColor: '#FFFBEB' }}>
         <div class="mx-auto max-w-6xl px-6">
-          <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: primaryColor }}>
+          <p class="mb-2 text-xs font-semibold uppercase tracking-[0.2em]" style={{ color: token.primary }}>
             Insights & Articles
           </p>
           <h1 class="text-3xl font-extrabold tracking-[-0.03em] leading-[1.1] text-slate-900 sm:text-4xl lg:text-5xl">
@@ -49,7 +48,7 @@ const Insights: FC<LayoutProps> = (props) => {
         <section class="py-12 border-b border-gray-100">
           <div class="mx-auto max-w-6xl px-6">
             <div class="mb-6 flex items-center gap-3">
-              <div class="h-1 w-6 rounded" style={{ backgroundColor: primaryColor }} />
+              <div class="h-1 w-6 rounded" style={{ backgroundColor: token.primary }} />
               <span class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">Featured</span>
             </div>
             <a href={(featured as any).url ?? `/articles/${featured.slug}`} class="group block hover:no-underline">
@@ -68,7 +67,7 @@ const Insights: FC<LayoutProps> = (props) => {
                 {/* Content — 60% */}
                 <div class="lg:col-span-3 flex flex-col justify-center">
                   {featured.fields.category && (
-                    <span class="mb-3 inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ backgroundColor: primaryColor }}>
+                    <span class="mb-3 inline-block w-fit rounded-full px-3 py-1 text-xs font-semibold text-white" style={{ backgroundColor: token.primary }}>
                       {featured.fields.category}
                     </span>
                   )}
@@ -94,7 +93,7 @@ const Insights: FC<LayoutProps> = (props) => {
                     </div>
                   </div>
                   <div class="mt-5">
-                    <span class="inline-flex items-center gap-1 text-sm font-semibold transition-colors duration-200" style={{ color: primaryColor }}>
+                    <span class="inline-flex items-center gap-1 text-sm font-semibold transition-colors duration-200" style={{ color: token.primary }}>
                       Read article
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="transition-transform duration-200 group-hover:translate-x-1"><path d="M3 8h10M9 4l4 4-4 4"/></svg>
                     </span>
@@ -119,7 +118,7 @@ const Insights: FC<LayoutProps> = (props) => {
                   <button
                     class="shrink-0 rounded-full border px-4 py-2 text-sm font-medium transition-all duration-200 hover:shadow-sm"
                     style={cat === 'All'
-                      ? { backgroundColor: primaryColor, color: '#fff', borderColor: primaryColor }
+                      ? { backgroundColor: token.primary, color: '#fff', borderColor: token.primary }
                       : { borderColor: '#e5e7eb', color: '#64748b', backgroundColor: '#fff' }}
                   >
                     {cat}
@@ -134,7 +133,7 @@ const Insights: FC<LayoutProps> = (props) => {
                     <button
                       class="block w-full text-left rounded-lg px-4 py-2.5 text-sm font-medium transition-all duration-200"
                       style={cat === 'All'
-                        ? { backgroundColor: `${primaryColor}15`, color: primaryColor, borderLeft: `3px solid ${primaryColor}` }
+                        ? { backgroundColor: alpha(token.primary, 8), color: token.primary, borderLeft: `3px solid ${token.primary}` }
                         : { color: '#64748b', borderLeft: '3px solid transparent' }}
                     >
                       {cat}
@@ -142,10 +141,10 @@ const Insights: FC<LayoutProps> = (props) => {
                   ))}
                 </nav>
                 {/* Sidebar promo card */}
-                <div class="mt-8 rounded-xl p-5 border" style={{ backgroundColor: '#FFFBEB', borderColor: `${primaryColor}30` }}>
+                <div class="mt-8 rounded-xl p-5 border" style={{ backgroundColor: '#FFFBEB', borderColor: alpha(token.primary, 19) }}>
                   <p class="text-sm font-semibold text-slate-700">Got hiring insights?</p>
                   <p class="mt-1 text-xs text-slate-500">We welcome guest contributions from HR professionals.</p>
-                  <a href="/contact" class="mt-3 inline-block text-xs font-semibold hover:no-underline" style={{ color: primaryColor }}>
+                  <a href="/contact" class="mt-3 inline-block text-xs font-semibold hover:no-underline" style={{ color: token.primary }}>
                     Submit an article →
                   </a>
                 </div>
@@ -170,7 +169,7 @@ const Insights: FC<LayoutProps> = (props) => {
                     <div class="mt-4">
                       <div class="flex items-center gap-2">
                         {item.fields.category && (
-                          <span class="text-xs font-semibold" style={{ color: primaryColor }}>
+                          <span class="text-xs font-semibold" style={{ color: token.primary }}>
                             {item.fields.category}
                           </span>
                         )}
@@ -210,7 +209,7 @@ const Insights: FC<LayoutProps> = (props) => {
       {/* Newsletter CTA — amber card instead of dark section */}
       <section class="py-16">
         <div class="mx-auto max-w-2xl px-6">
-          <div class="rounded-2xl border p-10 text-center" style={{ backgroundColor: '#FFFBEB', borderColor: `${primaryColor}30` }}>
+          <div class="rounded-2xl border p-10 text-center" style={{ backgroundColor: '#FFFBEB', borderColor: alpha(token.primary, 19) }}>
             <h2 class="text-2xl font-bold tracking-[-0.02em] text-slate-900">Subscribe to our newsletter</h2>
             <p class="mt-3 text-slate-500">Hiring insights, workforce trends, and HR best practices — delivered biweekly.</p>
             <form class="mt-8 flex gap-3 sm:mx-auto sm:max-w-md" action="#" method="post">
@@ -222,7 +221,7 @@ const Insights: FC<LayoutProps> = (props) => {
               <button
                 type="submit"
                 class="shrink-0 rounded-lg px-6 py-3 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: token.primary }}
               >
                 Subscribe
               </button>
@@ -233,12 +232,12 @@ const Insights: FC<LayoutProps> = (props) => {
       </section>
 
       {/* Bottom CTA */}
-      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}10 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 6)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">Have a hiring need?</h2>
           <p class="mt-4 text-lg text-gray-300/90">Let's discuss how our 200+ recruiters can help you find the right talent.</p>
-          <a href="/contact" class="mt-8 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: primaryColor }}>
+          <a href="/contact" class="mt-8 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline" style={{ backgroundColor: token.primary }}>
             Start a Conversation
           </a>
         </div>

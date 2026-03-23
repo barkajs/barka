@@ -174,12 +174,10 @@ const Base: FC<LayoutProps> = ({ content, site, theme, themeSettings, children }
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
         />
 
-        <style>{`
-          :root {
-            --color-primary: ${primaryColor};
-            --color-navy: ${navColor};
-          }
-        `}</style>
+        {themeSettings._tokenCss
+          ? <style dangerouslySetInnerHTML={{ __html: themeSettings._tokenCss }} />
+          : <style>{`:root { --color-primary: ${primaryColor}; --color-navy: ${navColor}; }`}</style>
+        }
       </head>
       <body class="min-h-screen flex flex-col bg-white text-slate-800 antialiased">
 

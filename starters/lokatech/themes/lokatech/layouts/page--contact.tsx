@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 const contactChannels = [
@@ -32,14 +33,11 @@ const offices = [
 
 const PageContact: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
-
   return (
     <Base {...props}>
       {/* Hero */}
-      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 60% 50%, ${primaryColor}12 0%, transparent 50%)` }} />
+      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 60% 50%, ${alpha(token.primary, 7)} 0%, transparent 50%)` }} />
         <div class="relative mx-auto max-w-7xl px-6 text-center">
           <h1 class="text-4xl font-extrabold tracking-[-0.03em] sm:text-5xl">
             {content.title ?? 'Get in Touch'}
@@ -127,7 +125,7 @@ const PageContact: FC<LayoutProps> = (props) => {
               <button
                 type="submit"
                 class="w-full rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg sm:w-auto"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: token.primary }}
               >
                 Send Message
               </button>
@@ -145,12 +143,12 @@ const PageContact: FC<LayoutProps> = (props) => {
                   <div class="flex items-start gap-4">
                     <div
                       class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl text-white"
-                      style={{ backgroundColor: primaryColor }}
+                      style={{ backgroundColor: token.primary }}
                       dangerouslySetInnerHTML={{ __html: ch.icon }}
                     />
                     <div>
                       <div class="text-sm font-semibold text-slate-900">{ch.label}</div>
-                      <a href={`mailto:${ch.email}`} class="mt-1 block text-sm hover:no-underline" style={{ color: primaryColor }}>
+                      <a href={`mailto:${ch.email}`} class="mt-1 block text-sm hover:no-underline" style={{ color: token.primary }}>
                         {ch.email}
                       </a>
                       {ch.phone && (
@@ -178,7 +176,7 @@ const PageContact: FC<LayoutProps> = (props) => {
                 </div>
               </div>
               <div class="mt-4 border-t border-gray-200 pt-4 text-xs text-slate-400">
-                24/7 operations support: <a href="mailto:ops@barka.dev" class="hover:no-underline" style={{ color: primaryColor }}>ops@barka.dev</a>
+                24/7 operations support: <a href="mailto:ops@barka.dev" class="hover:no-underline" style={{ color: token.primary }}>ops@barka.dev</a>
               </div>
             </div>
           </div>
@@ -199,7 +197,7 @@ const PageContact: FC<LayoutProps> = (props) => {
               <div class="group rounded-2xl border border-gray-100 bg-white p-6 transition-all duration-300 hover:shadow-lg hover:shadow-slate-200/50">
                 <div class="mb-3 text-2xl">{office.flag}</div>
                 <h3 class="text-base font-semibold text-slate-900">{office.city}</h3>
-                <div class="mt-0.5 text-xs font-medium uppercase tracking-widest" style={{ color: primaryColor }}>{office.label}</div>
+                <div class="mt-0.5 text-xs font-medium uppercase tracking-widest" style={{ color: token.primary }}>{office.label}</div>
                 <p class="mt-3 text-sm leading-relaxed text-slate-400">
                   {office.address}
                 </p>
@@ -210,8 +208,8 @@ const PageContact: FC<LayoutProps> = (props) => {
       </section>
 
       {/* CTA */}
-      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: navColor }}>
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}12 0%, transparent 60%)` }} />
+      <section class="relative overflow-hidden py-20 text-white" style={{ backgroundColor: token.navy }}>
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 7)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-3xl font-bold tracking-[-0.02em] sm:text-4xl">
             Prefer a scheduled call?
@@ -222,7 +220,7 @@ const PageContact: FC<LayoutProps> = (props) => {
           <a
             href="#"
             class="mt-8 inline-block rounded-lg px-8 py-3.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-xl hover:no-underline"
-            style={{ backgroundColor: primaryColor }}
+            style={{ backgroundColor: token.primary }}
           >
             Book a Discovery Call
           </a>

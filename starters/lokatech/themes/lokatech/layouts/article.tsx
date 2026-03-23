@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 function estimateReadingTime(html: string): number {
@@ -11,8 +12,6 @@ function estimateReadingTime(html: string): number {
 
 const Article: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
   const publishedDate = content.publishedAt ?? content.createdAt;
   const readTime = estimateReadingTime(content.bodyHtml ?? '');
   const category = content.fields.category ?? content.fields.tags?.[0];
@@ -31,11 +30,11 @@ const Article: FC<LayoutProps> = (props) => {
               loading="eager"
             />
             <div class="absolute inset-0" style={{
-              background: `linear-gradient(to bottom, ${navColor}cc 0%, ${navColor}e6 50%, ${navColor}f2 100%)`,
+              background: `linear-gradient(to bottom, ${alpha(token.navy, 80)} 0%, ${alpha(token.navy, 90)} 50%, ${alpha(token.navy, 95)} 100%)`,
             }} />
           </>
         ) : (
-          <div class="absolute inset-0" style={{ backgroundColor: navColor }} />
+          <div class="absolute inset-0" style={{ backgroundColor: token.navy }} />
         )}
 
         <div class="relative z-10 flex min-h-[520px] items-end pb-16 pt-24">
@@ -43,7 +42,7 @@ const Article: FC<LayoutProps> = (props) => {
             <div class="mb-5 flex items-center gap-3">
               {category && (
                 <span class="rounded-full px-3 py-1 text-xs font-semibold text-white" style={{
-                  backgroundColor: `${primaryColor}cc`,
+                  backgroundColor: `${alpha(token.primary, 80)}`,
                   backdropFilter: 'blur(4px)',
                 }}>
                   {category}
@@ -67,7 +66,7 @@ const Article: FC<LayoutProps> = (props) => {
                   {content.fields.author_image ? (
                     <img src={content.fields.author_image} alt={content.fields.author} class="h-9 w-9 rounded-full object-cover ring-2 ring-white/20" loading="lazy" />
                   ) : (
-                    <div class="flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: primaryColor }}>
+                    <div class="flex h-9 w-9 items-center justify-center rounded-full text-xs font-bold text-white" style={{ backgroundColor: token.primary }}>
                       {content.fields.author.charAt(0).toUpperCase()}
                     </div>
                   )}
@@ -105,7 +104,7 @@ const Article: FC<LayoutProps> = (props) => {
                 {content.fields.author_image ? (
                   <img src={content.fields.author_image} alt={content.fields.author} class="h-14 w-14 rounded-full object-cover ring-2 ring-gray-100" />
                 ) : (
-                  <div class="flex h-14 w-14 items-center justify-center rounded-full text-lg font-bold text-white" style={{ backgroundColor: primaryColor }}>
+                  <div class="flex h-14 w-14 items-center justify-center rounded-full text-lg font-bold text-white" style={{ backgroundColor: token.primary }}>
                     {content.fields.author.charAt(0).toUpperCase()}
                   </div>
                 )}
@@ -126,7 +125,7 @@ const Article: FC<LayoutProps> = (props) => {
         <div class="mx-auto max-w-3xl px-6 text-center">
           <h2 class="text-2xl font-bold tracking-[-0.02em] text-slate-900">Want to discuss this topic?</h2>
           <p class="mt-3 text-slate-500">Our experts are ready to help with your specific challenges.</p>
-          <a href="/contact" class="mt-6 inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: primaryColor }}>
+          <a href="/contact" class="mt-6 inline-block rounded-lg px-6 py-2.5 text-sm font-semibold text-white transition-all duration-200 hover:shadow-lg hover:no-underline" style={{ backgroundColor: token.primary }}>
             Get in Touch
           </a>
         </div>

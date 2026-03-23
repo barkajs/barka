@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { SiteConfig, ThemeConfig } from '../_types.js';
+import { token } from '../lib/tokens.js';
 
 interface FooterProps {
   site: SiteConfig;
@@ -33,12 +34,9 @@ const footerResources = [
 ];
 
 const Footer: FC<FooterProps> = ({ site, themeSettings }) => {
-  const primaryColor = themeSettings.primary_color ?? '#F59E0B';
-  const navColor = themeSettings.nav_color ?? '#14101E';
-
   return (
-    <footer style={{ backgroundColor: navColor }}>
-      <div class="h-1" style={{ backgroundColor: primaryColor }} />
+    <footer style={{ backgroundColor: token.navy }}>
+      <div class="h-1" style={{ backgroundColor: token.primary }} />
       <div class="mx-auto max-w-7xl px-6 py-16">
         <div class="grid gap-12 sm:grid-cols-2 lg:grid-cols-4">
           {/* Company info */}

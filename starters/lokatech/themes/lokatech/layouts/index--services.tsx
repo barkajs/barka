@@ -1,6 +1,7 @@
 /** @jsxImportSource hono/jsx */
 import type { FC } from 'hono/jsx';
 import type { LayoutProps, Content } from '../_types.js';
+import { token, alpha } from '../lib/tokens.js';
 import Base from './base.js';
 
 const iconSvgs: Record<string, string> = {
@@ -14,8 +15,6 @@ const iconSvgs: Record<string, string> = {
 
 const Services: FC<LayoutProps> = (props) => {
   const { content, themeSettings } = props;
-  const primaryColor = themeSettings.primary_color ?? '#10B981';
-  const navColor = themeSettings.nav_color ?? '#0B1222';
   const items: Content[] = content.fields.items ?? [];
   const t = themeSettings._t ?? ((key: string) => key);
 
@@ -25,15 +24,15 @@ const Services: FC<LayoutProps> = (props) => {
   return (
     <Base {...props}>
       {/* Hero — strong first impression (halo effect) */}
-      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: navColor }}>
+      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: token.navy }}>
         <div class="grid-pattern pointer-events-none absolute inset-0" />
-        <div class="blob blob-lg" style={{ top: '-20%', right: '-5%', background: `${primaryColor}12` }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 70%, ${primaryColor}12 0%, transparent 50%)` }} />
+        <div class="blob blob-lg" style={{ top: '-20%', right: '-5%', background: `${alpha(token.primary, 7)}` }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 70%, ${alpha(token.primary, 7)} 0%, transparent 50%)` }} />
         <div class="relative mx-auto max-w-7xl px-6">
           <p class="reveal-sub mb-5 text-xs font-semibold uppercase tracking-[0.25em] text-gray-400">{t('services.hero_label')}</p>
           <h1 class="reveal-heading max-w-4xl text-4xl font-extrabold tracking-[-0.04em] leading-[1.05] sm:text-5xl lg:text-6xl">
             End-to-end{' '}
-            <em class="not-italic" style={{ background: `linear-gradient(135deg, ${primaryColor}, #60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>engineering</em>{' '}
+            <em class="not-italic" style={{ background: `linear-gradient(135deg, ${token.primary}, #60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>engineering</em>{' '}
             services
           </h1>
           <p class="reveal-sub mt-6 max-w-2xl text-lg leading-relaxed text-gray-300/80" style={{ animationDelay: '0.3s' }}>
@@ -72,7 +71,7 @@ const Services: FC<LayoutProps> = (props) => {
               <div class="relative flex flex-col justify-center p-10 lg:p-14">
                 <div
                   class="mb-6 flex h-14 w-14 items-center justify-center rounded-2xl"
-                  style={{ backgroundColor: `${primaryColor}12`, color: primaryColor }}
+                  style={{ backgroundColor: `${alpha(token.primary, 7)}`, color: token.primary }}
                   dangerouslySetInnerHTML={{ __html: iconSvgs[featured.fields?.icon] ?? iconSvgs.code }}
                 />
                 <h2 class="text-2xl font-bold tracking-[-0.03em] text-slate-900 lg:text-3xl">
@@ -85,25 +84,25 @@ const Services: FC<LayoutProps> = (props) => {
                   <div class="mt-8 grid grid-cols-3 gap-6 border-t border-gray-100 pt-8">
                     {(featured.fields.hero_stats as Array<{ value: string; label: string }>).map((stat) => (
                       <div>
-                        <div class="text-xl font-extrabold" style={{ color: primaryColor }}>{stat.value}</div>
+                        <div class="text-xl font-extrabold" style={{ color: token.primary }}>{stat.value}</div>
                         <div class="mt-0.5 text-xs text-slate-400">{stat.label}</div>
                       </div>
                     ))}
                   </div>
                 )}
-                <div class="mt-8 flex items-center gap-2 text-sm font-semibold" style={{ color: primaryColor }}>
+                <div class="mt-8 flex items-center gap-2 text-sm font-semibold" style={{ color: token.primary }}>
                   Explore service
                   <span class="transition-transform duration-300 group-hover:translate-x-2">&rarr;</span>
                 </div>
               </div>
-              <div class="relative hidden overflow-hidden lg:block" style={{ backgroundColor: `${navColor}08` }}>
+              <div class="relative hidden overflow-hidden lg:block" style={{ backgroundColor: `${alpha(token.navy, 3)}` }}>
                 <div class="absolute inset-0 grid-pattern opacity-40" />
-                <div class="absolute inset-0" style={{ background: `radial-gradient(circle at 50% 50%, ${primaryColor}15 0%, transparent 70%)` }} />
+                <div class="absolute inset-0" style={{ background: `radial-gradient(circle at 50% 50%, ${alpha(token.primary, 8)} 0%, transparent 70%)` }} />
                 <div class="flex h-full items-center justify-center">
                   <div class="text-slate-200/20" style={{ transform: 'scale(6)' }} dangerouslySetInnerHTML={{ __html: iconSvgs[featured.fields?.icon] ?? iconSvgs.code }} />
                 </div>
               </div>
-              <div class="absolute bottom-0 left-0 h-1 w-0 transition-all duration-700 group-hover:w-full" style={{ backgroundColor: primaryColor }} />
+              <div class="absolute bottom-0 left-0 h-1 w-0 transition-all duration-700 group-hover:w-full" style={{ backgroundColor: token.primary }} />
             </a>
           </div>
         </section>
@@ -115,11 +114,11 @@ const Services: FC<LayoutProps> = (props) => {
           <div class="mx-auto max-w-7xl px-6">
             <div class="mb-14 max-w-2xl">
               <div class="mb-4 flex items-center gap-3">
-                <div class="h-1 w-8 rounded" style={{ backgroundColor: primaryColor }} />
+                <div class="h-1 w-8 rounded" style={{ backgroundColor: token.primary }} />
                 <span class="text-xs font-semibold uppercase tracking-[0.15em] text-slate-400">{t('services.all_services')}</span>
               </div>
               <h2 class="text-3xl font-bold tracking-[-0.03em] text-slate-900">
-                Every capability you need, <em class="not-italic" style={{ color: primaryColor }}>under one roof</em>
+                Every capability you need, <em class="not-italic" style={{ color: token.primary }}>under one roof</em>
               </h2>
             </div>
 
@@ -131,7 +130,7 @@ const Services: FC<LayoutProps> = (props) => {
                 >
                   <div
                     class="mb-5 flex h-12 w-12 items-center justify-center rounded-xl transition-all duration-300 group-hover:scale-110"
-                    style={{ backgroundColor: `${primaryColor}10`, color: primaryColor }}
+                    style={{ backgroundColor: `${alpha(token.primary, 6)}`, color: token.primary }}
                     dangerouslySetInnerHTML={{ __html: iconSvgs[item.fields?.icon] ?? iconSvgs.code }}
                   />
                   <h3 class="text-lg font-bold tracking-[-0.02em] text-slate-900">
@@ -144,16 +143,16 @@ const Services: FC<LayoutProps> = (props) => {
                     <div class="mt-6 flex gap-6 border-t border-gray-50 pt-5">
                       {(item.fields.hero_stats as Array<{ value: string; label: string }>).slice(0, 2).map((stat) => (
                         <div>
-                          <div class="text-sm font-extrabold" style={{ color: primaryColor }}>{stat.value}</div>
+                          <div class="text-sm font-extrabold" style={{ color: token.primary }}>{stat.value}</div>
                           <div class="text-[10px] text-slate-400">{stat.label}</div>
                         </div>
                       ))}
                     </div>
                   )}
-                  <div class="mt-5 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100" style={{ color: primaryColor }}>
+                  <div class="mt-5 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100" style={{ color: token.primary }}>
                     Learn more <span class="transition-transform duration-200 group-hover:translate-x-1">&rarr;</span>
                   </div>
-                  <div class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full" style={{ backgroundColor: primaryColor }} />
+                  <div class="absolute bottom-0 left-0 h-0.5 w-0 transition-all duration-500 group-hover:w-full" style={{ backgroundColor: token.primary }} />
                 </a>
               ))}
             </div>
@@ -167,7 +166,7 @@ const Services: FC<LayoutProps> = (props) => {
           <div class="mb-16 text-center">
             <p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-slate-400">{t('services.how_we_work')}</p>
             <h2 class="text-3xl font-bold tracking-[-0.03em] text-slate-900 sm:text-4xl">
-              From first call to <em class="not-italic" style={{ color: primaryColor }}>production</em>
+              From first call to <em class="not-italic" style={{ color: token.primary }}>production</em>
             </h2>
             <p class="mx-auto mt-4 max-w-xl text-base text-slate-500">
               Every engagement follows a proven methodology refined across 200+ enterprise projects.
@@ -181,12 +180,12 @@ const Services: FC<LayoutProps> = (props) => {
               { step: '04', title: 'Scale', desc: '24/7 monitoring, optimization, and continuous improvement. Your systems grow as you grow.' },
             ].map((phase) => (
               <div class="group relative bg-white p-8 transition-all duration-300 hover:bg-slate-50">
-                <div class="mb-4 text-3xl font-extrabold tracking-tighter" style={{ color: `${primaryColor}30` }}>
+                <div class="mb-4 text-3xl font-extrabold tracking-tighter" style={{ color: `${alpha(token.primary, 19)}` }}>
                   {phase.step}
                 </div>
                 <h3 class="text-base font-bold text-slate-900">{phase.title}</h3>
                 <p class="mt-2 text-sm leading-relaxed text-slate-500">{phase.desc}</p>
-                <div class="absolute top-0 left-0 h-1 w-0 transition-all duration-500 group-hover:w-full" style={{ backgroundColor: primaryColor }} />
+                <div class="absolute top-0 left-0 h-1 w-0 transition-all duration-500 group-hover:w-full" style={{ backgroundColor: token.primary }} />
               </div>
             ))}
           </div>
@@ -194,17 +193,17 @@ const Services: FC<LayoutProps> = (props) => {
       </section>
 
       {/* CTA — strong ending (peak-end rule) */}
-      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: navColor }}>
+      <section class="relative overflow-hidden py-28 text-white" style={{ backgroundColor: token.navy }}>
         <div class="grid-pattern pointer-events-none absolute inset-0" />
-        <div class="blob blob-sm" style={{ bottom: '-10%', right: '10%', background: `${primaryColor}10`, animationDelay: '-4s' }} />
-        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${primaryColor}10 0%, transparent 60%)` }} />
+        <div class="blob blob-sm" style={{ bottom: '-10%', right: '10%', background: `${alpha(token.primary, 6)}`, animationDelay: '-4s' }} />
+        <div class="pointer-events-none absolute inset-0" style={{ background: `radial-gradient(ellipse at 50% 50%, ${alpha(token.primary, 6)} 0%, transparent 60%)` }} />
         <div class="relative mx-auto max-w-7xl px-6">
           <div class="grid items-center gap-12 lg:grid-cols-5">
             <div class="lg:col-span-3">
               <p class="reveal-sub mb-4 text-xs font-semibold uppercase tracking-[0.25em] text-gray-400">{t('services.lets_talk')}</p>
               <h2 class="reveal-heading text-3xl font-bold tracking-[-0.03em] sm:text-4xl lg:text-5xl">
                 Ready to{' '}
-                <em class="not-italic" style={{ background: `linear-gradient(135deg, ${primaryColor}, #60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>transform</em>{' '}
+                <em class="not-italic" style={{ background: `linear-gradient(135deg, ${token.primary}, #60a5fa)`, WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>transform</em>{' '}
                 your technology?
               </h2>
               <p class="reveal-sub mt-5 max-w-lg text-lg text-gray-300/90" style={{ animationDelay: '0.2s' }}>
@@ -215,7 +214,7 @@ const Services: FC<LayoutProps> = (props) => {
               <a
                 href="/contact"
                 class="inline-block rounded-xl px-8 py-4 text-center text-sm font-semibold text-white shadow-lg transition-all duration-300 hover:shadow-xl hover:brightness-110 hover:no-underline"
-                style={{ backgroundColor: primaryColor }}
+                style={{ backgroundColor: token.primary }}
               >
                 Start a Conversation
               </a>
