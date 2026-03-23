@@ -12,7 +12,7 @@ import type {
 const DEFAULT_SITE_CONFIG: SiteConfig = {
   site_name: 'Barka Site',
   base_url: 'http://localhost:3000',
-  theme: 'starter',
+  theme: 'base',
 };
 
 const DEFAULT_SECTION_SETTINGS: Record<string, FieldDefinition> = {

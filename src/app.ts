@@ -62,7 +62,7 @@ export function createApp(options: {
   });
 
   const siteConfig = loadSiteConfig(path.resolve(options.configDir));
-  const themeName = siteConfig.theme ?? 'starter';
+  const themeName = siteConfig.theme ?? 'base';
   const themesDir = path.resolve(options.themesDir);
   const themeStaticRoot = path.resolve(themesDir, themeName, 'static');
   const publicRoot = path.resolve(options.publicDir);

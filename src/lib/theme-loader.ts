@@ -4,7 +4,7 @@ import yaml from 'js-yaml';
 import type { ThemeConfig, ThemeResolver } from './theme-types.js';
 import { getPackageRoot } from './paths.js';
 
-const STARTER_THEME = 'starter';
+const STARTER_THEME = 'base';
 
 const BUILTIN_THEME_DIR = path.resolve(getPackageRoot(), 'src', 'built-in-theme');
 

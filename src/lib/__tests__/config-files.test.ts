@@ -24,7 +24,7 @@ describe('loadSiteConfig', () => {
 
     expect(config.site_name).toBe('Barka Site');
     expect(config.base_url).toBe('http://localhost:3000');
-    expect(config.theme).toBe('starter');
+    expect(config.theme).toBe('base');
   });
 
   it('loads and merges with defaults', () => {

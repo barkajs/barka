@@ -17,14 +17,14 @@ function esc(str: string): string {
 function loadSettings(configDir: string): SiteConfig {
   const filePath = path.join(configDir, 'settings.yaml');
   if (!fs.existsSync(filePath)) {
-    return { site_name: 'Barka Site', base_url: 'http://localhost:3000', theme: 'starter' };
+    return { site_name: 'Barka Site', base_url: 'http://localhost:3000', theme: 'base' };
   }
   const raw = fs.readFileSync(filePath, 'utf-8');
   const data = yaml.load(raw) as Partial<SiteConfig> | null;
   return {
     site_name: 'Barka Site',
     base_url: 'http://localhost:3000',
-    theme: 'starter',
+    theme: 'base',
     ...data,
   };
 }

@@ -101,7 +101,7 @@ export async function runInit(opts: InitOptions): Promise<void> {
 
   console.log(`\n  \x1b[1m\x1b[35m⬡ Barka\x1b[0m init\n`);
   console.log(`  \x1b[2m➜\x1b[0m  Starter: \x1b[36m${config.label}\x1b[0m`);
-  console.log(`  \x1b[2m➜\x1b[0m  Theme:   \x1b[36m${config.theme ?? 'starter'}\x1b[0m`);
+  console.log(`  \x1b[2m➜\x1b[0m  Theme:   \x1b[36m${config.theme ?? 'base'}\x1b[0m`);
   console.log();
 
   let totalFiles = 0;

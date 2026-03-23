@@ -93,7 +93,7 @@ export async function runBuild(opts: BuildOptions): Promise<void> {
 
   // --- Set up theme engine (same as app.ts) --------------------------------
 
-  const themeName = siteConfig.theme ?? 'starter';
+  const themeName = siteConfig.theme ?? 'base';
   const themesDir = path.resolve(opts.themesDir);
   const themeResolver = createThemeResolver(themesDir, themeName);
   const themeConfig = themeResolver.getConfig();

@@ -2,7 +2,7 @@ name: lokatech
 label: "LokaTech Theme"
 description: "Premium enterprise theme inspired by Nodion. Dark navy + green accent."
 version: "1.0.0"
-base: starter
+base: base
 settings:
   primary_color:
     type: color

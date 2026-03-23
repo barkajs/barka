@@ -8,6 +8,7 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 
 - NEVER delete or overwrite content/, config/, themes/ — USER-OWNED directories
 - NEVER modify starters/ without syncing changes to ALL starters (lokatech + kadoservices + blank)
+- NEVER modify starters/*/themes/base/ without syncing ALL 3 copies — they MUST be identical
 - NEVER hardcode language prefixes (/pl/, /de/) in theme components — use _url() and _t()
 - NEVER hardcode colors in theme components — use `token.*` from `lib/tokens.ts`, alpha via `alpha(token.*, N)`
 - NEVER commit apps/smoke-crm/ — temporary test fixture
@@ -17,7 +18,7 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 
 ## Architecture decisions (settled — do not re-litigate)
 
-- Theme resolution order: active theme → base theme → starter → built-in fallback
+- Theme resolution order: active theme → base theme (`themes/base/`) → built-in fallback
 - ALL section components use _url() for href links, _t() for UI text (hero, cta, features, blog-listing, text-with-image, etc.)
 - init --force cleans content/, config/, themes/ before copying
 - barka build must mirror app.ts rendering pipeline exactly

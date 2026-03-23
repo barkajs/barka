@@ -2,7 +2,7 @@ name: kadoservices
 label: "KadoServices Theme"
 description: "Premium staffing theme. Deep plum-charcoal + warm amber accent."
 version: "1.0.0"
-base: starter
+base: base
 settings:
   primary_color:
     type: color

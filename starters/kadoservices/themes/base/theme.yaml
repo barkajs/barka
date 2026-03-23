@@ -1,6 +1,6 @@
-name: starter
-label: "Starter Theme"
-description: "Clean, minimal theme. The default starting point for Barka sites."
+name: base
+label: "Base Theme"
+description: "Clean, minimal base theme. Inherited by premium themes via base: base."
 version: "1.0.0"
 settings:
   primary_color:
