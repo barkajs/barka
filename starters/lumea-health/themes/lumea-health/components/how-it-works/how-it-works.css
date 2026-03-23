@@ -1,0 +1,25 @@
+/* How it works steps */
+.mv-step-connector {
+  position: absolute;
+  top: 2rem;
+  left: calc(50% + 2rem);
+  width: calc(100% - 4rem);
+  height: 2px;
+  background: var(--color-border);
+}
+
+.mv-step-number {
+  width: 4rem;
+  height: 4rem;
+  border-radius: 50%;
+  background: var(--color-primary);
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  margin: 0 auto 1.25rem;
+  position: relative;
+  z-index: 1;
+}

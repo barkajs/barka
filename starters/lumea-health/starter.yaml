@@ -1,0 +1,15 @@
+name: lumea-health
+label: "Lumea Health — Healthcare Demo"
+description: >
+  Full demo site for a fictional private healthcare network.
+  Includes 15 services, 6 clinics, 6 doctors, 6 articles, pages,
+  and a landing page with 8 sections.
+  Ships with the premium Lumea Health theme (sage green + coral).
+theme: lumea-health
+copies:
+  - from: content/
+    to: content/
+  - from: config/
+    to: config/
+  - from: themes/
+    to: themes/

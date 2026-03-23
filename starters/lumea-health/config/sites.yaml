@@ -1,0 +1,7 @@
+sites:
+  main:
+    label: "Lumea Health"
+    domain: "lumeahealth.pl"
+    localhost: "lumea.localhost"
+    default_lang: en
+    languages: [en, pl]

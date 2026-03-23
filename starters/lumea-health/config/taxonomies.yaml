@@ -1,0 +1,19 @@
+specialty_category:
+  label: Specialty Category
+  terms:
+    - cardiology
+    - dermatology
+    - orthopedics
+    - gynecology
+    - pediatrics
+    - ophthalmology
+    - neurology
+    - endocrinology
+
+article_category:
+  label: Article Category
+  terms:
+    - prevention
+    - wellness
+    - medical-news
+    - patient-stories

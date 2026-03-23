@@ -1,0 +1,9 @@
+label: Appointment Booking Form
+icon: calendar
+fields:
+  heading:
+    type: text
+    label: Heading
+  subheading:
+    type: textarea
+    label: Subheading

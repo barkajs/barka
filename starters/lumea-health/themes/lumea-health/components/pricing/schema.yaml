@@ -1,0 +1,44 @@
+label: Pricing
+icon: credit-card
+description: "Pricing plans grid with features, highlighted plan, and CTAs."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  subheading:
+    type: text
+    label: Subheading
+  plans:
+    type: repeater
+    label: Plans
+    fields:
+      name:
+        type: text
+        label: Plan Name
+        required: true
+      price:
+        type: text
+        label: Price
+        required: true
+      period:
+        type: text
+        label: Period
+        default: "/month"
+      description:
+        type: text
+        label: Description
+      features:
+        type: textarea
+        label: "Features (one per line)"
+      highlighted:
+        type: boolean
+        label: Highlighted
+        default: false
+      cta_text:
+        type: text
+        label: Button Text
+        default: "Choose Plan"
+      cta_url:
+        type: text
+        label: Button URL

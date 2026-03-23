@@ -1,0 +1,18 @@
+label: Contact Form
+icon: mail
+description: "Contact form."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  description:
+    type: textarea
+    label: Description
+  action_url:
+    type: text
+    label: Form Action URL
+  success_message:
+    type: text
+    label: Success Message
+    default: "Thank you! We'll be in touch."

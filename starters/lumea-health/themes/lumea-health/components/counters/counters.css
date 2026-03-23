@@ -1,0 +1,7 @@
+/* Counter animation placeholder */
+.mv-counter-value {
+  font-family: var(--font-heading);
+  font-size: 3rem;
+  color: var(--color-primary);
+  line-height: 1;
+}

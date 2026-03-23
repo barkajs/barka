@@ -1,0 +1,52 @@
+name: lumea-health
+label: "Lumea Health Theme"
+description: "Warm premium healthcare theme. Sage green + cream + coral accents. Serif headings."
+version: "1.0.0"
+base: base
+settings:
+  primary_color:
+    type: color
+    label: "Primary Color (Sage Green)"
+    default: "#4A7C59"
+  accent_color:
+    type: color
+    label: "Accent Color (Coral)"
+    default: "#E8735A"
+  bg_color:
+    type: color
+    label: "Background (Cream)"
+    default: "#FFF8F0"
+  text_color:
+    type: color
+    label: "Text (Charcoal)"
+    default: "#2D2D2D"
+  logo:
+    type: media
+    label: "Site Logo"
+  footer_text:
+    type: text
+    label: "Footer Tagline"
+    default: "Your health, our mission."
+design_tokens:
+  colors:
+    primary: "{{primary_color}}"
+    primary_dark: "#3D6A4B"
+    primary_light: "#E8F0EB"
+    accent: "{{accent_color}}"
+    accent_light: "#FDE8E4"
+    cream: "{{bg_color}}"
+    text: "{{text_color}}"
+    text_light: "#FFFFFF"
+    muted: "#6B7280"
+    border: "#E5DFD6"
+    surface: "#FFF8F0"
+    navy: "#2D2D2D"
+    navy_light: "#3D3D3D"
+  fonts:
+    heading: "'DM Serif Display', Georgia, serif"
+    sans: "'Source Sans 3', 'Source Sans Pro', ui-sans-serif, system-ui, -apple-system, sans-serif"
+  font_imports:
+    - "https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&display=swap"
+  transitions:
+    base: "0.3s cubic-bezier(0.4, 0, 0.2, 1)"
+    slow: "0.5s cubic-bezier(0.4, 0, 0.2, 1)"

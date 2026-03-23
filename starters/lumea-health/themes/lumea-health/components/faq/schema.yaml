@@ -1,0 +1,20 @@
+label: FAQ
+icon: help-circle
+description: "Question and answer accordion."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  items:
+    type: repeater
+    label: Questions
+    fields:
+      question:
+        type: text
+        label: Question
+        required: true
+      answer:
+        type: textarea
+        label: Answer
+        required: true

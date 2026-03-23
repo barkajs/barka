@@ -1,0 +1,26 @@
+label: Testimonials
+icon: quote
+description: "Featured testimonial with side quotes and author details."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  items:
+    type: repeater
+    label: Testimonials
+    fields:
+      quote:
+        type: textarea
+        label: Quote
+        required: true
+      author:
+        type: text
+        label: Author Name
+        required: true
+      role:
+        type: text
+        label: Author Role
+      avatar:
+        type: media
+        label: Avatar

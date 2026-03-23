@@ -1,0 +1,120 @@
+article:
+  label: Article
+  path_pattern: "/blog/{slug}"
+  fields:
+    summary:
+      type: textarea
+      label: Summary
+      required: false
+    featured_image:
+      type: media
+      label: Featured Image
+    category:
+      type: select
+      label: Category
+      options:
+        - prevention
+        - wellness
+        - medical-news
+        - patient-stories
+    tags:
+      type: text
+      label: Tags
+
+page:
+  label: Page
+  path_pattern: "/{slug}"
+  fields:
+    subtitle:
+      type: text
+      label: Subtitle
+    featured_image:
+      type: media
+      label: Featured Image
+
+landing_page:
+  label: Landing Page
+  path_pattern: "/{slug}"
+  fields:
+    subtitle:
+      type: text
+      label: Subtitle
+    cta_text:
+      type: text
+      label: CTA Button Text
+    cta_url:
+      type: text
+      label: CTA Button URL
+
+service:
+  label: Service
+  path_pattern: "/services/{slug}"
+  fields:
+    short_description:
+      type: textarea
+      label: Short Description
+      required: true
+    icon:
+      type: text
+      label: Icon Name
+    related_services:
+      type: text
+      label: Related Services
+
+person:
+  label: Person
+  path_pattern: "/doctors/{slug}"
+  fields:
+    role:
+      type: text
+      label: Role / Title
+      required: true
+    photo:
+      type: media
+      label: Photo
+    department:
+      type: text
+      label: Department
+    specialization:
+      type: text
+      label: Specialization
+    clinics:
+      type: text
+      label: Clinics
+    experience_years:
+      type: number
+      label: Years of Experience
+    education:
+      type: textarea
+      label: Education
+
+location:
+  label: Location
+  path_pattern: "/clinics/{slug}"
+  fields:
+    city:
+      type: text
+      label: City
+      required: true
+    address:
+      type: text
+      label: Address
+    country:
+      type: text
+      label: Country
+      required: true
+    photo:
+      type: media
+      label: Clinic Photo
+    phone:
+      type: text
+      label: Phone
+    hours:
+      type: text
+      label: Opening Hours
+    specializations:
+      type: text
+      label: Specializations
+    coordinates:
+      type: text
+      label: "Coordinates (lat,lng)"

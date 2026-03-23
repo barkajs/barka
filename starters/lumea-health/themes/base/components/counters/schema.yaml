@@ -1,0 +1,23 @@
+label: Counters
+icon: hash
+description: "Animated counter stats with numbers, labels, and optional suffixes."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  items:
+    type: repeater
+    label: Counter Items
+    fields:
+      number:
+        type: text
+        label: Number
+        required: true
+      label:
+        type: text
+        label: Label
+        required: true
+      suffix:
+        type: text
+        label: Suffix

@@ -1,0 +1,139 @@
+uuid: "mv-homepage-pl-001"
+title: "Lumea Health — Prywatna Opieka Zdrowotna"
+type: landing_page
+status: published
+langcode: pl
+slug: homepage
+date: 2026-03-20
+seo:
+  title: "Lumea Health — Prywatna Opieka Zdrowotna w Polsce"
+  description: "Lumea Health — sieć 6 prywatnych klinik w Polsce. Doświadczeni lekarze, nowoczesne placówki i podejście stawiające pacjenta na pierwszym miejscu."
+
+sections:
+  - type: hero
+    heading: "Twoje zdrowie zasługuje na najlepszą opiekę"
+    subheading: "6 klinik w całej Polsce. 60+ lekarzy specjalistów. Jedna misja — wyjątkowa opieka zdrowotna."
+    show_search: true
+    cta_text: "Umów Wizytę"
+    cta_url: "/contact"
+    cta_secondary_text: "Nasze Specjalizacje"
+    cta_secondary_url: "/services"
+    settings:
+      background: primary
+      spacing: xlarge
+      width: wide
+
+  - type: features
+    heading: "Nasze Specjalizacje"
+    subheading: "Kompleksowa opieka w 8 dziedzinach medycyny"
+    columns: "4"
+    items:
+      - title: "Kardiologia"
+        description: "Diagnostyka i profilaktyka chorób serca"
+        icon: heart
+        href: "/services/cardiology"
+      - title: "Dermatologia"
+        description: "Badania przesiewowe, leczenie trądziku i zabiegi estetyczne"
+        icon: shield
+        href: "/services/dermatology"
+      - title: "Ortopedia"
+        description: "Bóle stawów, urazy sportowe i rehabilitacja"
+        icon: bone
+        href: "/services/orthopedics"
+      - title: "Ginekologia"
+        description: "Zdrowie kobiet — od badań profilaktycznych po opiekę prenatalną"
+        icon: users
+        href: "/services/gynecology"
+      - title: "Pediatria"
+        description: "Opieka nad dziećmi od noworodków po nastolatków"
+        icon: baby
+        href: "/services/pediatrics"
+      - title: "Okulistyka"
+        description: "Kompleksowe badania oczu i korekcja wzroku"
+        icon: eye
+        href: "/services/ophthalmology"
+      - title: "Neurologia"
+        description: "Bóle głowy, padaczka i zaburzenia neurologiczne"
+        icon: brain
+        href: "/services/neurology"
+      - title: "Endokrynologia"
+        description: "Cukrzyca, tarczyca i zdrowie hormonalne"
+        icon: thermometer
+        href: "/services/endocrinology"
+    settings:
+      spacing: large
+      background: light
+
+  - type: how_it_works
+    heading: "Jak to działa"
+    subheading: "Rozpoczęcie współpracy z Lumea Health jest proste"
+    items:
+      - title: "Zarezerwuj online lub zadzwoń"
+        description: "Wybierz specjalistę, preferowaną klinikę i termin. Wiele usług dostępnych tego samego dnia."
+      - title: "Odwiedź lekarza"
+        description: "Minimum 30-minutowe konsultacje zapewniają dokładną opiekę. Bez pośpiechu, bez czekania."
+      - title: "Realizuj plan leczenia"
+        description: "Recepty, wyniki badań i wizyty kontrolne dostępne w portalu pacjenta. Zawsze jesteśmy do dyspozycji."
+    settings:
+      spacing: large
+      background: light
+
+  - type: counters
+    items:
+      - number: "6"
+        label: "Klinik w Polsce"
+      - number: "60"
+        suffix: "+"
+        label: "Lekarzy Specjalistów"
+      - number: "150"
+        suffix: "tys.+"
+        label: "Wizyt Rocznie"
+      - number: "98"
+        suffix: "%"
+        label: "Satysfakcji Pacjentów"
+    settings:
+      spacing: large
+      background: primary
+
+  - type: testimonials
+    heading: "Co mówią nasi pacjenci"
+    items:
+      - quote: "Dr Kowalska w Lumea Health Warszawa była niesamowicie dokładna. Spędziła ze mną 40 minut, wyjaśniła każdy wynik badania i sprawiła, że czułam się zupełnie swobodnie."
+        author: "Magdalena Wiśniewska"
+        role: "Pacjentka, Warszawa Centrum"
+        rating: 5
+      - quote: "Przyprowadziłem 3-letniego syna na szczepienia i byłem pod wrażeniem, jak przyjazna dzieciom jest klinika. Dr Kamińska ma dar do dzieci — syn nawet nie zapłakał."
+        author: "Paweł Kowalczyk"
+        role: "Rodzic, Warszawa Ursynów"
+        rating: 5
+      - quote: "Telemedycyna uratowała mnie od wizyty w klinice, gdy potrzebowałam odnowienia recepty. Łatwa rezerwacja, świetna jakość wideo, a e-recepta była w aptece w kilka minut."
+        author: "Anna Jabłońska"
+        role: "Pacjentka, Telemedycyna"
+        rating: 5
+    settings:
+      spacing: large
+      background: light
+
+  - type: text_with_image
+    heading: "Nowoczesne kliniki, ciepła atmosfera"
+    body: "Nasze kliniki są zaprojektowane tak, by różnić się od typowego gabinetu lekarskiego. Naturalne materiały, ciepłe oświetlenie i wygodne poczekalnie tworzą uspokajającą atmosferę od momentu przekroczenia progu."
+    image: "https://placehold.co/600x400/4A7C59/FFFFFF?text=Klinika+Lumea+Health"
+    image_alt: "Wnętrze kliniki Lumea Health"
+    image_position: right
+    cta_text: "Znajdź klinikę"
+    cta_url: "/clinics"
+    settings:
+      spacing: large
+      background: light
+
+  - type: cta
+    eyebrow: "Gotowy, by zacząć?"
+    heading: "Umów wizytę już dziś"
+    description: "Niezależnie od tego, czy potrzebujesz rutynowego badania czy konsultacji specjalistycznej — Lumea Health jest tu dla Ciebie. Zadzwoń lub umów się online — większość wizyt dostępna w ciągu 48 godzin."
+    button_text: "Umów teraz"
+    button_url: "/contact"
+    secondary_text: "Zobacz cennik"
+    secondary_url: "/pricing"
+    settings:
+      background: dark
+      spacing: large

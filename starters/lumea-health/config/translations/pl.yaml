@@ -1,0 +1,53 @@
+# Polish UI translations
+
+# Navigation
+nav.specialties: "Specjalizacje"
+nav.services: "Usługi"
+nav.clinics: "Kliniki"
+nav.doctors: "Lekarze"
+nav.blog: "Blog"
+nav.about: "O nas"
+nav.contact: "Kontakt"
+nav.book_appointment: "Umów wizytę"
+
+# Specialties
+nav.cardiology: "Kardiologia"
+nav.dermatology: "Dermatologia"
+nav.orthopedics: "Ortopedia"
+nav.gynecology: "Ginekologia"
+nav.pediatrics: "Pediatria"
+nav.ophthalmology: "Okulistyka"
+nav.neurology: "Neurologia"
+nav.endocrinology: "Endokrynologia"
+
+# Services
+nav.primary_care: "Podstawowa opieka zdrowotna"
+nav.diagnostics: "Diagnostyka"
+nav.rehabilitation: "Rehabilitacja"
+nav.telemedicine: "Telemedycyna"
+nav.health_checkups: "Badania profilaktyczne"
+nav.occupational_medicine: "Medycyna pracy"
+nav.vaccinations: "Szczepienia"
+
+# Footer
+footer.specialties: "Specjalizacje"
+footer.company: "Firma"
+footer.patient_info: "Dla pacjenta"
+footer.about_us: "O nas"
+footer.our_clinics: "Nasze kliniki"
+footer.careers: "Kariera"
+footer.for_patients: "Strefa pacjenta"
+footer.faq: "FAQ"
+footer.pricing: "Cennik"
+footer.rights: "Wszelkie prawa zastrzeżone."
+
+# Mobile bottom nav
+mobile.home: "Start"
+mobile.specialties: "Specjalizacje"
+mobile.clinics: "Kliniki"
+mobile.doctors: "Lekarze"
+mobile.blog: "Blog"
+mobile.contact: "Kontakt"
+
+# Language
+lang.label: "Język"

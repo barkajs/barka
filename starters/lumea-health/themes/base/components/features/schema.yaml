@@ -1,0 +1,19 @@
+label: Features
+icon: grid
+description: "Grid of feature cards with icons, titles, and descriptions."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  subheading:
+    type: textarea
+    label: Subheading
+  columns:
+    type: select
+    label: Columns
+    options: ["2", "3", "4"]
+    default: "3"
+  items:
+    type: textarea
+    label: Feature Items (YAML)

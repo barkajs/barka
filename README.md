@@ -102,6 +102,7 @@ Based on answers, pick the best starter:
 |---------|----------|-------------|
 | `lokatech` | IT, software, consulting, digital agencies | Dark navy + emerald |
 | `kadoservices` | HR, staffing, recruitment, business services | Warm amber + deep plum |
+| `lumea-health` | Healthcare, clinics, medical centers, wellness | Sage green + coral, warm serif |
 | `blank` | Custom design, e-commerce, portfolio | Minimal base theme |
 
 > More starters coming. Pick the closest match and customize.
@@ -357,6 +358,7 @@ Starters are ready-made website templates for different industries. Each starter
 barka starters                       # list available starters
 barka init --starter lokatech        # enterprise IT company
 barka init --starter kadoservices    # staffing & HR company
+barka init --starter lumea-health    # healthcare clinic
 barka init --starter blank           # clean starting point
 ```
 
@@ -403,6 +405,28 @@ A complete website for a fictional staffing and HR services company. Warm amber 
 - **Theme**: 14 layouts, 15 SDC components, DM Sans + Source Sans 3 typography, pre-footer dual audience strip
 - **Languages**: EN + PL translations
 - **Use case**: Staffing agency, HR consulting, recruitment firm, outsourcing company
+
+### Lumea Health — Healthcare Demo
+
+A complete website for a fictional private healthcare network. Sage green + coral + cream theme with serif headings (DM Serif Display), warm professional design.
+
+> **Live demo:** [demo03.barka.dev](https://demo03.barka.dev)
+
+<table>
+<tr>
+<td><a href="https://demo03.barka.dev"><img src="docs/screenshots/demo03-lumea-health-homepage.png" alt="Lumea Health — Homepage" width="480" /></a></td>
+<td><a href="https://demo03.barka.dev/doctors"><img src="docs/screenshots/demo03-lumea-health-doctors.png" alt="Lumea Health — Doctors" width="480" /></a></td>
+</tr>
+<tr>
+<td align="center"><em>Homepage</em></td>
+<td align="center"><em>Doctors</em></td>
+</tr>
+</table>
+
+- **Content**: 51 files — 15 services, 6 clinics, 6 doctors, 6 articles, pages (about, contact, pricing, FAQ, careers), homepage with 8 sections
+- **Theme**: 8 layouts, 13 SDC components, DM Serif Display + Source Sans 3 typography, appointment form
+- **Languages**: EN + PL translations
+- **Use case**: Private clinic, hospital, medical center, wellness center, dental practice
 
 ### Blank — Clean Starting Point
 

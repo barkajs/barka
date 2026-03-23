@@ -1,0 +1,160 @@
+uuid: "mv-homepage-001"
+title: "Lumea Health — Premium Healthcare"
+type: landing_page
+status: published
+langcode: en
+slug: homepage
+date: 2026-03-20
+seo:
+  title: "Lumea Health — Premium Private Healthcare in Poland"
+  description: "Lumea Health is a network of 6 private healthcare clinics across Poland. Expert doctors, modern facilities, and a patient-first approach."
+
+sections:
+  - type: hero
+    heading: "Your health deserves the best care"
+    subheading: "6 clinics across Poland. 60+ specialist doctors. One mission — exceptional healthcare that puts you first."
+    show_search: true
+    cta_text: "Book an Appointment"
+    cta_url: "/contact"
+    cta_secondary_text: "View Our Specialties"
+    cta_secondary_url: "/services"
+    settings:
+      background: primary
+      spacing: xlarge
+      width: wide
+
+  - type: features
+    heading: "Our Specialties"
+    subheading: "Comprehensive care across 8 medical disciplines"
+    columns: "4"
+    items:
+      - title: "Cardiology"
+        description: "Heart health diagnostics and preventive care"
+        icon: heart
+        href: "/services/cardiology"
+      - title: "Dermatology"
+        description: "Skin cancer screening, acne, and aesthetic treatments"
+        icon: shield
+        href: "/services/dermatology"
+      - title: "Orthopedics"
+        description: "Joint pain, sports injuries, and rehabilitation"
+        icon: bone
+        href: "/services/orthopedics"
+      - title: "Gynecology"
+        description: "Women's health from screenings to prenatal care"
+        icon: users
+        href: "/services/gynecology"
+      - title: "Pediatrics"
+        description: "Expert care for newborns through adolescents"
+        icon: baby
+        href: "/services/pediatrics"
+      - title: "Ophthalmology"
+        description: "Complete eye exams and vision care"
+        icon: eye
+        href: "/services/ophthalmology"
+      - title: "Neurology"
+        description: "Headaches, epilepsy, and neurological disorders"
+        icon: brain
+        href: "/services/neurology"
+      - title: "Endocrinology"
+        description: "Diabetes, thyroid, and hormonal health"
+        icon: thermometer
+        href: "/services/endocrinology"
+    settings:
+      spacing: large
+      background: light
+
+  - type: how_it_works
+    heading: "How It Works"
+    subheading: "Getting started with Lumea Health is simple"
+    items:
+      - title: "Book Online or Call"
+        description: "Choose your specialist, preferred clinic, and appointment time. Same-day availability for many services."
+      - title: "Visit Your Doctor"
+        description: "30-minute minimum consultations ensure thorough care. No rushing, no waiting — your health deserves time."
+      - title: "Follow Your Care Plan"
+        description: "Access prescriptions, test results, and follow-ups through our patient portal. We're always here when you need us."
+    settings:
+      spacing: large
+      background: light
+
+  - type: counters
+    items:
+      - number: "6"
+        label: "Clinics Across Poland"
+      - number: "60"
+        suffix: "+"
+        label: "Specialist Doctors"
+      - number: "150"
+        suffix: "K+"
+        label: "Patient Visits Annually"
+      - number: "98"
+        suffix: "%"
+        label: "Patient Satisfaction"
+    settings:
+      spacing: large
+      background: primary
+
+  - type: testimonials
+    heading: "What Our Patients Say"
+    items:
+      - quote: "Dr. Kowalska at Lumea Health Warsaw was incredibly thorough. She spent 40 minutes with me, explained every test result, and made me feel completely at ease. This is what healthcare should be."
+        author: "Magdalena Wiśniewska"
+        role: "Patient, Warsaw Centrum"
+        rating: 5
+      - quote: "I brought my 3-year-old son for vaccinations and was impressed by how child-friendly the clinic is. Dr. Kamińska has a gift with children — he didn't cry once."
+        author: "Paweł Kowalczyk"
+        role: "Parent, Warsaw Ursynów"
+        rating: 5
+      - quote: "The telemedicine service saved me a trip to the clinic when I needed a prescription renewal. Easy to book, great video quality, and my e-prescription was at the pharmacy within minutes."
+        author: "Anna Jabłońska"
+        role: "Patient, Telemedicine"
+        rating: 5
+    settings:
+      spacing: large
+      background: light
+
+  - type: text_with_image
+    heading: "Modern Clinics, Warm Atmosphere"
+    body: "Our clinics are designed to feel different from the typical medical office. Natural materials, warm lighting, and comfortable waiting areas create a calming environment from the moment you walk in. Because healing starts with feeling welcome."
+    image: "https://placehold.co/600x400/4A7C59/FFFFFF?text=Lumea Health+Clinic"
+    image_alt: "Lumea Health clinic interior"
+    image_position: right
+    cta_text: "Find a Clinic Near You"
+    cta_url: "/clinics"
+    settings:
+      spacing: large
+      background: light
+
+  - type: blog_listing
+    heading: "Health & Wellness Blog"
+    items:
+      - title: "5 Simple Steps to Protect Your Heart Health"
+        url: "/blog/heart-health-prevention"
+        excerpt: "Cardiovascular disease remains the leading cause of death in Poland. Here are five evidence-based steps you can take today."
+        image: "https://placehold.co/400x250/4A7C59/FFFFFF?text=Heart+Health"
+        date: "Mar 15, 2026"
+      - title: "When to Get a Skin Cancer Screening"
+        url: "/blog/skin-cancer-screening"
+        excerpt: "Melanoma cases in Poland have doubled in the last 20 years. Learn the ABCDE rule and when to book an appointment."
+        image: "https://placehold.co/400x250/E8735A/FFFFFF?text=Skin+Screening"
+        date: "Mar 10, 2026"
+      - title: "Telemedicine: A Complete Patient Guide"
+        url: "/blog/telemedicine-guide"
+        excerpt: "Everything you need to know about using Lumea Health's telemedicine service — from booking to consultation."
+        image: "https://placehold.co/400x250/4A7C59/FFFFFF?text=Telemedicine"
+        date: "Mar 5, 2026"
+    settings:
+      spacing: large
+
+  - type: cta
+    eyebrow: "Ready to get started?"
+    heading: "Book your appointment today"
+    description: "Whether you need a routine check-up or specialist consultation, Lumea Health is here for you. Call us or book online — most appointments available within 48 hours."
+    button_text: "Book Now"
+    button_url: "/contact"
+    secondary_text: "View Pricing"
+    secondary_url: "/pricing"
+    settings:
+      background: dark
+      spacing: large
