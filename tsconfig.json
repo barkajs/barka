@@ -21,6 +21,6 @@
     },
     "types": ["node"]
   },
-  "include": ["src/**/*.ts", "src/**/*.tsx"],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "themes/**/*.tsx"],
   "exclude": ["node_modules", "dist", "src/**/*.test.ts", "src/**/__tests__/**"]
 }
