@@ -1,0 +1,53 @@
+# English UI translations
+
+# Navigation
+nav.specialties: "Specialties"
+nav.services: "Services"
+nav.clinics: "Clinics"
+nav.doctors: "Doctors"
+nav.blog: "Blog"
+nav.about: "About"
+nav.contact: "Contact"
+nav.book_appointment: "Book Appointment"
+
+# Specialties
+nav.cardiology: "Cardiology"
+nav.dermatology: "Dermatology"
+nav.orthopedics: "Orthopedics"
+nav.gynecology: "Gynecology"
+nav.pediatrics: "Pediatrics"
+nav.ophthalmology: "Ophthalmology"
+nav.neurology: "Neurology"
+nav.endocrinology: "Endocrinology"
+
+# Services
+nav.primary_care: "Primary Care"
+nav.diagnostics: "Diagnostics"
+nav.rehabilitation: "Rehabilitation"
+nav.telemedicine: "Telemedicine"
+nav.health_checkups: "Health Checkups"
+nav.occupational_medicine: "Occupational Medicine"
+nav.vaccinations: "Vaccinations"
+
+# Footer
+footer.specialties: "Specialties"
+footer.company: "Company"
+footer.patient_info: "Patient Info"
+footer.about_us: "About Us"
+footer.our_clinics: "Our Clinics"
+footer.careers: "Careers"
+footer.for_patients: "For Patients"
+footer.faq: "FAQ"
+footer.pricing: "Pricing"
+footer.rights: "All rights reserved."
+
+# Mobile bottom nav
+mobile.home: "Home"
+mobile.specialties: "Specialties"
+mobile.clinics: "Clinics"
+mobile.doctors: "Doctors"
+mobile.blog: "Blog"
+mobile.contact: "Contact"
+
+# Language
+lang.label: "Language"

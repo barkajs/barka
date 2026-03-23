@@ -1,0 +1,27 @@
+name: base
+label: "Base Theme"
+description: "Clean, minimal base theme. Inherited by premium themes via base: base."
+version: "1.0.0"
+settings:
+  primary_color:
+    type: color
+    label: "Primary Color"
+    default: "#2563eb"
+  logo:
+    type: media
+    label: "Site Logo"
+  footer_text:
+    type: text
+    label: "Footer Text"
+    default: "Powered by Barka CMS"
+design_tokens:
+  colors:
+    primary: "{{primary_color}}"
+    text: "#111827"
+    muted: "#6b7280"
+    border: "#e5e7eb"
+    surface: "#f9fafb"
+  fonts:
+    sans: "'Inter', ui-sans-serif, system-ui, -apple-system, sans-serif"
+  font_imports:
+    - "https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"

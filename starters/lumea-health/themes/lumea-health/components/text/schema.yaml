@@ -1,0 +1,12 @@
+label: Text
+icon: text
+description: "Rich text block with optional heading."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  body:
+    type: textarea
+    label: Body
+    required: true

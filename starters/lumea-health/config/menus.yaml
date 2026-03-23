@@ -1,0 +1,41 @@
+main:
+  - label: Specialties
+    url: /specialties
+    children:
+      - label: Cardiology
+        url: /specialties/cardiology
+      - label: Dermatology
+        url: /specialties/dermatology
+      - label: Orthopedics
+        url: /specialties/orthopedics
+      - label: Gynecology
+        url: /specialties/gynecology
+      - label: Pediatrics
+        url: /specialties/pediatrics
+      - label: Ophthalmology
+        url: /specialties/ophthalmology
+      - label: Neurology
+        url: /specialties/neurology
+      - label: Endocrinology
+        url: /specialties/endocrinology
+  - label: Services
+    url: /services
+    children:
+      - label: Primary Care
+        url: /services/primary-care
+      - label: Diagnostics
+        url: /services/diagnostics
+      - label: Rehabilitation
+        url: /services/rehabilitation
+      - label: Telemedicine
+        url: /services/telemedicine
+  - label: Our Clinics
+    url: /clinics
+  - label: Doctors
+    url: /doctors
+  - label: Blog
+    url: /blog
+  - label: About
+    url: /about
+  - label: Contact
+    url: /contact

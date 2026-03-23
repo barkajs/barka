@@ -1,0 +1,273 @@
+/* Lumea Health Theme — Global Styles */
+
+/* ── Fonts ── */
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+/* ── Base ── */
+:root {
+  --color-primary: #4A7C59;
+  --color-primary-dark: #3D6A4B;
+  --color-primary-light: #E8F0EB;
+  --color-accent: #E8735A;
+  --color-accent-light: #FDE8E4;
+  --color-cream: #FFF8F0;
+  --color-text: #2D2D2D;
+  --color-text-light: #FFFFFF;
+  --color-muted: #6B7280;
+  --color-border: #E5DFD6;
+  --color-surface: #FFF8F0;
+  --color-navy: #2D2D2D;
+  --color-navy-light: #3D3D3D;
+  --font-heading: 'DM Serif Display', Georgia, serif;
+  --font-sans: 'Source Sans 3', 'Source Sans Pro', ui-sans-serif, system-ui, -apple-system, sans-serif;
+}
+
+body {
+  font-family: var(--font-sans);
+  color: var(--color-text);
+  background-color: var(--color-cream);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-heading);
+  font-weight: 400;
+  letter-spacing: -0.01em;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ── Header ── */
+.mv-header {
+  background: rgba(255, 248, 240, 0.97);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mv-header a:hover {
+  text-decoration: none;
+}
+
+.mv-nav-link {
+  color: var(--color-text);
+  font-weight: 500;
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  transition: all 0.2s;
+  font-size: 0.9375rem;
+}
+
+.mv-nav-link:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+}
+
+/* Dropdown */
+.mv-dropdown {
+  position: relative;
+}
+
+.mv-dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 0.5rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s;
+  z-index: 50;
+}
+
+.mv-dropdown:hover .mv-dropdown-menu {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+.mv-dropdown-panel {
+  background: white;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  padding: 0.75rem;
+  min-width: 220px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.08);
+}
+
+.mv-dropdown-item {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 10px;
+  color: var(--color-text);
+  font-size: 0.875rem;
+  font-weight: 500;
+  transition: all 0.15s;
+}
+
+.mv-dropdown-item:hover {
+  background: var(--color-primary-light);
+  color: var(--color-primary);
+  text-decoration: none;
+}
+
+/* ── Cards ── */
+.mv-card {
+  background: white;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  transition: all 0.3s;
+  overflow: hidden;
+}
+
+.mv-card:hover {
+  box-shadow: 0 8px 30px rgba(0,0,0,0.08);
+  transform: translateY(-2px);
+}
+
+/* ── Buttons ── */
+.mv-btn-primary {
+  display: inline-block;
+  background: var(--color-primary);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  transition: all 0.2s;
+  border: none;
+  cursor: pointer;
+}
+
+.mv-btn-primary:hover {
+  background: var(--color-primary-dark);
+  text-decoration: none;
+  color: white;
+  box-shadow: 0 4px 16px rgba(74, 124, 89, 0.3);
+}
+
+.mv-btn-accent {
+  display: inline-block;
+  background: var(--color-accent);
+  color: white;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  transition: all 0.2s;
+}
+
+.mv-btn-accent:hover {
+  background: #D4624B;
+  text-decoration: none;
+  color: white;
+}
+
+.mv-btn-outline {
+  display: inline-block;
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  font-weight: 600;
+  padding: 0.65rem 1.5rem;
+  border-radius: 12px;
+  font-size: 0.9375rem;
+  transition: all 0.2s;
+  background: transparent;
+}
+
+.mv-btn-outline:hover {
+  background: var(--color-primary);
+  color: white;
+  text-decoration: none;
+}
+
+/* ── Section backgrounds ── */
+.mv-bg-cream { background: var(--color-cream); }
+.mv-bg-white { background: white; }
+.mv-bg-primary { background: var(--color-primary); }
+.mv-bg-dark { background: var(--color-navy); color: white; }
+
+/* ── FAQ ── */
+.mv-faq details {
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  margin-bottom: 0.75rem;
+  overflow: hidden;
+  background: white;
+}
+
+.mv-faq summary {
+  padding: 1.25rem 1.5rem;
+  cursor: pointer;
+  font-family: var(--font-heading);
+  font-size: 1.125rem;
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.mv-faq summary::-webkit-details-marker { display: none; }
+
+.mv-faq details[open] summary {
+  border-bottom: 1px solid var(--color-border);
+}
+
+.mv-faq .mv-faq-answer {
+  padding: 1.25rem 1.5rem;
+  color: var(--color-muted);
+  line-height: 1.7;
+}
+
+/* ── Stars ── */
+.mv-stars {
+  display: inline-flex;
+  gap: 2px;
+  color: #F59E0B;
+}
+
+/* ── Mobile menu ── */
+#mv-mobile-menu {
+  display: none;
+}
+
+#mv-mobile-menu.open {
+  display: flex;
+}
+
+/* ── Lang switcher ── */
+.mv-lang-switcher {
+  position: relative;
+}
+
+.mv-lang-dropdown {
+  position: absolute;
+  right: 0;
+  top: 100%;
+  padding-top: 0.25rem;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.2s;
+}
+
+.mv-lang-switcher:hover .mv-lang-dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+}
+
+/* ── Prose ── */
+.mv-prose h2 { font-size: 1.75rem; margin-top: 2rem; margin-bottom: 1rem; }
+.mv-prose h3 { font-size: 1.35rem; margin-top: 1.5rem; margin-bottom: 0.75rem; }
+.mv-prose p { margin-bottom: 1rem; line-height: 1.8; color: var(--color-muted); }
+.mv-prose ul, .mv-prose ol { margin-bottom: 1rem; padding-left: 1.5rem; }
+.mv-prose li { margin-bottom: 0.5rem; line-height: 1.7; color: var(--color-muted); }
+.mv-prose strong { color: var(--color-text); }

@@ -29,7 +29,7 @@
     "langcode_filter_on_listings": true
   },
   "starters": {
-    "available": ["lokatech", "kadoservices", "blank"],
+    "available": ["lokatech", "kadoservices", "lumea-health", "blank"],
     "init_force_cleans_dirs": true,
     "after_init_user_owns": ["content/", "config/", "themes/"]
   },

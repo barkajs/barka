@@ -1,0 +1,351 @@
+_defaults:
+  settings:
+    background:
+      type: select
+      label: Background
+      options: [light, dark, primary, custom]
+      default: light
+    background_color:
+      type: text
+      label: Background Color
+    background_image:
+      type: media
+      label: Background Image
+    spacing:
+      type: select
+      label: Spacing
+      options: [none, small, medium, large, xlarge]
+      default: medium
+    width:
+      type: select
+      label: Width
+      options: [contained, wide, full]
+      default: contained
+    css_class:
+      type: text
+      label: CSS Class
+    anchor_id:
+      type: text
+      label: Anchor ID
+    hidden:
+      type: boolean
+      label: Hidden
+      default: false
+
+hero:
+  label: Hero
+  icon: star
+  fields:
+    heading:
+      type: text
+      label: Heading
+      required: true
+    subheading:
+      type: textarea
+      label: Subheading
+    image:
+      type: media
+      label: Background Image
+    show_search:
+      type: boolean
+      label: Show Search Bar
+      default: false
+    cta_text:
+      type: text
+      label: CTA Button Text
+    cta_url:
+      type: text
+      label: CTA Button URL
+    cta_secondary_text:
+      type: text
+      label: Secondary CTA Text
+    cta_secondary_url:
+      type: text
+      label: Secondary CTA URL
+
+features:
+  label: Features
+  icon: grid
+  fields:
+    heading:
+      type: text
+      label: Heading
+    subheading:
+      type: textarea
+      label: Subheading
+    columns:
+      type: select
+      label: Columns
+      options: ["2", "3", "4"]
+      default: "3"
+    items:
+      type: textarea
+      label: Feature Items (YAML)
+
+how_it_works:
+  label: How It Works
+  icon: list
+  fields:
+    heading:
+      type: text
+      label: Heading
+    subheading:
+      type: textarea
+      label: Subheading
+    items:
+      type: repeater
+      label: Steps
+      fields:
+        title:
+          type: text
+          label: Step Title
+          required: true
+        description:
+          type: textarea
+          label: Step Description
+          required: true
+
+cta:
+  label: Call to Action
+  icon: megaphone
+  fields:
+    eyebrow:
+      type: text
+      label: Eyebrow Text
+    heading:
+      type: text
+      label: Heading
+      required: true
+    description:
+      type: textarea
+      label: Description
+    button_text:
+      type: text
+      label: Button Text
+    button_url:
+      type: text
+      label: Button URL
+    secondary_text:
+      type: text
+      label: Secondary Button Text
+    secondary_url:
+      type: text
+      label: Secondary Button URL
+
+text:
+  label: Text
+  icon: text
+  fields:
+    heading:
+      type: text
+      label: Heading
+    body:
+      type: textarea
+      label: Body
+      required: true
+
+text_with_image:
+  label: Text with Image
+  icon: image
+  fields:
+    heading:
+      type: text
+      label: Heading
+    body:
+      type: textarea
+      label: Body
+      required: true
+    image:
+      type: media
+      label: Image
+      required: true
+    image_alt:
+      type: text
+      label: Image Alt Text
+    image_position:
+      type: select
+      label: Image Position
+      options: [left, right]
+      default: right
+    cta_text:
+      type: text
+      label: CTA Text
+    cta_url:
+      type: text
+      label: CTA URL
+
+counters:
+  label: Counters
+  icon: hash
+  fields:
+    heading:
+      type: text
+      label: Heading
+    items:
+      type: repeater
+      label: Counter Items
+      fields:
+        number:
+          type: text
+          label: Number
+          required: true
+        label:
+          type: text
+          label: Label
+          required: true
+        suffix:
+          type: text
+          label: Suffix
+
+testimonials:
+  label: Testimonials
+  icon: quote
+  fields:
+    heading:
+      type: text
+      label: Heading
+    items:
+      type: repeater
+      label: Testimonials
+      fields:
+        quote:
+          type: textarea
+          label: Quote
+          required: true
+        author:
+          type: text
+          label: Author Name
+          required: true
+        role:
+          type: text
+          label: Author Role
+        rating:
+          type: number
+          label: Rating (1-5)
+        avatar:
+          type: media
+          label: Avatar
+
+faq:
+  label: FAQ
+  icon: help-circle
+  fields:
+    heading:
+      type: text
+      label: Heading
+    items:
+      type: repeater
+      label: Questions
+      fields:
+        question:
+          type: text
+          label: Question
+          required: true
+        answer:
+          type: textarea
+          label: Answer
+          required: true
+
+pricing:
+  label: Pricing
+  icon: credit-card
+  fields:
+    heading:
+      type: text
+      label: Heading
+    subheading:
+      type: text
+      label: Subheading
+    plans:
+      type: repeater
+      label: Plans
+      fields:
+        name:
+          type: text
+          label: Plan Name
+          required: true
+        price:
+          type: text
+          label: Price
+          required: true
+        period:
+          type: text
+          label: Period
+          default: "/month"
+        description:
+          type: text
+          label: Description
+        features:
+          type: textarea
+          label: "Features (one per line)"
+        highlighted:
+          type: boolean
+          label: Highlighted
+          default: false
+        cta_text:
+          type: text
+          label: Button Text
+          default: "Choose Plan"
+        cta_url:
+          type: text
+          label: Button URL
+
+blog_listing:
+  label: Blog Listing
+  icon: list
+  fields:
+    heading:
+      type: text
+      label: Heading
+    content_type:
+      type: text
+      label: Content Type
+      default: article
+    limit:
+      type: number
+      label: Max Items
+      default: 6
+    columns:
+      type: select
+      label: Columns
+      options: ["2", "3", "4"]
+      default: "3"
+
+form:
+  label: Contact Form
+  icon: mail
+  fields:
+    heading:
+      type: text
+      label: Heading
+    description:
+      type: textarea
+      label: Description
+    action_url:
+      type: text
+      label: Form Action URL
+    success_message:
+      type: text
+      label: Success Message
+      default: "Thank you! We'll be in touch."
+
+appointment_form:
+  label: Appointment Form
+  icon: calendar
+  fields:
+    heading:
+      type: text
+      label: Heading
+    description:
+      type: textarea
+      label: Description
+    specialties:
+      type: textarea
+      label: "Specialties (one per line)"
+    action_url:
+      type: text
+      label: Form Action URL
+    success_message:
+      type: text
+      label: Success Message
+      default: "Your appointment request has been submitted."

@@ -1,0 +1,16 @@
+site_name: "Lumea Health"
+base_url: "https://demo03.barka.dev"
+theme: lumea-health
+theme_settings:
+  logo: ""
+  footer_text: "Your health, our mission. Premium healthcare across Poland."
+
+seo:
+  title_separator: " — "
+  default_description: "Lumea Health — Premium private healthcare network with 6 clinics across Poland. Cardiology, dermatology, pediatrics, and more."
+  default_image: "https://placehold.co/1200x630/4A7C59/FFFFFF?text=Lumea Health"
+  feeds:
+    - type: rss
+      path: /feed.xml
+      content_types: [article]
+      limit: 20

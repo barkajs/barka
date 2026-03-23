@@ -1,0 +1,23 @@
+label: How It Works
+icon: list
+description: "3-step process section."
+status: stable
+fields:
+  heading:
+    type: text
+    label: Heading
+  subheading:
+    type: textarea
+    label: Subheading
+  items:
+    type: repeater
+    label: Steps
+    fields:
+      title:
+        type: text
+        label: Step Title
+        required: true
+      description:
+        type: textarea
+        label: Step Description
+        required: true

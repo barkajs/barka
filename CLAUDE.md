@@ -7,8 +7,8 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 ## INVARIANTS — NEVER violate
 
 - NEVER delete or overwrite content/, config/, themes/ — USER-OWNED directories
-- NEVER modify starters/ without syncing changes to ALL starters (lokatech + kadoservices + blank)
-- NEVER modify starters/*/themes/base/ without syncing ALL 3 copies — they MUST be identical
+- NEVER modify starters/ without syncing changes to ALL starters (lokatech + kadoservices + lumea-health + blank)
+- NEVER modify starters/*/themes/base/ without syncing ALL 4 copies — they MUST be identical
 - NEVER hardcode language prefixes (/pl/, /de/) in theme components — use _url() and _t()
 - NEVER hardcode colors in theme components — use `token.*` from `lib/tokens.ts`, alpha via `alpha(token.*, N)`
 - NEVER commit apps/smoke-crm/ — temporary test fixture
