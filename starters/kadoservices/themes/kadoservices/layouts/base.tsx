@@ -655,7 +655,7 @@ const Base: FC<LayoutProps> = ({ content, site, theme, themeSettings, children }
 
             <div class="mt-16 border-t border-gray-800/50 pt-8 text-center text-xs text-gray-600">
               <p>&copy; {new Date().getFullYear()} {site.site_name}. {t('footer.rights')}</p>
-              <p class="mt-3 text-gray-700/40">{t('footer.crafted_with')} <a href="https://barkajs.dev" class="hover:text-gray-500 hover:no-underline" style="color: inherit">Barka</a></p>
+              <p class="mt-3 text-gray-700/40">{t('footer.crafted_with')} <a href="https://www.barka.dev" class="hover:text-gray-500 hover:no-underline" style="color: inherit">Barka</a></p>
             </div>
           </div>
         </footer>
