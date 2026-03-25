@@ -165,6 +165,7 @@ const Base: FC<LayoutProps> = ({ content, site, theme, themeSettings, children }
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
         <title>{fullTitle}</title>
+        <meta name="generator" content="BarkaCMS (https://www.barka.dev)" />
         <meta name="description" content={description} />
         {seo.noindex && <meta name="robots" content="noindex, nofollow" />}
         <link rel="canonical" href={canonical} />

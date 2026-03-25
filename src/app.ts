@@ -32,6 +32,7 @@ import { generateTokenCss } from './lib/design-tokens.js';
 function render404Fallback(siteConfig: SiteConfig): string {
   return `<!DOCTYPE html>
 <html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="generator" content="BarkaCMS (https://www.barka.dev)">
 <title>Page not found | ${siteConfig.site_name}</title>
 <style>body{font-family:system-ui,sans-serif;display:flex;align-items:center;justify-content:center;min-height:100vh;color:#1a1a1a;text-align:center}h1{font-size:4rem;font-weight:700}a{color:#2563eb}</style>
 </head><body><div><h1>404</h1><p>Page not found. <a href="/">Go home</a></p></div></body></html>`;
