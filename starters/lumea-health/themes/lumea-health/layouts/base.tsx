@@ -350,6 +350,7 @@ const Base: FC<LayoutProps> = ({ content, site, theme, themeSettings, children }
                 </a>
               </div>
               <p class="text-xs" style={{ color: 'var(--color-muted)' }}>&copy; {new Date().getFullYear()} {site.site_name}. {tr(t, 'footer.rights', 'All rights reserved.')} NIP: 525-XXX-XX-XX</p>
+              <p class="mt-2 text-xs" style={{ color: 'var(--color-muted)', opacity: '0.5' }}>{tr(t, 'footer.crafted_with', 'Crafted with')} <a href="https://www.barka.dev" class="hover:no-underline" style={{ color: 'inherit' }}>Barka</a></p>
             </div>
           </div>
         </footer>

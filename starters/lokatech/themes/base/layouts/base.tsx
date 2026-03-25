@@ -81,6 +81,7 @@ const Base: FC<LayoutProps> = ({ content, site, theme, themeSettings, children }
           <div class="mx-auto max-w-6xl px-6 py-10 text-center text-sm text-gray-500">
             <p>{themeSettings.footer_text ?? 'Powered by Barka CMS'}</p>
             <p class="mt-1">&copy; {new Date().getFullYear()} {site.site_name}</p>
+            <p class="mt-2 text-xs text-gray-400">Crafted with <a href="https://www.barka.dev" class="hover:text-gray-500 hover:no-underline" style="color: inherit">Barka</a></p>
           </div>
         </footer>
       </body>
