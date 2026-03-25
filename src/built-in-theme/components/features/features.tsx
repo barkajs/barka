@@ -9,7 +9,7 @@ export default function FeaturesSection({ data }: { data: any }) {
         {items.map((item: any) => (
           <div style="padding: 1.5rem; background: #f9fafb; border-radius: 8px;">
             {item.title && <h3 style="margin-bottom: 0.5rem;">{item.title}</h3>}
-            {item.description && <p style="color: #6b7280; font-size: 0.9rem;" dangerouslySetInnerHTML={{ __html: item.description }} />}
+            {item.description && <div style="color: #6b7280; font-size: 0.9rem;" dangerouslySetInnerHTML={{ __html: item.description }} />}
           </div>
         ))}
       </div>

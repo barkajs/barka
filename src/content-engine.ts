@@ -34,6 +34,9 @@ export function buildListingRoutes(
   const routes: Record<string, { type: string; title: string; subtitle?: string }> = {};
 
   for (const ct of contentTypes) {
+    // Opt-in: only generate listing when explicitly configured
+    if (!ct.listing_path && !ct.listing_title) continue;
+
     let listingPath = ct.listing_path;
 
     if (!listingPath && ct.path_pattern) {

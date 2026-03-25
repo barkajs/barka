@@ -144,6 +144,33 @@ describe('parseContentFile', () => {
     expect(cta.settings.spacing).toBe('medium');
   });
 
+  it('parses sections with data: wrapper format', () => {
+    const filePath = fixture('landing-pages/data-wrapper.md', [
+      '---',
+      'title: "Data Wrapper Test"',
+      'sections:',
+      '  - type: hero',
+      '    data:',
+      '      heading: "Wrapped"',
+      '      subheading: "In data"',
+      '    settings:',
+      '      background: dark',
+      '---',
+      '',
+      'Body.',
+    ].join('\n'));
+
+    const content = parseContentFile(filePath);
+
+    expect(content.sections).toHaveLength(1);
+
+    const hero = content.sections![0];
+    expect(hero.type).toBe('hero');
+    expect(hero.data.heading).toBe('Wrapped');
+    expect(hero.data.subheading).toBe('In data');
+    expect(hero.settings.background).toBe('dark');
+  });
+
   it('parses a YAML landing page file', () => {
     const filePath = fixture('landing-pages/home.yaml', [
       'uuid: "1111-2222-3333-4444"',

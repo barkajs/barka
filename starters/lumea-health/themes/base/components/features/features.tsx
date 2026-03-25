@@ -69,7 +69,7 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
               )}
               <h3 class="mb-2 text-lg font-semibold text-gray-900">{item.title}</h3>
               {item.description && (
-                <p class="text-sm leading-relaxed text-gray-600" dangerouslySetInnerHTML={{ __html: item.description }} />
+                <div class="text-sm leading-relaxed text-gray-600" dangerouslySetInnerHTML={{ __html: item.description }} />
               )}
             </div>
           ))}

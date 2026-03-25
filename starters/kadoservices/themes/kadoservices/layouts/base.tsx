@@ -105,7 +105,7 @@ const Base: FC<LayoutProps> = ({ content, site, theme, themeSettings, children }
   const seo = content.seo ?? {};
   const separator = site.seo?.title_separator ?? ' | ';
   const pageTitle = seo.title ?? content.title;
-  const fullTitle = pageTitle.includes(site.site_name)
+  const fullTitle = pageTitle.endsWith(site.site_name)
     ? pageTitle
     : `${pageTitle}${separator}${site.site_name}`;
   const description = seo.description ?? site.seo?.default_description ?? '';
