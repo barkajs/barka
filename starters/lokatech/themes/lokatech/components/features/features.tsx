@@ -129,9 +129,8 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 {item.title}
               </h3>
               {item.description && (
-                <p class={`text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-slate-500'}`}>
-                  {item.description}
-                </p>
+                <div class={`text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-slate-500'}`}
+                   dangerouslySetInnerHTML={{ __html: item.description }} />
               )}
               {/* Hover arrow indicator */}
               <div class={`mt-5 flex items-center gap-1 text-xs font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1`} style={{ color: token.primary }}>

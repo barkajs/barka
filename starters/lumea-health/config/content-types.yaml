@@ -1,6 +1,8 @@
 article:
   label: Article
   path_pattern: "/blog/{slug}"
+  listing_title: "Health Blog"
+  listing_subtitle: "Prevention, wellness, and medical news"
   fields:
     summary:
       type: textarea
@@ -49,6 +51,7 @@ landing_page:
 service:
   label: Service
   path_pattern: "/services/{slug}"
+  listing_title: "Our Services"
   fields:
     short_description:
       type: textarea

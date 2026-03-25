@@ -1,6 +1,8 @@
 article:
   label: Article
   path_pattern: "/articles/{slug}"
+  listing_title: "Insights"
+  listing_subtitle: "Hiring trends, HR strategy, and workforce management"
   fields:
     summary:
       type: textarea
@@ -50,6 +52,7 @@ landing_page:
 service:
   label: Service
   path_pattern: "/services/{slug}"
+  listing_title: "Our Services"
   fields:
     short_description:
       type: textarea
@@ -83,6 +86,8 @@ service:
 industry:
   label: Industry
   path_pattern: "/industries/{slug}"
+  listing_title: "Industries"
+  listing_subtitle: "Deep domain expertise across regulated and high-growth sectors"
   fields:
     short_description:
       type: textarea
@@ -107,6 +112,8 @@ industry:
 case_study:
   label: Case Study
   path_pattern: "/case-studies/{slug}"
+  listing_title: "Case Studies"
+  listing_subtitle: "Real results for real enterprises"
   fields:
     client_name:
       type: text

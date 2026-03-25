@@ -87,7 +87,7 @@ describe('barka build', () => {
     await runBuild(buildOpts());
 
     // Content pages generated at their resolved paths
-    expect(distExists('test-article/index.html')).toBe(true);
+    expect(distExists('articles/test-article/index.html')).toBe(true);
     expect(distExists('about/index.html')).toBe(true);
     expect(distExists('homepage/index.html')).toBe(true);
   });
@@ -104,11 +104,11 @@ describe('barka build', () => {
     await runBuild(buildOpts());
 
     // PL article at /pl/ prefix
-    expect(distExists('pl/test-article/index.html')).toBe(true);
+    expect(distExists('pl/articles/test-article/index.html')).toBe(true);
     // PL listing
     expect(distExists('pl/articles/index.html')).toBe(true);
     // EN article at root (no prefix)
-    expect(distExists('test-article/index.html')).toBe(true);
+    expect(distExists('articles/test-article/index.html')).toBe(true);
   });
 
   it('does not produce duplicate pages', async () => {

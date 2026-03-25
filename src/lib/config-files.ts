@@ -52,6 +52,9 @@ export function loadContentTypes(configDir: string): ContentType[] {
     label: def.label ?? name,
     fields: def.fields ?? {},
     path_pattern: def.path_pattern,
+    listing_path: def.listing_path,
+    listing_title: def.listing_title,
+    listing_subtitle: def.listing_subtitle,
   }));
 }
 

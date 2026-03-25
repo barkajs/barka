@@ -14,7 +14,7 @@ export default function BaseLayout({
       <head>
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <title>{title} | {siteName}</title>
+        <title>{title.endsWith(siteName) ? title : `${title} | ${siteName}`}</title>
         <meta name="generator" content="BarkaCMS (https://www.barka.dev)" />
         <style>{`
           *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
