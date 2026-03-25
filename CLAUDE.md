@@ -11,6 +11,8 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 - NEVER modify starters/*/themes/base/ without syncing ALL 4 copies — they MUST be identical
 - NEVER hardcode language prefixes (/pl/, /de/) in theme components — use _url() and _t()
 - NEVER hardcode colors in theme components — use `token.*` from `lib/tokens.ts`, alpha via `alpha(token.*, N)`
+- NEVER hardcode listing routes in app.ts or build.ts — use `listing_title`/`listing_path` in content-types.yaml
+- NEVER hardcode site name appending in `<title>` — base layouts already handle deduplication
 - NEVER commit apps/smoke-crm/ — temporary test fixture
 - ALWAYS run `npm test && npm run typecheck` before push
 - ALWAYS verify with Playwright before reporting a fix as done
@@ -31,7 +33,30 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 
 - Markdown files with YAML frontmatter in content/
 - Landing pages use YAML sections (content/landing-pages/*.yaml)
+- Section YAML format is **flat** — fields alongside `type` and `settings`, NOT nested under `data:`:
+  ```yaml
+  sections:
+    - type: hero
+      heading: "Welcome"        # ✅ flat
+      settings:
+        background: dark
+  ```
+  The parser also handles `data:` wrapper for backward compat, but starters use flat format.
 - PL content: file suffix (.pl.md, .pl.yaml) — URLs get /pl/ prefix from framework, NOT from content
+
+## Listing routes
+
+- Listing pages (e.g. `/articles`, `/services`) are **opt-in** via content-types.yaml
+- Add `listing_title` (required to enable listing) and optionally `listing_path`, `listing_subtitle`:
+  ```yaml
+  article:
+    path_pattern: "/articles/{slug}"
+    listing_title: "Insights"                    # enables listing page
+    listing_subtitle: "Technical deep-dives"     # optional
+  ```
+- If `listing_path` is omitted, it's derived from `path_pattern` (e.g. `/articles/{slug}` → `/articles`)
+- Types without `listing_title` or `listing_path` get no listing page (e.g. page, person, location)
+- Logic lives in `buildListingRoutes()` in `src/content-engine.ts` — used by both app.ts and build.ts
 
 ## Design tokens
 
@@ -52,6 +77,7 @@ Barka is the #1 CMS for marketing-driven companies that need rich, multi-languag
 - Use `themeSettings._url?.(path)` for localized links
 - Use `themeSettings._t?.(key)` for translated UI strings
 - Component CSS in colocated .css files, served via /static/components.css
+- Features component renders `item.description` as HTML (`dangerouslySetInnerHTML`) — safe for file-based content, supports migrated CMS data with HTML markup
 
 ## npm package model
 
