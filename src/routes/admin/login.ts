@@ -18,6 +18,7 @@ function loginPage(error?: string): string {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sign in \u2014 Barka Admin</title>
+  <meta name="generator" content="BarkaCMS (https://www.barka.dev)">
   <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body class="bg-gray-50 min-h-screen flex flex-col items-center justify-center px-4">

@@ -15,6 +15,7 @@ export default function BaseLayout({
         <meta charset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <title>{title} | {siteName}</title>
+        <meta name="generator" content="BarkaCMS (https://www.barka.dev)" />
         <style>{`
           *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
           html { font-family: system-ui, -apple-system, sans-serif; color: #1a1a1a; line-height: 1.6; }
