@@ -1,6 +1,6 @@
 import fs from 'node:fs';
 import path from 'node:path';
-import { createContentEngine, resolveContentPath } from '../content-engine.js';
+import { createContentEngine, resolveContentPath, buildListingRoutes } from '../content-engine.js';
 import { loadSites, filterContentBySite } from '../lib/multisite.js';
 import { createThemeResolver } from '../lib/theme-loader.js';
 import { renderContent } from '../lib/template-renderer.js';
@@ -41,12 +41,7 @@ function writeFile(filePath: string, data: string): void {
 // Listing routes (mirrors app.ts)
 // ---------------------------------------------------------------------------
 
-const listingRoutes: Record<string, { type: string; title: string; subtitle?: string }> = {
-  '/articles': { type: 'article', title: 'Insights', subtitle: 'Engineering perspectives, technical deep-dives, and industry analysis' },
-  '/services': { type: 'service', title: 'Our Services' },
-  '/industries': { type: 'industry', title: 'Industries', subtitle: 'Deep domain expertise across regulated and high-growth sectors' },
-  '/case-studies': { type: 'case_study', title: 'Case Studies', subtitle: 'Real results for real enterprises' },
-};
+// Listing routes are built dynamically from content-types.yaml (see runBuild)
 
 // ---------------------------------------------------------------------------
 // Build
@@ -177,6 +172,7 @@ export async function runBuild(opts: BuildOptions): Promise<void> {
 
     // --- Listing pages -----------------------------------------------------
 
+    const listingRoutes = buildListingRoutes(contentTypes);
     for (const [routePath, listing] of Object.entries(listingRoutes)) {
       const items = dedupedContent
         .filter((item) => item.type === listing.type)

@@ -49,7 +49,7 @@ const Features: FC<SectionProps> = ({ data, settings }) => {
                 </div>
               )}
               <h3 class="text-xl mb-2" style={{ fontFamily: token.fontHeading }}>{item.title}</h3>
-              <p class="text-sm leading-relaxed" style={{ color: token.muted }}>{item.description}</p>
+              <p class="text-sm leading-relaxed" style={{ color: token.muted }} dangerouslySetInnerHTML={{ __html: item.description }} />
               {item.href && (
                 <a href={item.href} class="mt-3 inline-block text-sm font-medium hover:no-underline" style={{ color: token.accent }}>
                   Learn more &rarr;

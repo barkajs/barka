@@ -49,6 +49,9 @@ export interface ContentType {
   label: string;
   fields: Record<string, FieldDefinition>;
   path_pattern?: string;
+  listing_path?: string;
+  listing_title?: string;
+  listing_subtitle?: string;
 }
 
 export interface FieldDefinition {

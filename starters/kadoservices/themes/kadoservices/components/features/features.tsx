@@ -119,7 +119,7 @@ const Features: FC<SectionProps> = ({ data, settings, themeSettings }) => {
                 <div class="flex-1">
                   <h3 class={`text-lg font-semibold tracking-[-0.01em] ${isDark ? 'text-white' : 'text-slate-900'}`}>{item.title}</h3>
                   {item.description && (
-                    <p class={`mt-1 text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-slate-500'}`}>{item.description}</p>
+                    <p class={`mt-1 text-sm leading-relaxed ${isDark ? 'text-gray-400' : 'text-slate-500'}`} dangerouslySetInnerHTML={{ __html: item.description }} />
                   )}
                 </div>
                 <span class="shrink-0 text-sm font-semibold opacity-0 transition-all duration-300 group-hover:opacity-100 group-hover:translate-x-1" style={{ color: token.primary }}>&rarr;</span>

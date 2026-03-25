@@ -33,7 +33,8 @@ function typeFromDirectory(filePath: string): string {
 function parseSections(raw: any[] | undefined): Section[] {
   if (!Array.isArray(raw)) return [];
   return raw.map((entry, index) => {
-    const { type, settings: rawSettings, children: rawChildren, ...data } = entry;
+    const { type, settings: rawSettings, children: rawChildren, data: dataWrapper, ...rest } = entry;
+    const data = dataWrapper ?? rest;
     const settings: SectionSettings = {
       ...DEFAULT_SECTION_SETTINGS,
       ...rawSettings,

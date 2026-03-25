@@ -1,13 +1,15 @@
-content_types:
-  - name: article
-    label: Article
-    plural: Articles
-    path_prefix: /articles
-  - name: page
-    label: Page
-    plural: Pages
-    path_prefix: ""
-  - name: landing_page
-    label: Landing Page
-    plural: Landing Pages
-    path_prefix: ""
+article:
+  label: Article
+  path_pattern: "/articles/{slug}"
+  listing_title: "Insights"
+  fields: {}
+
+page:
+  label: Page
+  path_pattern: "/{slug}"
+  fields: {}
+
+landing_page:
+  label: Landing Page
+  path_pattern: "/{slug}"
+  fields: {}

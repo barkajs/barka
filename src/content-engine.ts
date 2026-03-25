@@ -28,6 +28,33 @@ export function resolveContentPath(
   return `/${content.slug}`;
 }
 
+export function buildListingRoutes(
+  contentTypes: ContentType[],
+): Record<string, { type: string; title: string; subtitle?: string }> {
+  const routes: Record<string, { type: string; title: string; subtitle?: string }> = {};
+
+  for (const ct of contentTypes) {
+    let listingPath = ct.listing_path;
+
+    if (!listingPath && ct.path_pattern) {
+      const derived = ct.path_pattern.replace(/\/?\{slug\}$/, '');
+      if (derived && derived !== '/') {
+        listingPath = derived;
+      }
+    }
+
+    if (!listingPath) continue;
+
+    routes[listingPath] = {
+      type: ct.name,
+      title: ct.listing_title ?? ct.label,
+      subtitle: ct.listing_subtitle,
+    };
+  }
+
+  return routes;
+}
+
 export class FileContentEngine implements ContentEngine {
   private contentCache: Content[] | null = null;
   private siteConfigCache: SiteConfig | null = null;

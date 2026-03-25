@@ -9,11 +9,12 @@ import { eq } from 'drizzle-orm';
 import {
   createContentEngine,
   resolveContentPath,
+  buildListingRoutes,
   type ContentEngine,
 } from './content-engine.js';
 import { hasDatabase, getDb } from './db/connection.js';
 import * as schema from './db/schema.js';
-import { loadSiteConfig } from './lib/config-files.js';
+import { loadSiteConfig, loadContentTypes } from './lib/config-files.js';
 import type { Content, SiteConfig, ContentType } from './lib/types.js';
 import {
   generateMetaTags,
@@ -322,12 +323,7 @@ export function createApp(options: {
 
   // --- Collection listing routes --------------------------------------------
 
-  const listingRoutes: Record<string, { type: string; title: string; subtitle?: string }> = {
-    '/articles': { type: 'article', title: 'Insights', subtitle: 'Engineering perspectives, technical deep-dives, and industry analysis' },
-    '/services': { type: 'service', title: 'Our Services' },
-    '/industries': { type: 'industry', title: 'Industries', subtitle: 'Deep domain expertise across regulated and high-growth sectors' },
-    '/case-studies': { type: 'case_study', title: 'Case Studies', subtitle: 'Real results for real enterprises' },
-  };
+  const listingRoutes = buildListingRoutes(loadContentTypes(path.resolve(options.configDir)));
 
   for (const [routePath, listing] of Object.entries(listingRoutes)) {
     app.get(routePath, async (c) => {
